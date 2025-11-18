@@ -1,0 +1,183 @@
+"use client"
+
+import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
+import { InquiryButton } from "@/components/inquiry-button"
+
+declare global {
+  interface Window {
+    kakao: any
+  }
+}
+
+export default function LocationPage() {
+  const mapRef = useRef<HTMLDivElement>(null)
+  const [mapLoaded, setMapLoaded] = useState(false)
+  const [mapError, setMapError] = useState(false)
+  const [isButtonHovered, setIsButtonHovered] = useState(false)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return
+
+    const KAKAO_MAP_KEY = process.env.NEXT_PUBLIC_KAKAO_MAP_KEY
+
+    if (document.querySelector(`script[src*="dapi.kakao.com"]`)) {
+      if (window.kakao && window.kakao.maps) {
+        initializeMap()
+      }
+      return
+    }
+
+    const script = document.createElement("script")
+    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_MAP_KEY}`
+    script.async = true
+    script.type = "text/javascript"
+    document.head.appendChild(script)
+
+    script.onload = () => {
+      setTimeout(() => {
+        initializeMap()
+      }, 100)
+    }
+
+    script.onerror = () => {
+      setMapError(true)
+    }
+
+    function initializeMap() {
+      if (!window.kakao || !window.kakao.maps) {
+        setMapError(true)
+        return
+      }
+
+      if (mapRef.current) {
+        try {
+          const container = mapRef.current
+          const options = {
+            center: new window.kakao.maps.LatLng(37.274991, 127.071493),
+            level: 3,
+          }
+
+          const map = new window.kakao.maps.Map(container, options)
+
+          // Add marker
+          const markerPosition = new window.kakao.maps.LatLng(37.274991, 127.071493)
+          const marker = new window.kakao.maps.Marker({
+            position: markerPosition,
+          })
+          marker.setMap(map)
+
+          setMapLoaded(true)
+        } catch (error) {
+          setMapError(true)
+        }
+      } else {
+        setMapError(true)
+      }
+    }
+
+    return () => {
+      // Don't remove the script on unmount to avoid re-loading issues
+    }
+  }, [])
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Navigation - using component with forceWhiteMode */}
+      <Navigation forceWhiteMode />
+
+      {/* Main Content */}
+      <section
+        className="bg-white pb-[calc(100vw*300/1920)] max-[439px]:!pb-[calc(100vw*160/375)] pt-[190px] max-[440px]:!pt-[116px]"
+      >
+        <div
+          className="max-[440px]:!px-5"
+          style={{ paddingLeft: "calc(100vw / 5.5)", paddingRight: "calc(100vw / 5.5)" }}
+        >
+          <div className="container mx-auto px-6 max-[440px]:px-0">
+            <div className="max-w-7xl mx-auto">
+              {/* Page Title */}
+              <h1 className="font-bold text-gray-900 text-center max-[440px]:text-2xl max-[440px]:mb-[60px] text-6xl mb-[100px]">
+                오시는 길
+              </h1>
+
+              {/* Map Container */}
+              <div
+                className="w-full mx-auto mb-12 aspect-[12/5] max-[440px]:aspect-[375/440] max-[440px]:mb-8 max-[440px]:!-mx-5 max-[440px]:!w-[100vw] max-[440px]:rounded-none"
+                style={{
+                  maxWidth: "1200px",
+                  borderRadius: "30px",
+                }}
+              >
+                {mapError || !mapLoaded ? (
+                  <Image
+                    src="/images/img_map.png"
+                    alt="Map placeholder"
+                    width={1200}
+                    height={500}
+                    className="w-full h-full object-cover max-[440px]:rounded-none rounded-none"
+                  />
+                ) : null}
+                <div ref={mapRef} className={`w-full h-full ${mapLoaded && !mapError ? "block" : "hidden"}`} />
+              </div>
+
+              {/* Location Information */}
+              <div className="max-w-4xl space-y-6 mb-8 max-[440px]:space-y-8 max-[440px]:mx-auto">
+                <div className="flex gap-4 max-[440px]:flex-col max-[440px]:gap-2">
+                  <div className="font-bold text-gray-900 min-w-[100px] max-[440px]:min-w-0 max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[22px] leading-[31px]">주소</div>
+                  <div className="text-gray-700 max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[22px] leading-[31px]">경기도 용인시 기흥구 흥덕1로 79번길 2, 가은프라자 717호(영덕동)</div>
+                </div>
+
+                <div className="flex gap-4 max-[440px]:flex-col max-[440px]:gap-2">
+                  <div className="font-bold text-gray-900 min-w-[100px] max-[440px]:min-w-0 max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[22px] leading-[31px]">대중교통</div>
+                  <div className="text-gray-700 max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[22px] leading-[31px]">상현역 2번 출구에서 55번 버스 탑승 (15분 소요)</div>
+                </div>
+
+                <div className="flex gap-4 max-[440px]:flex-col max-[440px]:gap-2">
+                  <div className="font-bold text-gray-900 min-w-[100px] max-[440px]:min-w-0 max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[22px] leading-[31px]">주차장</div>
+                  <div className="text-gray-700 max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[22px] leading-[31px]">건물 내 주차 가능 (무료)</div>
+                </div>
+              </div>
+
+              {/* Kakao Map Button */}
+              <div className="flex justify-start max-w-4xl max-[440px]:justify-center max-[440px]:mx-auto">
+                <Link
+                  href="https://place.map.kakao.com/1394637530"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full border-2 text-[#355CBA] border-[#355CBA] hover:bg-[#355CBA] hover:text-white transition-colors font-semibold max-[440px]:w-[calc(100vw*335/375)] max-[440px]:px-6 max-[440px]:py-3 max-[440px]:gap-1 max-[440px]:text-[15px] max-[440px]:leading-[22px] px-[30px] py-[18px] gap-[6px] text-[20px]"
+                  onMouseEnter={() => setIsButtonHovered(true)}
+                  onMouseLeave={() => setIsButtonHovered(false)}
+                >
+                  <Image
+                    src={isButtonHovered ? "/images/icon_map_pin_hover.svg" : "/images/icon_map_pin.svg"}
+                    alt=""
+                    width={24}
+                    height={24}
+                    className="max-[440px]:w-5 max-[440px]:h-5"
+                  />
+                  카카오맵 보러 가기
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <Footer />
+
+      {/* Inquiry Button */}
+      <InquiryButton />
+    </div>
+  )
+}
