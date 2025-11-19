@@ -15,8 +15,6 @@ declare global {
 
 export default function LocationPage() {
   const mapRef = useRef<HTMLDivElement>(null)
-  const [mapLoaded, setMapLoaded] = useState(false)
-  const [mapError, setMapError] = useState(false)
   const [isButtonHovered, setIsButtonHovered] = useState(false)
 
   useEffect(() => {
@@ -49,39 +47,28 @@ export default function LocationPage() {
       }, 100)
     }
 
-    script.onerror = () => {
-      setMapError(true)
-    }
-
     function initializeMap() {
-      if (!window.kakao || !window.kakao.maps) {
-        setMapError(true)
+      if (!window.kakao || !window.kakao.maps || !mapRef.current) {
         return
       }
 
-      if (mapRef.current) {
-        try {
-          const container = mapRef.current
-          const options = {
-            center: new window.kakao.maps.LatLng(37.274991, 127.071493),
-            level: 3,
-          }
-
-          const map = new window.kakao.maps.Map(container, options)
-
-          // Add marker
-          const markerPosition = new window.kakao.maps.LatLng(37.274991, 127.071493)
-          const marker = new window.kakao.maps.Marker({
-            position: markerPosition,
-          })
-          marker.setMap(map)
-
-          setMapLoaded(true)
-        } catch (error) {
-          setMapError(true)
+      try {
+        const container = mapRef.current
+        const options = {
+          center: new window.kakao.maps.LatLng(37.274991, 127.071493),
+          level: 3,
         }
-      } else {
-        setMapError(true)
+
+        const map = new window.kakao.maps.Map(container, options)
+
+        // Add marker
+        const markerPosition = new window.kakao.maps.LatLng(37.274991, 127.071493)
+        const marker = new window.kakao.maps.Marker({
+          position: markerPosition,
+        })
+        marker.setMap(map)
+      } catch (error) {
+        console.error('Failed to initialize Kakao Map:', error)
       }
     }
 
@@ -112,23 +99,13 @@ export default function LocationPage() {
 
               {/* Map Container */}
               <div
+                ref={mapRef}
                 className="w-full mx-auto mb-12 aspect-[12/5] max-[440px]:aspect-[375/440] max-[440px]:mb-8 max-[440px]:!-mx-5 max-[440px]:!w-[100vw] max-[440px]:rounded-none"
                 style={{
                   maxWidth: "1200px",
                   borderRadius: "30px",
                 }}
-              >
-                {mapError || !mapLoaded ? (
-                  <Image
-                    src="/images/img_map.png"
-                    alt="Map placeholder"
-                    width={1200}
-                    height={500}
-                    className="w-full h-full object-cover max-[440px]:rounded-none rounded-none"
-                  />
-                ) : null}
-                <div ref={mapRef} className={`w-full h-full ${mapLoaded && !mapError ? "block" : "hidden"}`} />
-              </div>
+              />
 
               {/* Location Information */}
               <div className="max-w-4xl space-y-6 mb-8 max-[440px]:space-y-8 max-[440px]:mx-auto">
