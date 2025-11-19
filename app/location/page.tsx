@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import Script from "next/script"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { InquiryButton } from "@/components/inquiry-button"
@@ -12,6 +13,8 @@ declare global {
     kakao: any
   }
 }
+
+const KAKAO_MAP_KEY = process.env.NEXT_PUBLIC_KAKAO_MAP_KEY
 
 export default function LocationPage() {
   const mapRef = useRef<HTMLDivElement>(null)
@@ -23,62 +26,44 @@ export default function LocationPage() {
     }
   }, [])
 
-  useEffect(() => {
-    if (typeof window === 'undefined' || typeof document === 'undefined') return
-
-    const KAKAO_MAP_KEY = process.env.NEXT_PUBLIC_KAKAO_MAP_KEY
-
-    if (document.querySelector(`script[src*="dapi.kakao.com"]`)) {
-      if (window.kakao && window.kakao.maps) {
-        initializeMap()
-      }
+  const initializeMap = () => {
+    if (!window.kakao || !window.kakao.maps || !mapRef.current) {
       return
     }
 
-    const script = document.createElement("script")
-    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_MAP_KEY}`
-    script.async = true
-    script.type = "text/javascript"
-    document.head.appendChild(script)
-
-    script.onload = () => {
-      setTimeout(() => {
-        initializeMap()
-      }, 100)
-    }
-
-    function initializeMap() {
-      if (!window.kakao || !window.kakao.maps || !mapRef.current) {
-        return
+    try {
+      const container = mapRef.current
+      const options = {
+        center: new window.kakao.maps.LatLng(37.274991, 127.071493),
+        level: 3,
       }
 
-      try {
-        const container = mapRef.current
-        const options = {
-          center: new window.kakao.maps.LatLng(37.274991, 127.071493),
-          level: 3,
-        }
+      const map = new window.kakao.maps.Map(container, options)
 
-        const map = new window.kakao.maps.Map(container, options)
-
-        // Add marker
-        const markerPosition = new window.kakao.maps.LatLng(37.274991, 127.071493)
-        const marker = new window.kakao.maps.Marker({
-          position: markerPosition,
-        })
-        marker.setMap(map)
-      } catch (error) {
-        console.error('Failed to initialize Kakao Map:', error)
-      }
+      // Add marker
+      const markerPosition = new window.kakao.maps.LatLng(37.274991, 127.071493)
+      const marker = new window.kakao.maps.Marker({
+        position: markerPosition,
+      })
+      marker.setMap(map)
+    } catch (error) {
+      console.error('Failed to initialize Kakao Map:', error)
     }
-
-    return () => {
-      // Don't remove the script on unmount to avoid re-loading issues
-    }
-  }, [])
+  }
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Kakao Map Script */}
+      {KAKAO_MAP_KEY && (
+        <Script
+          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_MAP_KEY}&autoload=false`}
+          strategy="afterInteractive"
+          onLoad={() => {
+            window.kakao.maps.load(initializeMap)
+          }}
+        />
+      )}
+
       {/* Navigation - using component with forceWhiteMode */}
       <Navigation forceWhiteMode />
 
@@ -100,10 +85,9 @@ export default function LocationPage() {
               {/* Map Container */}
               <div
                 ref={mapRef}
-                className="w-full mx-auto mb-12 aspect-[12/5] max-[440px]:aspect-[375/440] max-[440px]:mb-8 max-[440px]:!-mx-5 max-[440px]:!w-[100vw] max-[440px]:rounded-none"
+                className="w-full mx-auto mb-12 aspect-[12/5] max-[440px]:aspect-[375/440] max-[440px]:mb-8 max-[440px]:!-mx-5 max-[440px]:!w-[100vw]"
                 style={{
                   maxWidth: "1200px",
-                  borderRadius: "30px",
                 }}
               />
 
