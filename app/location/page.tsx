@@ -24,6 +24,13 @@ export default function LocationPage() {
     if (typeof window !== 'undefined') {
       window.scrollTo(0, 0)
     }
+
+    // Kakao Maps SDK가 이미 로드되어 있으면 지도 초기화
+    if (window.kakao && window.kakao.maps && mapRef.current) {
+      window.kakao.maps.load(() => {
+        initializeMap()
+      })
+    }
   }, [])
 
   const initializeMap = () => {

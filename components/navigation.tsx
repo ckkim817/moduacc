@@ -355,7 +355,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
               className="block text-base font-bold py-2"
               style={{ color: "#355CBA" }}
             >
-              Tax Refund Application
+              세금 환급 신청
             </a>
           </div>
         </div>
