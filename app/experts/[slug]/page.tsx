@@ -41,52 +41,45 @@ export default function ExpertDetailPage() {
           }}
         >
           <div
-            className="relative"
+            className="relative max-w-[1200px] mx-auto"
             style={{
               width: "calc(100vw * 1200 / 1920)",
-              margin: "0 auto",
-              minHeight: "calc(88px + (100vw * 530 / 1920) + (100vw * 170 / 1920))",
+              height: "min(530px, calc(100vw * 530 / 1920))",
             }}
           >
-            {/* Gray Description Section - Base layer (z-10), overlaps blue by 70px, only bottom corners rounded */}
-            <div
-              className="absolute z-10 bg-[#F5F5F5]"
-              style={{
-                width: "100%",
-                top: "calc(min(90px, 100vw * 90 / 1920) + (100vw * 440 / 1920) - (100vw * 70 / 1920))",
-                left: 0,
-                borderBottomLeftRadius: "calc(100vw * 40 / 1920)",
-                borderBottomRightRadius: "calc(100vw * 40 / 1920)",
-              }}
-            >
-              <div
-                style={{
-                  width: "calc(100vw * 1040 / 1920)",
-                  marginLeft: "calc(100vw * 80 / 1920)",
-                  marginRight: "calc(100vw * 80 / 1920)",
-                  paddingTop: "calc((100vw * 70 / 1920) + (100vw * 50 / 1920))",
-                  paddingBottom: "calc(100vw * 50 / 1920)",
-                }}
-              >
-                <p className="text-gray-700 max-[440px]:text-[16px] max-[440px]:leading-[22px] text-[22px] leading-[36px] font-medium">{expert.description}</p>
-              </div>
-            </div>
 
             {/* Blue Gradient Section - Middle layer (z-20), all corners rounded */}
             <div
               className="absolute z-20"
               style={{
                 width: "100%",
-                height: "calc(100vw * 440 / 1920)",
+                height: "min(440px, calc(100vw * 440 / 1920))",
                 top: "min(90px, calc(100vw * 90 / 1920))",
                 left: 0,
                 background: "linear-gradient(180deg, #2C498C 0%, #223B77 100%)",
-                borderRadius: "calc(100vw * 40 / 1920)",
+                borderRadius: "min(40px, calc(100vw * 40 / 1920))",
               }}
             >
               <div className="relative w-full h-full">
+                <div
+                  className="absolute flex flex-col max-[440px]:hidden"
+                  style={{
+                    left: "min(80px, calc(100vw * 80 / 1920))",
+                    top: "min(70px, calc(100vw * 70 / 1920))",
+                    gap: "min(14px, calc(100vw * 14 / 1920))",
+                  }}
+                >
+                  <p className="text-white text-[20px] font-semibold">
+                    {expert.tagline}
+                  </p>
+                  <h1 className="text-white font-bold text-[48px] leading-[64px]">
+                    {expert.name} {expert.title}
+                  </h1>
+                </div>
+
+                {/* Mobile version */}
                 <p
-                  className="absolute text-white max-[440px]:text-[13px] max-[440px]:font-medium text-[20px] font-semibold"
+                  className="absolute text-white text-[13px] font-medium hidden max-[440px]:block"
                   style={{
                     left: "calc(100vw * 80 / 1920)",
                     top: "calc(100vw * 70 / 1920)",
@@ -96,7 +89,7 @@ export default function ExpertDetailPage() {
                 </p>
 
                 <h1
-                  className="absolute text-white font-bold max-[440px]:text-[24px] max-[440px]:leading-[34px] text-[48px] leading-[64px]"
+                  className="absolute text-white font-bold text-[24px] leading-[34px] hidden max-[440px]:block"
                   style={{
                     left: "calc(100vw * 80 / 1920)",
                     top: "min(calc(100vw * 104 / 1920), 104px)",
@@ -108,15 +101,15 @@ export default function ExpertDetailPage() {
                 <div
                   className="absolute flex items-center text-white opacity-50"
                   style={{
-                    left: "calc(100vw * 80 / 1920)",
-                    bottom: "calc(100vw * 70 / 1920)",
+                    left: "min(80px, calc(100vw * 80 / 1920))",
+                    bottom: "min(70px, calc(100vw * 70 / 1920))",
                   }}
                 >
                   <Image src="/images/icon_email.svg" alt="email" width={24} height={24} unoptimized />
                   <span
                     className="text-base"
                     style={{
-                      marginLeft: "calc(100vw * 6 / 1920)",
+                      marginLeft: "min(6px, calc(100vw * 6 / 1920))",
                     }}
                   >
                     email
@@ -124,7 +117,7 @@ export default function ExpertDetailPage() {
                   <span
                     className="text-base"
                     style={{
-                      marginLeft: "calc(100vw * 10 / 1920)",
+                      marginLeft: "min(10px, calc(100vw * 10 / 1920))",
                     }}
                   >
                     {expert.email}
@@ -137,10 +130,10 @@ export default function ExpertDetailPage() {
             <div
               className="absolute z-30"
               style={{
-                width: "calc(100vw * 400 / 1920)",
-                height: "calc(100vw * 530 / 1920)",
-                top: `calc(min(90px, calc(100vw * 90 / 1920)) + calc(100vw * 440 / 1920) - calc(100vw * 530 / 1920))`,
-                right: "calc(100vw * 60 / 1920)",
+                width: "min(400px, calc(100vw * 400 / 1920))",
+                height: "min(530px, calc(100vw * 530 / 1920))",
+                top: `calc(min(90px, calc(100vw * 90 / 1920)) + min(440px, calc(100vw * 440 / 1920)) - min(530px, calc(100vw * 530 / 1920)))`,
+                right: "min(60px, calc(100vw * 60 / 1920))",
               }}
             >
               <Image
@@ -149,6 +142,29 @@ export default function ExpertDetailPage() {
                 fill
                 className="object-cover object-top"
               />
+            </div>
+          </div>
+
+          {/* Gray Description Section - overlaps blue by 70px, only bottom corners rounded */}
+          <div
+            className="relative bg-[#F5F5F5] max-[440px]:hidden max-w-[1200px]"
+            style={{
+              width: "calc(100vw * 1200 / 1920)",
+              margin: "0 auto",
+              marginTop: "max(-70px, calc(-100vw * 70 / 1920))",
+              borderBottomLeftRadius: "min(40px, calc(100vw * 40 / 1920))",
+              borderBottomRightRadius: "min(40px, calc(100vw * 40 / 1920))",
+            }}
+          >
+            <div
+              style={{
+                paddingTop: "calc(min(70px, 100vw * 70 / 1920) + 50px)",
+                paddingBottom: "50px",
+                paddingLeft: "80px",
+                paddingRight: "80px",
+              }}
+            >
+              <p className="text-gray-700 text-[22px] leading-[36px] font-medium">{expert.description}</p>
             </div>
           </div>
         </div>
@@ -193,7 +209,7 @@ export default function ExpertDetailPage() {
                     height: "calc(100vw * 140 / 375)",
                   }}
                 >
-                  <Image src="/images/design-mode/Rectangle%201664145505.png" alt="" fill className="object-cover" />
+                  <Image src="/images/design-mode/gradient-overlay-mobile.png" alt="" fill className="object-cover" />
                 </div>
 
                 {/* Email icon */}
@@ -242,20 +258,19 @@ export default function ExpertDetailPage() {
 
       {/* Details Section */}
       <section
-        className="bg-white max-[440px]:!px-5"
+        className="bg-white max-[440px]:!px-5 pt-[60px] max-[440px]:!pt-[20px]"
         style={{
           paddingLeft: "calc(100vw * 360 / 1920)",
           paddingRight: "calc(100vw * 360 / 1920)",
-          paddingTop: "calc(100vw * 80 / 1920)",
         }}
       >
-        <div className="mx-auto max-[440px]:!w-full" style={{ width: "calc(100vw * 1200 / 1920)", margin: "0 auto" }}>
+        <div className="mx-auto max-[440px]:!w-full max-w-[1200px]" style={{ width: "calc(100vw * 1200 / 1920)", margin: "0 auto" }}>
           {/* Education & Qualifications */}
-          <div className="grid grid-cols-[200px_1fr] gap-8 py-8 max-[440px]:grid-cols-1 max-[440px]:gap-4">
+          <div className="grid grid-cols-[200px_1fr] gap-8 py-[60px] max-[440px]:py-[40px] max-[440px]:grid-cols-1 max-[440px]:gap-4">
             <h2 className="font-bold max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[28px] leading-[42px]">학력 및 자격</h2>
             <div className="space-y-2">
               {expert.education.map((item, index) => (
-                <p key={index} className="text-gray-700 max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[22px] leading-[36px]">
+                <p key={index} className="text-gray-700 max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[22px] leading-[36px] whitespace-pre-line">
                   {item}
                 </p>
               ))}
@@ -266,11 +281,11 @@ export default function ExpertDetailPage() {
           <div className="w-full h-[1px] bg-black/[0.07]" />
 
           {/* Career */}
-          <div className="grid grid-cols-[200px_1fr] gap-8 py-8 max-[440px]:grid-cols-1 max-[440px]:gap-4">
+          <div className="grid grid-cols-[200px_1fr] gap-8 py-[60px] max-[440px]:py-[40px] max-[440px]:grid-cols-1 max-[440px]:gap-4">
             <h2 className="font-bold max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[28px] leading-[42px]">경력</h2>
             <div className="space-y-2">
               {expert.career.map((item, index) => (
-                <p key={index} className="text-gray-700 max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[22px] leading-[36px]">
+                <p key={index} className="text-gray-700 max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[22px] leading-[36px] whitespace-pre-line">
                   {item}
                 </p>
               ))}
@@ -281,11 +296,11 @@ export default function ExpertDetailPage() {
           <div className="w-full h-[1px] bg-black/[0.07]" />
 
           {/* Main Work Areas */}
-          <div className="grid grid-cols-[200px_1fr] gap-8 py-8 max-[440px]:grid-cols-1 max-[440px]:gap-4">
+          <div className="grid grid-cols-[200px_1fr] gap-8 py-[60px] max-[440px]:py-[40px] max-[440px]:grid-cols-1 max-[440px]:gap-4">
             <h2 className="font-bold max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[28px] leading-[42px]">주요 업무분야</h2>
-            <div className="space-y-2">
+            <div className="flex flex-col gap-[20px] max-[440px]:gap-[16px]">
               {expert.workAreas.map((item, index) => (
-                <p key={index} className="text-gray-700 max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[22px] leading-[36px]">
+                <p key={index} className="text-gray-700 max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[22px] leading-[36px] whitespace-pre-line">
                   {item}
                 </p>
               ))}
@@ -293,8 +308,7 @@ export default function ExpertDetailPage() {
           </div>
 
           <div
-            className="flex justify-center pb-[calc(100vw*300/1920)] max-[439px]:!pb-[calc(100vw*160/375)]"
-            style={{ marginTop: "calc(100vw * 120 / 1920)" }}
+            className="flex justify-center pt-[60px] pb-[300px] max-[440px]:!pt-[20px] max-[440px]:!pb-[160px]"
           >
             <CommonButton onClick={() => router.push("/experts")}>목록으로 돌아가기</CommonButton>
           </div>

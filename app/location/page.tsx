@@ -99,7 +99,7 @@ export default function LocationPage() {
               />
 
               {/* Location Information */}
-              <div className="max-w-4xl space-y-6 mb-8 max-[440px]:space-y-8 max-[440px]:mx-auto">
+              <div className="mx-auto space-y-6 mb-8 max-[440px]:space-y-8" style={{ maxWidth: "1200px" }}>
                 <div className="flex gap-4 max-[440px]:flex-col max-[440px]:gap-2">
                   <div className="font-bold text-gray-900 min-w-[100px] max-[440px]:min-w-0 max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[22px] leading-[31px]">주소</div>
                   <div className="text-gray-700 max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[22px] leading-[31px]">경기도 용인시 기흥구 흥덕1로 79번길 2, 가은프라자 717호(영덕동)</div>
@@ -117,7 +117,7 @@ export default function LocationPage() {
               </div>
 
               {/* Kakao Map Button */}
-              <div className="flex justify-start max-w-4xl max-[440px]:justify-center max-[440px]:mx-auto">
+              <div className="mx-auto flex justify-start max-[440px]:justify-center" style={{ maxWidth: "1200px" }}>
                 <Link
                   href="https://place.map.kakao.com/1394637530"
                   target="_blank"

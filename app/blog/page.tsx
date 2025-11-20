@@ -168,7 +168,7 @@ export default function BlogPage() {
             style={{ paddingLeft: "calc(100vw * 3 / 16)", paddingRight: "calc(100vw * 3 / 16)" }}
           >
             <div
-              className="overflow-hidden rounded-3xl max-[440px]:w-[calc(100vw*335/375)] max-[440px]:!h-[calc(100vw*524/375)] max-[440px]:mx-auto max-[440px]:flex max-[440px]:flex-col group"
+              className="overflow-hidden rounded-[30px] max-[440px]:rounded-[20px] max-[440px]:w-[calc(100vw*335/375)] max-[440px]:!h-[calc(100vw*524/375)] max-[440px]:mx-auto max-[440px]:flex max-[440px]:flex-col group"
               style={{
                 backgroundColor: "#2D3345",
                 height: "calc(100vw * 480 / 1920)",
@@ -216,14 +216,14 @@ export default function BlogPage() {
                       className="hover:opacity-80 transition-opacity"
                       aria-label="Previous post"
                     >
-                      <Image src="/images/icon_swipe_arrow_left.svg" alt="Previous" width={40} height={40} />
+                      <Image src="/images/icon_swipe_arrow_left.svg" alt="Previous" width={56} height={56} />
                     </button>
                     <button
                       onClick={nextFeatured}
                       className="hover:opacity-80 transition-opacity"
                       aria-label="Next post"
                     >
-                      <Image src="/images/icon_swipe_arrow_right.svg" alt="Next" width={40} height={40} />
+                      <Image src="/images/icon_swipe_arrow_right.svg" alt="Next" width={56} height={56} />
                     </button>
                   </div>
                 </div>

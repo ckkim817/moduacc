@@ -184,10 +184,10 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Service title */}
-                    <h3 className="font-bold text-gray-900 mb-3 max-[440px]:text-lg text-2xl">{service.title}</h3>
+                    <h3 className="font-bold text-gray-900 mb-3 max-[440px]:text-lg text-2xl min-[441px]:px-[10px]">{service.title}</h3>
 
                     {/* Service description */}
-                    <p className="text-gray-600 leading-relaxed max-[440px]:text-sm text-xl">{service.description}</p>
+                    <p className="text-gray-600 leading-relaxed max-[440px]:text-sm text-xl min-[441px]:px-[10px]">{service.description}</p>
                   </Link>
                 ))}
               </div>

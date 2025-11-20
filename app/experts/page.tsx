@@ -70,10 +70,10 @@ export default function ExpertsPage() {
                     height: "calc(100vw * 180 / 1920)",
                   }}
                 >
-                  <Image src="/images/design-mode/Group%202085668117.png" alt="" fill className="object-cover" />
+                  <Image src="/images/design-mode/gradient-overlay-pc.png" alt="" fill className="object-cover" />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 pointer-events-none hidden max-[440px]:block max-[440px]:h-[calc(100vw*140/375)] max-[440px]:w-[calc(100vw*335/375)] max-[440px]:mx-auto">
-                  <Image src="/images/design-mode/Rectangle%201664145505.png" alt="" fill className="object-cover" />
+                  <Image src="/images/design-mode/gradient-overlay-mobile.png" alt="" fill className="object-cover" />
                 </div>
                 <div
                   className="absolute flex flex-col items-start text-white z-10 max-[440px]:!left-6 max-[440px]:!bottom-6"

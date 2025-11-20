@@ -611,13 +611,13 @@ function QnAItem({ question, answer, isOpen, onToggle, isLast }: any) {
     <div className={isLast ? "" : "border-b border-[#EFEFEF]"}>
       <button
         onClick={onToggle}
-        className={`w-full py-4 flex items-center justify-between gap-4 text-left hover:bg-gray-50/50 transition-colors cursor-pointer pb-0 ${
+        className={`w-full flex items-center justify-between gap-4 text-left hover:bg-gray-50/50 transition-colors cursor-pointer pt-[30px] max-[440px]:pt-[24px] pb-0 ${
           isOpen ? "" : "max-[440px]:pb-[24px] pb-[30px]"
         }`}
       >
         <div className="flex-1 flex items-center max-[440px]:gap-[10px] gap-[20px]">
-          <span className="text-[#355CBA] font-bold flex-shrink-0 max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[28px] leading-[39px]">Q</span>
-          <span className="text-[#111111] font-medium max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[26px] leading-[39px]">{question}</span>
+          <span className="text-[#355CBA] font-bold flex-shrink-0 max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[26px] leading-[37px]">Q</span>
+          <span className="text-[#111111] font-medium max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[24px] leading-[37px]">{question}</span>
         </div>
         <div className="flex-shrink-0">
           <Image
@@ -635,8 +635,8 @@ function QnAItem({ question, answer, isOpen, onToggle, isLast }: any) {
         }`}
       >
         <div className="flex items-start max-[440px]:gap-[10px] gap-[20px] max-[440px]:pt-[12px] pt-[20px] max-[440px]:pb-[24px] pb-[40px]">
-          <span className="text-[#999999] font-bold flex-shrink-0 max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[28px] leading-[39px]">A</span>
-          <p className="text-[#535353] whitespace-pre-line max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[22px] leading-[32px]">{answer}</p>
+          <span className="text-[#999999] font-bold flex-shrink-0 max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[26px] leading-[37px]">A</span>
+          <p className="text-[#535353] whitespace-pre-line max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[20px] leading-[30px]">{answer}</p>
         </div>
       </div>
     </div>

@@ -35,8 +35,6 @@ export function Footer() {
               <div className="flex flex-wrap gap-2 max-[440px]:flex-col max-[440px]:gap-1">
                 <span>개인정보처리방침</span>
                 <span className="max-[440px]:hidden">|</span>
-                <span>이용약관</span>
-                <span className="max-[440px]:hidden">|</span>
                 <span>개인정보처리부서 : OOO</span>
               </div>
               <div>
