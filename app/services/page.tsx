@@ -93,20 +93,20 @@ export default function ServicesPage() {
       <Navigation forceWhiteMode />
 
       {/* Hero Section */}
-      <section className="pb-16 bg-white max-[440px]:pb-8 pt-[190px] max-[440px]:!pt-[116px]">
+      <section className="pb-16 bg-white max-[440px]:pb-8 pt-[220px] max-[440px]:!pt-[116px]">
         <div className="max-[440px]:!px-5">
           <div className="container mx-auto px-6 max-[440px]:px-0">
             <div className="max-w-7xl mx-auto text-center">
-              <h1 className="font-bold text-gray-900 mb-6 leading-tight max-[440px]:text-2xl text-6xl">
+              <h1 className="font-bold text-gray-900 mb-6 leading-tight max-[440px]:text-[30px] max-[440px]:leading-[39px] text-6xl">
                 원스톱
                 <br />
                 회계·세무 서비스
               </h1>
               <p
-                className="max-[440px]:text-sm font-semibold text-2xl"
+                className="max-[440px]:text-[16px] max-[440px]:leading-[24px] max-[440px]:!mb-[60px] font-semibold text-2xl"
                 style={{
                   marginBottom: "calc(100vw * 100 / 1920)",
-                  color: "rgba(17, 17, 17, 0.5)", // Changed text color to #111111 with 50% opacity
+                  color: "rgba(17, 17, 17, 0.5)",
                 }}
               >
                 기초 기장부터 합병·분할, 투자 실사까지 한 곳에서 해결하세요.
@@ -138,56 +138,25 @@ export default function ServicesPage() {
         >
           <div className="container mx-auto px-6 max-[440px]:px-0">
             <div className="max-w-7xl mx-auto">
-              <h2 className="font-bold text-gray-900 mb-8 max-[440px]:text-lg text-3xl">서비스</h2>
+              <h2 className="font-bold text-gray-900 mb-8 max-[440px]:mb-[14px] max-[440px]:text-lg text-3xl">서비스</h2>
 
               {/* Services Grid - 2 columns */}
-              <div
-                className="grid grid-cols-1 md:grid-cols-2"
-                style={{
-                  columnGap: "min(calc(100vw * 20 / 1920), 20px)",
-                  rowGap: "min(calc(100vw * 100 / 1920), 100px)",
-                }}
-              >
+              <div className="grid grid-cols-1 md:grid-cols-2 max-[440px]:gap-[40px] gap-x-5 gap-y-[100px]">
                 {services.map((service, index) => (
-                  <Link key={index} href={`/services/${service.slug}`} className="flex flex-col group cursor-pointer">
-                    {/* Service image - Desktop */}
-                    <div 
-                      className="w-full relative rounded-[30px] overflow-hidden max-[440px]:hidden" 
-                      style={{ 
-                        aspectRatio: "590 / 400",
-                        marginBottom: "30px" 
-                      }}
-                    >
+                  <Link key={index} href={`/services/${service.slug}`} className="flex flex-col cursor-pointer group">
+                    <div className="w-full relative rounded-[30px] overflow-hidden mb-[30px] max-[440px]:mb-4 max-[440px]:rounded-[20px] max-[440px]:[aspect-ratio:335/200]" style={{ aspectRatio: "590 / 400" }}>
                       <Image
                         src={service.image || "/placeholder.svg"}
                         alt={service.title}
                         fill
                         unoptimized
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    {/* Service image - Mobile */}
-                    <div 
-                      className="w-full relative rounded-[20px] overflow-hidden hidden max-[440px]:block" 
-                      style={{ 
-                        aspectRatio: "335 / 200",
-                        marginBottom: "16px" 
-                      }}
-                    >
-                      <Image
-                        src={service.image || "/placeholder.svg"}
-                        alt={service.title}
-                        fill
-                        unoptimized
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="object-cover min-[441px]:group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
 
-                    {/* Service title */}
-                    <h3 className="font-bold text-gray-900 mb-3 max-[440px]:text-lg text-2xl min-[441px]:px-[10px]">{service.title}</h3>
+                    <h3 className="font-bold text-gray-900 mb-[10px] max-[440px]:mb-[6px] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[28px] leading-[39px] min-[441px]:px-[10px]">{service.title}</h3>
 
-                    {/* Service description */}
-                    <p className="text-gray-600 leading-relaxed max-[440px]:text-sm text-xl min-[441px]:px-[10px]">{service.description}</p>
+                    <p className="text-gray-600 max-[440px]:text-[14px] max-[440px]:leading-[20px] text-[22px] leading-[31px] min-[441px]:px-[10px]">{service.description}</p>
                   </Link>
                 ))}
               </div>

@@ -35,58 +35,36 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section
-      className="bg-white max-[440px]:!pt-[78px] max-[440px]:pb-[160px]"
-      style={{
-        paddingTop: "min(calc(100vw * 200 / 1920), 200px)",
-      }}
-    >
-      <div
-        className="max-[440px]:px-5"
-        style={{
-          paddingLeft: "min(calc(100vw / 5.5), max(calc(100vw * 20 / 375), calc((100vw - 375px) * 340 / 1545 + 20px)))",
-          paddingRight:
-            "min(calc(100vw / 5.5), max(calc(100vw * 20 / 375), calc((100vw - 375px) * 340 / 1545 + 20px)))",
-        }}
-      >
-        <div className="container mx-auto px-6 max-[440px]:px-0">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="font-bold text-gray-900 mb-4 text-balance max-[440px]:text-[24px] max-[440px]:leading-[34px] max-[440px]:text-center text-[48px] leading-[64px]">
-              비즈니스 전 과정을 아우르는
-              <br />
-              회계·세무 원스톱 솔루션
-            </h2>
+    <section className="bg-white pt-[200px] pb-[300px] max-[440px]:!pt-[78px] max-[440px]:!pb-[160px]">
+      <div className="max-w-[1240px] mx-auto px-5">
+        <h2 className="font-bold text-gray-900 text-balance max-[440px]:text-[24px] max-[440px]:leading-[34px] max-[440px]:text-center text-[48px] leading-[64px]">
+          비즈니스 전 과정을 아우르는
+          <br />
+          회계·세무 원스톱 솔루션
+        </h2>
 
-            <div
-              className="grid grid-cols-1 md:grid-cols-2 gap-y-12 mt-16 max-[440px]:mt-8 max-[440px]:gap-6"
-              style={{
-                columnGap: "min(calc(100vw * 20 / 1920), 20px)",
-                rowGap: "min(calc(100vw * 100 / 1920), 100px)",
-              }}
-            >
-              {services.map((service, index) => (
-                <Link key={index} href={`/services/${service.slug}`} className="flex flex-col cursor-pointer">
-                  <div className="w-full relative rounded-[30px] overflow-hidden mb-[30px] max-[440px]:mb-4 max-[440px]:rounded-[20px] max-[440px]:[aspect-ratio:335/200]" style={{ aspectRatio: "590 / 400" }}>
-                    <Image
-                      src={service.image || "/placeholder.svg"}
-                      alt={service.title}
-                      fill
-                      unoptimized
-                      className="object-cover"
-                    />
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-20 max-[440px]:mt-[40px] max-[440px]:gap-[40px] gap-x-5 gap-y-[100px]">
+          {services.map((service, index) => (
+            <Link key={index} href={`/services/${service.slug}`} className="flex flex-col cursor-pointer group">
+              <div className="w-full relative rounded-[30px] overflow-hidden mb-[30px] max-[440px]:mb-4 max-[440px]:rounded-[20px] max-[440px]:[aspect-ratio:335/200]" style={{ aspectRatio: "590 / 400" }}>
+                <Image
+                  src={service.image || "/placeholder.svg"}
+                  alt={service.title}
+                  fill
+                  unoptimized
+                  className="object-cover min-[441px]:group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
 
-                  <h3 className="font-bold text-gray-900 mb-3 max-[440px]:mb-[6px] max-[440px]:text-lg text-2xl min-[441px]:px-[10px]">{service.title}</h3>
+              <h3 className="font-bold text-gray-900 mb-[10px] max-[440px]:mb-[6px] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[28px] leading-[39px] min-[441px]:px-[10px]">{service.title}</h3>
 
-                  <p className="text-gray-600 leading-relaxed max-[440px]:text-[16px] max-[440px]:leading-[24px] text-xl min-[441px]:px-[10px]">{service.description}</p>
-                </Link>
-              ))}
-            </div>
+              <p className="text-gray-600 max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[22px] leading-[31px] min-[441px]:px-[10px]">{service.description}</p>
+            </Link>
+          ))}
+        </div>
 
-            <div className="text-center max-[440px]:mt-[50px] mt-[120px]">
-              <CommonButton href="/services">서비스 전체 보기</CommonButton>
-            </div>
-          </div>
+        <div className="text-center max-[440px]:mt-[50px] mt-[120px]">
+          <CommonButton href="/services">서비스 전체 보기</CommonButton>
         </div>
       </div>
     </section>

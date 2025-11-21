@@ -611,13 +611,13 @@ function QnAItem({ question, answer, isOpen, onToggle, isLast }: any) {
     <div className={isLast ? "" : "border-b border-[#EFEFEF]"}>
       <button
         onClick={onToggle}
-        className={`w-full flex items-center justify-between gap-4 text-left hover:bg-gray-50/50 transition-colors cursor-pointer pt-[30px] max-[440px]:pt-[24px] pb-0 ${
+        className={`w-full flex max-[440px]:items-start items-center justify-between gap-4 text-left hover:bg-gray-50/50 transition-colors cursor-pointer pt-[30px] max-[440px]:pt-[24px] pb-0 ${
           isOpen ? "" : "max-[440px]:pb-[24px] pb-[30px]"
         }`}
       >
-        <div className="flex-1 flex items-center max-[440px]:gap-[10px] gap-[20px]">
+        <div className="flex-1 flex max-[440px]:items-start items-center max-[440px]:gap-[10px] gap-[20px]">
           <span className="text-[#355CBA] font-bold flex-shrink-0 max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[26px] leading-[37px]">Q</span>
-          <span className="text-[#111111] font-medium max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[24px] leading-[37px]">{question}</span>
+          <span className="text-[#111111] font-bold max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[24px] leading-[37px]">{question}</span>
         </div>
         <div className="flex-shrink-0">
           <Image
@@ -636,7 +636,7 @@ function QnAItem({ question, answer, isOpen, onToggle, isLast }: any) {
       >
         <div className="flex items-start max-[440px]:gap-[10px] gap-[20px] max-[440px]:pt-[12px] pt-[20px] max-[440px]:pb-[24px] pb-[40px]">
           <span className="text-[#999999] font-bold flex-shrink-0 max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[26px] leading-[37px]">A</span>
-          <p className="text-[#535353] whitespace-pre-line max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[20px] leading-[30px]">{answer}</p>
+          <p className="text-[#535353] font-medium whitespace-pre-line max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[20px] leading-[30px]">{answer}</p>
         </div>
       </div>
     </div>
@@ -684,7 +684,7 @@ export default function ServiceDetailPage() {
       <Navigation forceWhiteMode />
 
       {/* Hero Section with Image Overlay */}
-      <section className="pt-20 max-[440px]:pt-16">
+      <section className="pt-[110px] max-[440px]:pt-16">
         <div
           className="max-[440px]:!px-0"
           style={{ paddingLeft: "calc(100vw / 5.5)", paddingRight: "calc(100vw / 5.5)" }}
@@ -703,7 +703,7 @@ export default function ServiceDetailPage() {
 
             {/* Text Content */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-              <h1 className="text-white font-bold mb-6 max-[440px]:text-[30px] max-[440px]:leading-[39px] text-[60px] leading-[80px]">{service.title}</h1>
+              <h1 className="text-white font-bold mb-6 max-[440px]:mb-[10px] max-[440px]:text-[30px] max-[440px]:leading-[39px] text-[60px] leading-[80px]">{service.title}</h1>
               {/* PC version */}
               <p className="text-white max-w-3xl font-semibold text-[24px] leading-[32px] opacity-70 whitespace-pre-line max-[440px]:hidden">
                 {service.description}

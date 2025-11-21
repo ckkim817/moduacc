@@ -34,7 +34,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
 
     const handleScroll = () => {
       const heroHeight = window.innerHeight
-      const navHeight = 80
+      const navHeight = 110
       const scrollThreshold = heroHeight - navHeight / 2
 
       setIsScrolled(window.scrollY > scrollThreshold)
@@ -124,19 +124,15 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
           forceWhiteMode || isScrolled || isMobileMenuOpen ? "bg-white" : "bg-transparent"
         }`}
       >
-        <div className="w-full">
+        <div className="max-w-[1240px] mx-auto min-[830px]:px-5">
           <div
-            className="flex items-center justify-between h-14 min-[1130px]:h-20"
+            className="flex items-center justify-between h-14 min-[830px]:h-[110px]"
           >
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center max-[1129px]:!ml-4"
+              className="flex items-center max-[829px]:pl-[16px] max-[829px]:py-[10px]"
               onClick={handleLogoClick}
-              style={{
-                marginLeft:
-                  "min(calc(100vw / 5.5), max(calc(100vw * 20 / 375), calc((100vw - 375px) * 360 / 1545 + 20px)))",
-              }}
             >
               <Image
                 src={
@@ -145,9 +141,9 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
                     : "/images/img_logo_white.png"
                 }
                 alt="MODU Logo"
-                width={200}
-                height={50}
-                className="h-10 w-auto max-[1129px]:h-8"
+                width={197}
+                height={62}
+                className="h-[62px] w-auto max-[829px]:h-[36px]"
                 priority
                 quality={95}
               />
@@ -155,10 +151,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
 
             {/* Desktop Navigation */}
             <div
-              className="hidden min-[1130px]:flex items-center gap-2 min-[1130px]:h-20"
-              style={{
-                marginRight: "calc(100vw / 5.5)",
-              }}
+              className="hidden min-[830px]:flex items-center gap-2 min-[830px]:h-[110px]"
             >
               {/* MODU Dropdown */}
               <div
@@ -192,14 +185,14 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
                       <Link
                         href="/company"
                         onClick={handleCompanyClick}
-                        className="block px-4 py-2 text-lg text-gray-900 hover:bg-gray-100 transition-colors text-center"
+                        className="block px-4 py-2 text-lg text-gray-900 hover:text-[#223B77] transition-colors text-center"
                       >
                         ABOUT
                       </Link>
                       <Link
                         href="/location"
                         onClick={handleLocationClick}
-                        className="block px-4 py-2 text-lg text-gray-900 hover:bg-gray-100 transition-colors text-center"
+                        className="block px-4 py-2 text-lg text-gray-900 hover:text-[#223B77] transition-colors text-center"
                       >
                         LOCATION
                       </Link>
@@ -272,13 +265,9 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
 
             {/* Mobile Menu Button */}
             <button
-              className="min-[1130px]:hidden focus:outline-none max-[1129px]:!mr-4"
+              className="min-[830px]:hidden focus:outline-none max-[829px]:mr-[16px] max-[829px]:py-[13px]"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-              style={{
-                marginRight:
-                  "min(calc(100vw / 5.5), max(calc(100vw * 20 / 375), calc((100vw - 375px) * 360 / 1545 + 20px)))",
-              }}
             >
               {isMobileMenuOpen ? (
                 <Image src="/icon-close.svg" alt="Close menu" width={30} height={30} />
@@ -296,7 +285,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
 
         {/* Mobile Navigation */}
         <div
-          className={`min-[1130px]:hidden bg-white overflow-hidden transition-all duration-300 ${
+          className={`min-[830px]:hidden bg-white overflow-hidden transition-all duration-300 ${
             isMobileMenuOpen ? "max-h-screen" : "max-h-0"
           }`}
         >
@@ -364,7 +353,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-black/20 z-[90] min-[1130px]:hidden"
+          className="fixed inset-0 bg-black/20 z-[90] min-[830px]:hidden"
           style={{ top: "80px" }}
           onClick={() => setIsMobileMenuOpen(false)}
         />

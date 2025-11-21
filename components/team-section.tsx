@@ -49,7 +49,7 @@ const rightColumnMembers = [
 
 export function TeamSection() {
   return (
-    <section className="bg-white relative overflow-hidden lg:mt-[300px] max-[440px]:pt-[40px] max-[440px]:pb-[160px] lg:py-0 lg:h-[calc(100vw*800/1920)]">
+    <section className="bg-white relative overflow-hidden pb-[300px] max-[440px]:pt-[40px] max-[440px]:pb-[160px]">
       <style jsx>{`
         @keyframes scrollUp {
           0% {
@@ -61,33 +61,39 @@ export function TeamSection() {
         }
 
         .animate-scroll-up {
-          animation: scrollUp 80s linear infinite;
+          animation: scrollUp 120s linear infinite;
           will-change: transform;
           backface-visibility: hidden;
         }
       `}</style>
 
-      <div className="px-5 lg:px-[calc(100vw*360/1920)] max-w-[1920px] mx-auto h-full">
-        <div className="flex flex-col lg:flex-row lg:justify-between gap-[50px] lg:gap-0 h-full">
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left lg:flex-shrink-0">
+      <div className="max-w-[1240px] mx-auto px-5">
+        <div className="flex flex-col min-[1070px]:flex-row min-[1070px]:items-start gap-[50px] min-[1070px]:gap-0">
+          {/* Left side: Title and Button */}
+          <div className="flex flex-col items-center min-[1070px]:items-start text-center min-[1070px]:text-left min-[1070px]:flex-shrink-0 min-[1070px]:w-[400px]">
             <h2 className="font-bold text-gray-900 text-balance max-[440px]:text-[24px] max-[440px]:leading-[34px] text-[48px] leading-[64px]">
               수치 너머의 가치를
               <br />
               함께 만드는 전문가들
             </h2>
+
+            <div className="hidden min-[1070px]:block mt-[50px]">
+              <CommonButton href="/experts">파트너 모두 보기</CommonButton>
+            </div>
           </div>
 
-          <div className="relative w-full h-[calc(100vw*800/630)] lg:w-[calc(100vw*630/1920)] lg:h-[calc(100vw*799/1920)] overflow-hidden lg:flex-shrink-0 lg:order-2">
-            <div className="absolute top-0 left-0 right-0 h-[calc(100vw*800/630)] lg:h-[calc(100vw*800/1920)] pointer-events-none z-10">
+          {/* Right side: Card Animation */}
+          <div className="relative w-full min-[1070px]:w-[630px] min-[1070px]:h-[800px] max-[440px]:h-[500px] min-[441px]:max-[1069px]:aspect-[630/800] overflow-hidden min-[1070px]:flex-shrink-0 min-[1070px]:ml-auto">
+            <div className="absolute -top-[1px] -left-[1px] -right-[1px] -bottom-[1px] pointer-events-none z-10">
               <Image src="/images/img_white_gradient.png" alt="" fill className="object-cover" priority />
             </div>
 
-            <div className="grid grid-cols-2 gap-4 lg:gap-[calc(100vw*30/1920)] pointer-events-none relative z-0">
-              <div className="flex flex-col gap-4 lg:gap-[calc(100vw*30/1920)] animate-scroll-up">
-                {[...Array(6)].flatMap(() =>
+            <div className="grid grid-cols-2 gap-[10px] min-[440px]:gap-[30px] pointer-events-none relative z-0">
+              <div className="flex flex-col gap-[10px] min-[440px]:gap-[30px] animate-scroll-up">
+                {[...Array(6)].flatMap((_, arrayIndex) =>
                   leftColumnMembers.map((member, index) => (
                     <Link
-                      key={`left-${index}-${member.slug}`}
+                      key={`left-${arrayIndex}-${index}-${member.slug}`}
                       href={`/experts/${member.slug}`}
                       className="pointer-events-auto"
                     >
@@ -98,14 +104,14 @@ export function TeamSection() {
                             alt={member.name}
                             fill
                             className="object-cover object-top"
-                            sizes="(max-width: 1024px) 45vw, 15vw"
+                            sizes="(max-width: 1024px) 45vw, 300px"
                           />
                         </div>
-                        <div className="absolute left-4 bottom-4 lg:left-[calc(100vw*40/1920)] lg:bottom-[calc(100vw*40/1920)] flex flex-col items-start">
-                          <p className="text-white font-normal text-xs lg:text-[calc(100vw*18/1920)] mb-1 lg:mb-[calc(100vw*8/1920)]">
+                        <div className="absolute left-4 bottom-4 lg:left-[40px] lg:bottom-[40px] flex flex-col items-start">
+                          <p className="text-white font-normal text-xs lg:text-[18px] mb-1 lg:mb-[8px]">
                             {member.role}
                           </p>
-                          <h3 className="text-white font-bold text-lg lg:text-[calc(100vw*32/1920)]">{member.name}</h3>
+                          <h3 className="text-white font-bold text-lg lg:text-[32px]">{member.name}</h3>
                         </div>
                       </Card>
                     </Link>
@@ -113,11 +119,11 @@ export function TeamSection() {
                 )}
               </div>
 
-              <div className="flex flex-col gap-4 lg:gap-[calc(100vw*30/1920)] animate-scroll-up pt-10 lg:pt-[calc(100vw*80/1920)]">
-                {[...Array(6)].flatMap(() =>
+              <div className="flex flex-col gap-[10px] min-[440px]:gap-[30px] animate-scroll-up pt-10 min-[440px]:pt-[80px]">
+                {[...Array(6)].flatMap((_, arrayIndex) =>
                   rightColumnMembers.map((member, index) => (
                     <Link
-                      key={`right-${index}-${member.slug}`}
+                      key={`right-${arrayIndex}-${index}-${member.slug}`}
                       href={`/experts/${member.slug}`}
                       className="pointer-events-auto"
                     >
@@ -128,14 +134,14 @@ export function TeamSection() {
                             alt={member.name}
                             fill
                             className="object-cover object-top"
-                            sizes="(max-width: 1024px) 45vw, 15vw"
+                            sizes="(max-width: 1024px) 45vw, 300px"
                           />
                         </div>
-                        <div className="absolute left-4 bottom-4 lg:left-[calc(100vw*40/1920)] lg:bottom-[calc(100vw*40/1920)] flex flex-col items-start">
-                          <p className="text-white font-normal text-xs lg:text-[calc(100vw*18/1920)] mb-1 lg:mb-[calc(100vw*8/1920)]">
+                        <div className="absolute left-4 bottom-4 lg:left-[40px] lg:bottom-[40px] flex flex-col items-start">
+                          <p className="text-white font-normal text-xs lg:text-[18px] mb-1 lg:mb-[8px]">
                             {member.role}
                           </p>
-                          <h3 className="text-white font-bold text-lg lg:text-[calc(100vw*32/1920)]">{member.name}</h3>
+                          <h3 className="text-white font-bold text-lg lg:text-[32px]">{member.name}</h3>
                         </div>
                       </Card>
                     </Link>
@@ -145,7 +151,8 @@ export function TeamSection() {
             </div>
           </div>
 
-          <div className="flex justify-center lg:justify-start lg:absolute lg:left-[calc(100vw*360/1920)] lg:top-[calc(100vw*200/1920)] lg:order-1">
+          {/* Mobile Button */}
+          <div className="flex justify-center min-[1070px]:hidden">
             <CommonButton href="/experts">파트너 모두 보기</CommonButton>
           </div>
         </div>

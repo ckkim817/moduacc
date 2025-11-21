@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   title: "모두세무회계그룹 | MODU Accounting",
   description: "성장의 모든 순간, 모두와 함께. 전문 세무사와 회계사가 제공하는 원스톱 회계·세무 솔루션",
   generator: "v0.app",
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   openGraph: {
     title: "모두세무회계그룹 | MODU Accounting",
     description: "성장의 모든 순간, 모두와 함께. 전문 세무사와 회계사가 제공하는 원스톱 회계·세무 솔루션",

@@ -21,7 +21,7 @@ export default function ExpertsPage() {
     <div className="min-h-screen bg-white">
       <Navigation forceWhiteMode />
 
-      <section className="bg-white pt-[190px] max-[440px]:!pt-[116px]">
+      <section className="bg-white pt-[220px] max-[440px]:!pt-[116px]">
         <div
           className="max-[440px]:!px-5"
           style={{ paddingLeft: "calc(100vw / 5.5)", paddingRight: "calc(100vw / 5.5)" }}

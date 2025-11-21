@@ -6,6 +6,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { useState, useEffect, useRef } from "react"
 import { blogPosts } from "@/lib/blog-data"
+import { InquiryButton } from "@/components/inquiry-button"
 
 const getPostsForPage = (page: number) => {
   const startIndex = (page - 1) * 9
@@ -131,7 +132,7 @@ export default function BlogPage() {
 
       <main className="bg-white">
         {/* Hero Section */}
-        <section className="bg-white pt-[190px] max-[440px]:!pt-[116px]">
+        <section className="bg-white pt-[220px] max-[440px]:!pt-[116px]">
           <div
             className="max-[440px]:!px-5"
             style={{ paddingLeft: "calc(100vw * 3 / 16)", paddingRight: "calc(100vw * 3 / 16)" }}
@@ -144,7 +145,7 @@ export default function BlogPage() {
                   재무와 세무의 모든 것
                 </h1>
                 <p
-                  className="max-[440px]:text-[16px] max-[440px]:leading-[24px] text-2xl font-semibold"
+                  className="max-[440px]:text-[16px] max-[440px]:leading-[24px] max-[440px]:!mb-[40px] text-2xl font-semibold"
                   style={{
                     marginBottom: "calc(100vw * 140 / 1920)",
                     color: "rgba(17, 17, 17, 0.5)", // Changed text color to #111111 with 50% opacity
@@ -159,6 +160,7 @@ export default function BlogPage() {
 
         {/* Featured Carousel Section */}
         <section
+          className="max-[440px]:!pb-[60px]"
           style={{
             paddingBottom: "calc(100vw * 160 / 1920)",
           }}
@@ -250,7 +252,7 @@ export default function BlogPage() {
                 {/* Top half - Image (335 x 262) */}
                 <Link
                   href={`/blog/${featuredPosts[currentFeatured].slug}`}
-                  className="relative block w-full h-[calc(100vw*262/375)] flex-shrink-0 overflow-hidden rounded-t-3xl"
+                  className="relative block w-full h-[calc(100vw*262/375)] flex-shrink-0 overflow-hidden"
                 >
                   <Image
                     src={featuredPosts[currentFeatured].image || "/placeholder.svg"}
@@ -268,11 +270,11 @@ export default function BlogPage() {
                 {/* Bottom half - Text content (335 x 262) */}
                 <div className="flex flex-col justify-between w-full h-[calc(100vw*262/375)] flex-shrink-0 px-5 py-6">
                   <div>
-                    <div className="text-[14px] font-semibold mb-3" style={{ color: "#FFFFFF" }}>
+                    <div className="text-[14px] font-semibold mb-[10px]" style={{ color: "#FFFFFF" }}>
                       오늘의 커버스토리
                     </div>
                     <h2
-                      className="text-lg font-bold leading-snug mb-3 max-[440px]:text-[20px] max-[440px]:leading-[28px] text-[28px] leading-[39px]"
+                      className="text-lg font-bold leading-snug mb-[10px] max-[440px]:text-[20px] max-[440px]:leading-[28px] text-[28px] leading-[39px]"
                       style={{
                         color: "#FFFFFF",
                       }}
@@ -280,7 +282,7 @@ export default function BlogPage() {
                       {featuredPosts[currentFeatured].title}
                     </h2>
                     <div
-                      className="text-[14px]"
+                      className="text-[14px] font-medium"
                       style={{
                         color: "rgba(255, 255, 255, 0.5)",
                       }}
@@ -322,14 +324,14 @@ export default function BlogPage() {
             className="max-[440px]:!px-5"
             style={{ paddingLeft: "calc(100vw * 3 / 16)", paddingRight: "calc(100vw * 3 / 16)" }}
           >
-            <h2 className="font-bold mb-6 text-3xl" style={{ color: "#111111" }}>
+            <h2 className="font-bold mb-6 max-[440px]:mb-[16px] max-[440px]:ml-[2px] text-3xl max-[440px]:text-[18px] max-[440px]:leading-[25px]" style={{ color: "#111111" }}>
               모든 글
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 mb-16 max-[440px]:gap-y-4 max-[440px]:mb-[50px]" style={{ columnGap: "calc(100vw * 20 / 1920)" }}>
               {displayedPosts.map((post, index) => (
                 <Link key={index} href={`/blog/${post.slug}`} className="overflow-hidden group cursor-pointer block max-[440px]:flex max-[440px]:items-start max-[440px]:gap-[14px]">
-                  <div className="relative overflow-hidden rounded-2xl mb-[24px] max-[440px]:mb-0 max-[440px]:w-[110px] max-[440px]:h-[80px] max-[440px]:flex-shrink-0 max-[440px]:rounded-xl" style={{ aspectRatio: "387 / 250" }}>
+                  <div className="relative overflow-hidden rounded-2xl mb-[24px] max-[440px]:mb-0 max-[440px]:w-[110px] max-[440px]:h-[80px] max-[440px]:flex-shrink-0 max-[440px]:rounded-[10px]" style={{ aspectRatio: "387 / 250" }}>
                     <Image
                       src={post.image || "/placeholder.svg"}
                       alt={post.title}
@@ -390,6 +392,7 @@ export default function BlogPage() {
       </main>
 
       <Footer />
+      <InquiryButton />
     </>
   )
 }

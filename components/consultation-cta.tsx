@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export function ConsultationCTA() {
   return (
-    <section className="relative w-full flex items-center justify-center overflow-hidden h-[271px] lg:h-[418px]">
+    <section className="relative w-full flex items-center justify-center overflow-hidden h-[271px] min-[440px]:h-[418px]">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image src="/images/consultation-bg.png" alt="City skyline" fill className="object-cover" quality={85} />
@@ -11,10 +11,7 @@ export function ConsultationCTA() {
       </div>
 
       {/* Content */}
-      <div
-        className="relative z-10 text-center py-12"
-        style={{ paddingLeft: "calc(100vw / 5.5)", paddingRight: "calc(100vw / 5.5)" }}
-      >
+      <div className="relative z-10 text-center py-12 max-w-[1240px] mx-auto px-5">
         <h2 className="text-white text-4xl max-[439px]:text-[20px] max-[439px]:leading-[28px] max-[439px]:w-[315px] max-[439px]:h-[56px] font-bold mb-8 leading-tight">
           복잡한 회계,
           <br />
@@ -28,7 +25,7 @@ export function ConsultationCTA() {
           <Button
             variant="outline"
             size="lg"
-            className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-gray-900 transition-colors text-lg px-8 py-6 rounded-full font-bold"
+            className="h-auto border-2 border-white bg-transparent text-white hover:bg-white hover:text-gray-900 transition-colors rounded-full font-bold text-[20px] px-[30px] py-[18px] max-[440px]:text-[14px] max-[440px]:leading-[19px] max-[440px]:px-[16px] max-[440px]:py-[10px]"
           >
             상담 신청하기
           </Button>

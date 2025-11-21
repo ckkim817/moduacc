@@ -2,6 +2,7 @@ import { blogPosts } from "@/lib/blog-data"
 import BlogPostClient from "./BlogPostClient"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { InquiryButton } from "@/components/inquiry-button"
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({
@@ -26,6 +27,7 @@ export default async function BlogPostPage({
       <Navigation forceWhiteMode={true} />
       <BlogPostClient post={post} previousPost={previousPost} nextPost={nextPost} slug={slug} />
       <Footer />
+      <InquiryButton />
     </>
   )
 }

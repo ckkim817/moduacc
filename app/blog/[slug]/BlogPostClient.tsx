@@ -44,13 +44,13 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
       <div
         className="w-full flex flex-col items-center max-[440px]:!px-5 max-[440px]:!pt-24"
         style={{
-          paddingTop: "calc(80px + (100vw * 130 / 1920))",
+          paddingTop: "calc(110px + (100vw * 130 / 1920))",
           paddingLeft: "calc(100vw * 360 / 1920)",
           paddingRight: "calc(100vw * 360 / 1920)",
         }}
       >
         {/* Category */}
-        <div className="text-center mb-6 max-[440px]:mb-[6px]">
+        <div className="text-center mb-6 max-[440px]:mb-[5px]">
           <span
             className="font-bold max-[440px]:text-[14px] text-[20px]"
             style={{
@@ -62,7 +62,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
         </div>
 
         {/* Title */}
-        <h1 className="font-bold text-center text-balance text-5xl max-[440px]:text-[24px] max-[440px]:leading-[34px] max-[440px]:mb-[10px] mb-[20px]">
+        <h1 className="font-bold text-center text-balance text-5xl leading-[64px] max-[440px]:text-[24px] max-[440px]:leading-[34px] max-[440px]:mb-[5px] mb-[20px]">
           {post.title}
         </h1>
 
@@ -168,7 +168,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
                     이전 글
                   </span>
                   <Image
-                    src="/images/icon_arrow_medium_up.svg"
+                    src="/images/icon_arrow_small_up.svg"
                     alt="Previous"
                     width={24}
                     height={24}
@@ -207,7 +207,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
                     다음 글
                   </span>
                   <Image
-                    src="/images/icon_arrow_medium_down.svg"
+                    src="/images/icon_arrow_small_down.svg"
                     alt="Next"
                     width={24}
                     height={24}

@@ -3,16 +3,11 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="text-white pt-[100px] pb-[120px] max-[440px]:pt-[60px] max-[440px]:pb-[80px]" style={{ backgroundColor: "#222222", fontFamily: "Inter, sans-serif" }}>
-      <div
-        className="max-[440px]:!px-5"
-        style={{ paddingLeft: "calc(100vw / 5.5)", paddingRight: "calc(100vw / 5.5)" }}
-      >
-        <div className="container mx-auto px-6 max-[440px]:px-0">
-          <div className="max-w-7xl mx-auto">
+    <footer className="text-white pt-[100px] pb-[120px] max-[440px]:pt-[60px] max-[440px]:pb-[80px]" style={{ backgroundColor: "#222222", fontFamily: "Pretendard, sans-serif" }}>
+      <div className="max-w-[1240px] mx-auto px-5">
             {/* Logo */}
             <div className="mb-8">
-              <Image src="/images/img_logo_white.png" alt="MODU Logo" width={200} height={50} className="h-[53px] max-[440px]:h-[44px] w-auto" />
+              <Image src="/images/img_logo_white.png" alt="MODU Logo" width={170} height={53} className="h-[53px] max-[440px]:h-[44px] w-auto" />
             </div>
 
             <div className="mb-8 max-[440px]:mb-6">
@@ -42,8 +37,6 @@ export function Footer() {
                 <p>@ Copyright 2025 Modoo Accounting Firm</p>
               </div>
             </div>
-          </div>
-        </div>
       </div>
     </footer>
   )
