@@ -53,6 +53,19 @@ export default function LocationPage() {
         position: markerPosition,
       })
       marker.setMap(map)
+
+      // 커스텀 오버레이에 표시할 내용
+      const content = '<div style="padding: 8px 12px; background: #223B77; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); font-size: 14px; font-weight: 600; color: white; white-space: nowrap; margin-top: 5px;">모두세무회계그룹</div>'
+
+      // 커스텀 오버레이 생성
+      const customOverlay = new window.kakao.maps.CustomOverlay({
+        position: markerPosition,
+        content: content,
+        yAnchor: 0
+      })
+
+      // 커스텀 오버레이를 지도에 표시
+      customOverlay.setMap(map)
     } catch (error) {
       console.error('Failed to initialize Kakao Map:', error)
     }
