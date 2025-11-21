@@ -238,10 +238,9 @@ export default function BlogPage() {
                     src={featuredPosts[currentFeatured].image || "/placeholder.svg"}
                     alt={featuredPosts[currentFeatured].title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-cover min-[441px]:group-hover:scale-105 transition-all duration-300"
                     style={{
                       opacity: isFading ? 0 : 1,
-                      transition: "opacity 300ms ease-in-out",
                     }}
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
@@ -258,10 +257,9 @@ export default function BlogPage() {
                     src={featuredPosts[currentFeatured].image || "/placeholder.svg"}
                     alt={featuredPosts[currentFeatured].title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-cover min-[441px]:group-hover:scale-105 transition-all duration-300"
                     style={{
                       opacity: isFading ? 0 : 1,
-                      transition: "opacity 300ms ease-in-out",
                     }}
                     sizes="100vw"
                   />
@@ -336,7 +334,7 @@ export default function BlogPage() {
                       src={post.image || "/placeholder.svg"}
                       alt={post.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="object-cover min-[441px]:group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   </div>

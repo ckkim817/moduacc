@@ -34,7 +34,7 @@ export function BlogSection() {
                       src={latestPosts[0].image || "/placeholder.svg"}
                       alt={latestPosts[0].title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="object-cover min-[441px]:group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 640px) 100vw, 720px"
                     />
                   </div>
@@ -69,7 +69,7 @@ export function BlogSection() {
                         src={post.image || "/placeholder.svg"}
                         alt={post.title}
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="object-cover min-[441px]:group-hover:scale-105 transition-transform duration-300"
                         sizes="360px"
                       />
                     </div>

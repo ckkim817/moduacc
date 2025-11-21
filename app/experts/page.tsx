@@ -62,7 +62,7 @@ export default function ExpertsPage() {
                   src={expert.imageWithBackground || expert.image || "/placeholder.svg"}
                   alt={`${expert.title} ${expert.name}`}
                   fill
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                  className="object-cover object-top min-[441px]:group-hover:scale-105 transition-transform duration-300"
                 />
                 <div
                   className="absolute bottom-0 left-0 right-0 pointer-events-none max-[440px]:hidden"
