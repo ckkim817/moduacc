@@ -58,11 +58,17 @@ const ptComponents = {
   },
   marks: {
     link: ({children, value}: any) => {
-      const rel = !value.href.startsWith('/') ? 'noopener noreferrer' : undefined
-      const target = !value.href.startsWith('/') ? '_blank' : undefined
+      let href = value.href
+      // 프로토콜이 없고 /로 시작하지 않으면 https:// 추가
+      if (!href.startsWith('/') && !href.startsWith('http://') && !href.startsWith('https://')) {
+        href = `https://${href}`
+      }
+      const isExternal = !href.startsWith('/')
+      const rel = isExternal ? 'noopener noreferrer' : undefined
+      const target = isExternal ? '_blank' : undefined
       return (
         <a
-          href={value.href}
+          href={href}
           target={target}
           rel={rel}
           className="underline"
