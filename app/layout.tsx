@@ -1,5 +1,8 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { draftMode } from "next/headers"
+import { VisualEditing } from "next-sanity/visual-editing"
+import PreviewProvider from "@/components/preview-provider"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -36,11 +39,13 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const { isEnabled: isDraftMode } = await draftMode()
+
   return (
     <html lang="ko">
       <head>
@@ -80,7 +85,14 @@ export default function RootLayout({
         className="font-sans antialiased"
         style={{ fontFamily: "Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif" }}
       >
-        {children}
+        {isDraftMode ? (
+          <PreviewProvider token={process.env.SANITY_API_READ_TOKEN!}>
+            {children}
+            <VisualEditing />
+          </PreviewProvider>
+        ) : (
+          children
+        )}
       </body>
     </html>
   )

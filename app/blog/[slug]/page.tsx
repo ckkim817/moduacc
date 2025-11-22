@@ -1,14 +1,20 @@
-import { blogPosts } from "@/lib/blog-data"
+import { draftMode } from "next/headers"
 import BlogPostClient from "./BlogPostClient"
+import BlogPostPreview from "./BlogPostPreview"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { InquiryButton } from "@/components/inquiry-button"
+import { getPost, getPosts } from "@/lib/sanity-utils"
 
-export function generateStaticParams() {
-  return blogPosts.map((post) => ({
+// 정적 페이지 생성을 위한 params 생성
+export async function generateStaticParams() {
+  const posts = await getPosts()
+  return posts.map((post: any) => ({
     slug: post.slug,
   }))
 }
+
+export const revalidate = 60
 
 export default async function BlogPostPage({
   params,
@@ -16,16 +22,25 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-
-  const post = blogPosts.find((p) => p.slug === slug)
-  const currentIndex = blogPosts.findIndex((p) => p.slug === slug)
-  const previousPost = currentIndex > 0 ? blogPosts[currentIndex - 1] : null
-  const nextPost = currentIndex < blogPosts.length - 1 ? blogPosts[currentIndex + 1] : null
+  const { isEnabled: isDraftMode } = await draftMode()
+  const postData = await getPost(slug, isDraftMode)
 
   return (
     <>
       <Navigation forceWhiteMode={true} />
-      <BlogPostClient post={post} previousPost={previousPost} nextPost={nextPost} slug={slug} />
+      {isDraftMode ? (
+        <BlogPostPreview
+          initialPost={postData}
+          slug={slug}
+        />
+      ) : (
+        <BlogPostClient
+          post={postData}
+          previousPost={postData?.previousPost}
+          nextPost={postData?.nextPost}
+          slug={slug}
+        />
+      )}
       <Footer />
       <InquiryButton />
     </>
