@@ -7,6 +7,9 @@ import { Footer } from "@/components/footer"
 import { useState, useEffect, useRef } from "react"
 import { InquiryButton } from "@/components/inquiry-button"
 
+// 날짜 형식 변환 (yyyy-MM-dd → yyyy.MM.dd)
+const formatDate = (date: string) => date?.replace(/-/g, '.') || ''
+
 interface BlogListClientProps {
   posts: any[]
 }
@@ -276,7 +279,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
                         color: "rgba(255, 255, 255, 0.5)",
                       }}
                     >
-                      {featuredPosts[currentFeatured]?.date}
+                      {formatDate(featuredPosts[currentFeatured]?.date)}
                     </div>
                   </div>
 
@@ -353,7 +356,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
                         color: "rgba(255, 255, 255, 0.5)",
                       }}
                     >
-                      {featuredPosts[currentFeatured]?.date}
+                      {formatDate(featuredPosts[currentFeatured]?.date)}
                     </div>
                   </div>
 

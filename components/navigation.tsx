@@ -166,7 +166,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
                     isCompanyActive || isMainPage ? "font-bold" : "font-medium"
                   } ${
                     forceWhiteMode || isScrolled
-                      ? "text-gray-900 hover:bg-gray-200/80"
+                      ? "text-[#414141] hover:bg-gray-200/80"
                       : "text-white hover:bg-gray-700/80"
                   }`}
                 >
@@ -185,14 +185,14 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
                       <Link
                         href="/company"
                         onClick={handleCompanyClick}
-                        className="block px-4 py-2 text-lg text-gray-900 hover:text-[#223B77] transition-colors text-center"
+                        className="block px-4 py-2 text-lg font-medium text-[#333333] hover:text-[#355CBA] transition-colors text-center"
                       >
                         ABOUT
                       </Link>
                       <Link
                         href="/location"
                         onClick={handleLocationClick}
-                        className="block px-4 py-2 text-lg text-gray-900 hover:text-[#223B77] transition-colors text-center"
+                        className="block px-4 py-2 text-lg font-medium text-[#333333] hover:text-[#355CBA] transition-colors text-center"
                       >
                         LOCATION
                       </Link>
@@ -208,7 +208,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
                   isServicesActive || isMainPage ? "font-bold" : "font-medium"
                 } ${
                   forceWhiteMode || isScrolled
-                    ? "text-gray-900 hover:bg-gray-200/80"
+                    ? "text-[#414141] hover:bg-gray-200/80"
                     : "text-white hover:bg-gray-700/80"
                 }`}
               >
@@ -222,7 +222,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
                   isExpertsActive || isMainPage ? "font-bold" : "font-medium"
                 } ${
                   forceWhiteMode || isScrolled
-                    ? "text-gray-900 hover:bg-gray-200/80"
+                    ? "text-[#414141] hover:bg-gray-200/80"
                     : "text-white hover:bg-gray-700/80"
                 }`}
               >
@@ -236,7 +236,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
                   isBlogActive || isMainPage ? "font-bold" : "font-medium"
                 } ${
                   forceWhiteMode || isScrolled
-                    ? "text-gray-900 hover:bg-gray-200/80"
+                    ? "text-[#414141] hover:bg-gray-200/80"
                     : "text-white hover:bg-gray-700/80"
                 }`}
               >
@@ -294,7 +294,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
             <div className="mb-4">
               <button
                 onClick={() => setIsCompanySubmenuOpen(!isCompanySubmenuOpen)}
-                className="w-full flex items-center justify-between text-base font-bold text-gray-900 py-2"
+                className="w-full flex items-center justify-between text-base font-bold text-[#111111] py-2"
               >
                 MODU
                 <Image
@@ -311,10 +311,10 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
                 }`}
               >
                 <div className="mt-2 pl-4 space-y-1">
-                  <Link href="/company" className="block text-base text-gray-600 py-1.5">
+                  <Link href="/company" className="block text-base font-bold text-[#999999] py-1.5">
                     ABOUT
                   </Link>
-                  <Link href="/location" className="block text-base text-gray-600 py-1.5">
+                  <Link href="/location" className="block text-base font-bold text-[#999999] py-1.5">
                     LOCATION
                   </Link>
                 </div>
@@ -322,17 +322,17 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
             </div>
 
             {/* SERVICE */}
-            <Link href="/services" className="block text-base font-bold text-gray-900 py-2 mb-4">
+            <Link href="/services" className="block text-base font-bold text-[#111111] py-2 mb-4">
               SERVICE
             </Link>
 
             {/* MEMBER */}
-            <Link href="/experts" className="block text-base font-bold text-gray-900 py-2 mb-4">
+            <Link href="/experts" className="block text-base font-bold text-[#111111] py-2 mb-4">
               MEMBER
             </Link>
 
             {/* BLOG */}
-            <Link href="/blog" onClick={handleBlogClick} className="block text-base font-bold text-gray-900 py-2 mb-4">
+            <Link href="/blog" onClick={handleBlogClick} className="block text-base font-bold text-[#111111] py-2 mb-4">
               BLOG
             </Link>
 

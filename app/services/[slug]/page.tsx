@@ -14,7 +14,7 @@ const servicesData = [
     slug: "bookkeeping",
     title: "기장",
     image: "/images/service-bookkeeping.png",
-    description: "사업의 본질에만 집중하세요. 복잡하고 어려운 회계와 세무는 모두(MODU)가 책임지겠습니다.",
+    description: "사업의 본질에만 집중하세요.\n복잡하고 어려운 회계와 세무는 모두(MODU)가 책임지겠습니다.",
     mobileDescription: "사업의 본질에만 집중하세요.\n복잡하고 어려운 회계와 세무는\n모두(MODU)가 책임지겠습니다.",
   },
   {
@@ -26,14 +26,14 @@ const servicesData = [
   },
   {
     slug: "inheritance",
-    title: "상속/증여/양도",
+    title: "상속·증여·양도",
     image: "/images/service-inheritance.png",
-    description: "단순한 세금 신고를 넘어, 가족의 소중한 자산을 지키고 다음 세대로 온전히 이어주는 최적의 솔루션을 제공합니다.\n미래를 예측하는 깊이 있는 통찰력으로 가장 효과적인 절세 전략을 설계합니다.",
+    description: "단순한 세금 신고를 넘어, 가족의 소중한 자산을 지키고\n다음 세대로 온전히 이어주는 최적의 솔루션을 제공합니다.\n미래를 예측하는 깊이 있는 통찰력으로 가장 효과적인 절세 전략을 설계합니다.",
     mobileDescription: "단순한 세금 신고를 넘어, 가족의 소중한 자산을\n지키고 다음 세대로 온전히 이어주는\n최적의 솔루션을 제공합니다.\n미래를 예측하는 깊이 있는 통찰력으로\n가장 효과적인 절세 전략을 설계합니다.",
   },
   {
     slug: "tax-appeal",
-    title: "경정청구/조세불복",
+    title: "경정청구·조세불복",
     image: "/images/service-tax-appeal.png",
     description: "억울하게 더 낸 세금, 당연한 권리를 되찾아 드립니다.\n납세자의 정당한 권리, 회계법인 모두의 논리와 전문성으로 지켜내겠습니다.",
     mobileDescription: "억울하게 더 낸 세금, 당연한 권리를 되찾아 드립니다.\n납세자의 정당한 권리, 회계법인 모두의 논리와\n전문성으로 지켜내겠습니다.",
@@ -42,7 +42,7 @@ const servicesData = [
     slug: "tax-audit",
     title: "세무조사대응",
     image: "/images/service-tax-audit.png",
-    description: "세무조사는 단순한 회계 실수가 아닌, 기업의 존폐를 위협할 수 있는 중대한 위기입니다.\n최고의 전문가 그룹이 고객의 편에서 가장 든든한 방패가 되어 드립니다.",
+    description: "세무조사는 단순한 회계 실수가 아닌,\n기업의 존폐를 위협할 수 있는 중대한 위기입니다.\n최고의 전문가 그룹이 고객의 편에서 가장 든든한 방패가 되어 드립니다.",
     mobileDescription: "세무조사는 단순한 회계 실수가 아닌\n기업의 존폐를 위협할 수 있는 중대한 위기입니다.\n최고의 전문가 그룹이 고객의 편에서\n가장 든든한 방패가 되어 드립니다.",
   },
   {
@@ -56,14 +56,14 @@ const servicesData = [
     slug: "due-diligence",
     title: "실사(Due Diligence)",
     image: "/images/service-due-diligence.png",
-    description: "성공적인 M&A와 투자의 성패는 '숨겨진 위험'을 얼마나 잘 찾아내느냐에 달려있습니다.\n회계법인 모두의 재무·세무 실사는 기업의 과거와 현재를 관통하여 미래의 불확실성을 제거하는 가장 정밀한 현미경입니다.",
+    description: "성공적인 M&A와 투자의 성패는\n'숨겨진 위험'을 얼마나 잘 찾아내느냐에 달려있습니다.\n회계법인 모두의 재무·세무 실사는 기업의 과거와 현재를 관통하여\n미래의 불확실성을 제거하는 가장 정밀한 현미경입니다.",
     mobileDescription: "성공적인 M&A와 투자의 성패는 '숨겨진 위험'을\n얼마나 잘 찾아내느냐에 달려있습니다.\n회계법인 모두의 재무·세무 실사는 기업의 과거와\n현재를 관통하여 미래의 불확실성을 제거하는\n가장 정밀한 현미경입니다.",
   },
   {
     slug: "consulting",
     title: "자문",
     image: "/images/service-consulting.png",
-    description: "기업 경영은 예측하지 못한 수많은 질문과 결정의 연속입니다.\n그 모든 과정에 가장 신뢰할 수 있는 전문가가 대표님의 곁에서 함께 고민하고 명쾌한 해답을 제시합니다.",
+    description: "기업 경영은 예측하지 못한 수많은 질문과 결정의 연속입니다.\n그 모든 과정에 가장 신뢰할 수 있는 전문가가 대표님의 곁에서\n함께 고민하고 명쾌한 해답을 제시합니다.",
     mobileDescription: "기업 경영은 예측하지 못한 수많은 질문과\n결정의 연속입니다.\n그 모든 과정에 가장 신뢰할 수 있는 전문가가\n대표님의 곁에서 함께 고민하고 명쾌한 해답을\n제시합니다.",
   },
   {
@@ -77,7 +77,7 @@ const servicesData = [
     slug: "subsidy",
     title: "보조금 검증",
     image: "/images/service-subsidy.png",
-    description: "국민의 세금으로 운영되는 보조금, 투명한 정산과 증빙은 기관의 신뢰도와 직결됩니다.\n까다롭고 복잡한 보조금 정산, 명쾌한 검증으로 사업의 성공적인 마무리를 돕겠습니다.",
+    description: "국민의 세금으로 운영되는 보조금,\n투명한 정산과 증빙은 기관의 신뢰도와 직결됩니다.\n까다롭고 복잡한 보조금 정산,\n명쾌한 검증으로 사업의 성공적인 마무리를 돕겠습니다.",
     mobileDescription: "국민의 세금으로 운영되는 보조금, 투명한 정산과\n증빙은 기관의 신뢰도와 직결됩니다.\n까다롭고 복잡한 보조금 정산, 명쾌한 검증으로\n사업의 성공적인 마무리를 돕겠습니다.",
   },
 ]

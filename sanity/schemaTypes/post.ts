@@ -36,6 +36,9 @@ export default defineType({
       name: 'publishedAt',
       title: '작성일 (Date)',
       type: 'date',
+      options: {
+        dateFormat: 'YYYY.MM.DD',
+      },
       initialValue: () => new Date().toISOString().split('T')[0],
       validation: (rule) => rule.required(),
     }),

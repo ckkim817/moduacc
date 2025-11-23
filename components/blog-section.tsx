@@ -4,6 +4,9 @@ import { Card } from "@/components/ui/card"
 import { CommonButton } from "@/components/common-button"
 import { getLatestPosts } from "@/lib/sanity-utils"
 
+// 날짜 형식 변환 (yyyy-MM-dd → yyyy.MM.dd)
+const formatDate = (date: string) => date?.replace(/-/g, '.') || ''
+
 export async function BlogSection() {
   const posts = await getLatestPosts(4)
 
@@ -51,7 +54,7 @@ export async function BlogSection() {
                       {posts[0].title}
                     </h3>
                     <div className="font-normal text-base" style={{ color: "#777777" }}>
-                      {posts[0].date}
+                      {formatDate(posts[0].date)}
                     </div>
                   </div>
                 </div>
@@ -96,7 +99,7 @@ export async function BlogSection() {
             {/* First post with image */}
             <Link href={`/blog/${posts[0].slug}`}>
               <div className="space-y-4 pb-[30px]">
-                <div className="w-full aspect-[16/10] overflow-hidden rounded-[24px] relative">
+                <div className="w-full aspect-[16/10] overflow-hidden rounded-[16px] relative">
                   <Image
                     src={posts[0].image || "/placeholder.svg"}
                     alt={posts[0].title}

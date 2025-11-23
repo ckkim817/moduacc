@@ -7,6 +7,9 @@ import { CommonButton } from "@/components/common-button"
 import { PortableText } from "@portabletext/react"
 import { urlFor } from "@/sanity/lib/image"
 
+// 날짜 형식 변환 (yyyy-MM-dd → yyyy.MM.dd)
+const formatDate = (date: string) => date?.replace(/-/g, '.') || ''
+
 // PortableText용 커스텀 스타일 컴포넌트
 const ptComponents = {
   block: {
@@ -150,7 +153,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
           }}
         >
           <span className="font-medium max-[440px]:text-[14px] text-[20px]">
-            {post.date} · {post.author || '김정선 회계사'} 작성
+            {formatDate(post.date)} · {post.author || '김정선 회계사'} 작성
           </span>
         </div>
 
