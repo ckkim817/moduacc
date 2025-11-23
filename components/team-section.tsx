@@ -71,7 +71,7 @@ export function TeamSection() {
         <div className="flex flex-col min-[1070px]:flex-row min-[1070px]:items-start gap-[50px] min-[1070px]:gap-0">
           {/* Left side: Title and Button */}
           <div className="flex flex-col items-center min-[1070px]:items-start text-center min-[1070px]:text-left min-[1070px]:flex-shrink-0 min-[1070px]:w-[400px]">
-            <h2 className="font-bold text-gray-900 text-balance max-[440px]:text-[24px] max-[440px]:leading-[34px] text-[48px] leading-[64px]">
+            <h2 className="font-bold text-[#111111] text-balance max-[440px]:text-[24px] max-[440px]:leading-[34px] text-[48px] leading-[64px]">
               수치 너머의 가치를
               <br />
               함께 만드는 전문가들

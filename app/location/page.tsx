@@ -98,7 +98,7 @@ export default function LocationPage() {
           <div className="container mx-auto px-6 max-[440px]:px-0">
             <div className="max-w-7xl mx-auto">
               {/* Page Title */}
-              <h1 className="font-bold text-gray-900 text-center max-[440px]:text-[30px] max-[440px]:leading-[39px] max-[440px]:mb-[60px] text-6xl leading-[80px] mb-[100px]">
+              <h1 className="font-bold text-[#111111] text-center max-[440px]:text-[30px] max-[440px]:leading-[39px] max-[440px]:mb-[60px] text-6xl leading-[80px] mb-[100px]">
                 오시는 길
               </h1>
 
@@ -112,7 +112,7 @@ export default function LocationPage() {
               />
 
               {/* Location Information */}
-              <div className="mx-auto space-y-6 mb-8 max-[440px]:space-y-8 max-[440px]:mb-[40px]" style={{ maxWidth: "1200px" }}>
+              <div className="mx-auto space-y-6 mb-[40px] max-[440px]:space-y-8 max-[440px]:mb-[40px]" style={{ maxWidth: "1200px" }}>
                 <div className="flex gap-4 max-[440px]:flex-col max-[440px]:gap-2">
                   <div className="font-bold text-[#111111] min-w-[100px] max-[440px]:min-w-0 max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[22px] leading-[31px]">주소</div>
                   <div className="text-[#535353] max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[22px] leading-[31px]">경기도 용인시 기흥구 흥덕1로 79번길 2, 가은프라자 717호(영덕동)</div>
@@ -135,7 +135,7 @@ export default function LocationPage() {
                   href="https://place.map.kakao.com/1394637530"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border-2 max-[440px]:border text-[#355CBA] border-[#355CBA] hover:bg-[#355CBA] hover:text-white transition-colors font-semibold max-[440px]:w-[calc(100vw*335/375)] max-[440px]:px-6 max-[440px]:py-3 max-[440px]:gap-1 max-[440px]:text-[15px] max-[440px]:leading-[22px] px-[30px] py-[18px] gap-[6px] text-[20px]"
+                  className="inline-flex items-center justify-center rounded-full border-2 max-[440px]:border text-[#355CBA] border-[#355CBA] hover:bg-[#355CBA] hover:text-white transition-colors font-bold max-[440px]:w-[calc(100vw*335/375)] max-[440px]:px-6 max-[440px]:py-3 max-[440px]:gap-1 max-[440px]:text-[15px] max-[440px]:leading-[22px] px-[30px] py-[18px] gap-[6px] text-[20px]"
                   onMouseEnter={() => setIsButtonHovered(true)}
                   onMouseLeave={() => setIsButtonHovered(false)}
                 >

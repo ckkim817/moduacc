@@ -170,7 +170,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
                       : "text-white hover:bg-gray-700/80"
                   }`}
                 >
-                  MODU
+                  <span className="inline-flex flex-col items-center after:content-['MODU'] after:font-bold after:h-0 after:overflow-hidden after:invisible">MODU</span>
                 </Link>
                 {activeDropdown === "company" && (
                   <div
@@ -212,7 +212,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
                     : "text-white hover:bg-gray-700/80"
                 }`}
               >
-                SERVICE
+                <span className="inline-flex flex-col items-center after:content-['SERVICE'] after:font-bold after:h-0 after:overflow-hidden after:invisible">SERVICE</span>
               </Link>
 
               <Link
@@ -226,7 +226,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
                     : "text-white hover:bg-gray-700/80"
                 }`}
               >
-                MEMBER
+                <span className="inline-flex flex-col items-center after:content-['MEMBER'] after:font-bold after:h-0 after:overflow-hidden after:invisible">MEMBER</span>
               </Link>
 
               <Link
@@ -240,7 +240,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
                     : "text-white hover:bg-gray-700/80"
                 }`}
               >
-                BLOG
+                <span className="inline-flex flex-col items-center after:content-['BLOG'] after:font-bold after:h-0 after:overflow-hidden after:invisible">BLOG</span>
               </Link>
 
               <a

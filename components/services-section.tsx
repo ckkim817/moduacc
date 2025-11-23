@@ -37,7 +37,7 @@ export function ServicesSection() {
   return (
     <section className="bg-white pt-[200px] pb-[300px] max-[440px]:!pt-[78px] max-[440px]:!pb-[160px]">
       <div className="max-w-[1240px] mx-auto px-5">
-        <h2 className="font-bold text-gray-900 text-balance max-[440px]:text-[24px] max-[440px]:leading-[34px] max-[440px]:text-center text-[48px] leading-[64px]">
+        <h2 className="font-bold text-[#111111] text-balance max-[440px]:text-[24px] max-[440px]:leading-[34px] max-[440px]:text-center text-[48px] leading-[64px]">
           비즈니스 전 과정을 아우르는
           <br />
           회계·세무 원스톱 솔루션
@@ -56,7 +56,7 @@ export function ServicesSection() {
                 />
               </div>
 
-              <h3 className="font-bold text-gray-900 mb-[10px] max-[440px]:mb-[6px] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[28px] leading-[39px] min-[441px]:px-[10px]">{service.title}</h3>
+              <h3 className="font-bold text-[#111111] mb-[10px] max-[440px]:mb-[6px] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[28px] leading-[39px] min-[441px]:px-[10px]">{service.title}</h3>
 
               <p className="text-gray-600 max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[22px] leading-[31px] min-[441px]:px-[10px]">{service.description}</p>
             </Link>

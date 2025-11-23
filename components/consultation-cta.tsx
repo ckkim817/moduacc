@@ -25,7 +25,7 @@ export function ConsultationCTA() {
           <Button
             variant="outline"
             size="lg"
-            className="h-auto border-2 border-white bg-transparent text-white hover:bg-white hover:text-gray-900 transition-colors rounded-full font-bold text-[20px] px-[30px] py-[18px] max-[440px]:text-[14px] max-[440px]:leading-[19px] max-[440px]:px-[16px] max-[440px]:py-[10px] cursor-pointer"
+            className="h-auto border-2 border-white bg-transparent text-white hover:bg-white hover:text-[#111111] transition-colors rounded-full font-bold text-[20px] px-[30px] py-[18px] max-[440px]:text-[14px] max-[440px]:leading-[19px] max-[440px]:px-[16px] max-[440px]:py-[10px] cursor-pointer"
           >
             상담 신청하기
           </Button>

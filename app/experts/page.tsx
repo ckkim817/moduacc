@@ -28,7 +28,7 @@ export default function ExpertsPage() {
         >
           <div className="container mx-auto px-6">
             <div className="max-w-7xl mx-auto text-center">
-              <h1 className="font-bold text-gray-900 mb-6 max-[440px]:mb-[10px] leading-tight max-[440px]:text-[30px] max-[440px]:leading-[39px] text-6xl">
+              <h1 className="font-bold text-[#111111] mb-6 max-[440px]:mb-[10px] leading-tight max-[440px]:text-[30px] max-[440px]:leading-[39px] text-6xl">
                 숫자 너머의 가치를
                 <br />
                 함께 만드는 파트너

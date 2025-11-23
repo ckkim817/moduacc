@@ -29,7 +29,7 @@ export function Footer() {
               style={{ color: "#BDBDBD" }}
             >
               <div className="flex flex-wrap gap-2 max-[440px]:flex-col max-[440px]:gap-1">
-                <Link href="/privacy" className="hover:underline">개인정보처리방침</Link>
+                <Link href="/privacy" className="hover:text-[#FFFFFF] transition-colors">개인정보처리방침</Link>
                 <span className="max-[440px]:hidden">|</span>
                 <span>개인정보처리부서 : OOO</span>
               </div>

@@ -29,7 +29,7 @@ export default function CompanyPage() {
         >
           <div className="container mx-auto px-6 max-[440px]:px-0">
             <div className="max-w-7xl mx-auto text-center">
-              <h1 className="font-bold text-gray-900 max-[440px]:text-[30px] max-[440px]:leading-[39px] text-[60px] leading-[80px] max-[440px]:mb-[10px] mb-[20px]">
+              <h1 className="font-bold text-[#111111] max-[440px]:text-[30px] max-[440px]:leading-[39px] text-[60px] leading-[80px] max-[440px]:mb-[10px] mb-[20px]">
                 안정된 재무 관리로
                 <br />
                 내일의 도약을 준비합니다.

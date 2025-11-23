@@ -9,41 +9,30 @@ export function InquiryButton() {
   const [isMessengerOpen, setIsMessengerOpen] = useState(false)
 
   useEffect(() => {
-    // Only load and boot if not already initialized
-    if (typeof window !== 'undefined' && !window.ChannelIO) {
-      // Load Channel Talk script
-      ChannelService.loadScript();
-    }
+    ChannelService.loadScript()
 
-    // Boot Channel Talk after a short delay to ensure script is loaded
-    const timer = setTimeout(() => {
-      if (typeof window !== 'undefined' && window.ChannelIO) {
-        ChannelService.boot({
-          pluginKey: "26d8bb53-48e6-4ab3-aefe-b499cdb9b681",
-          customLauncherSelector: "#channel-talk-button",
-          hideChannelButtonOnBoot: true,
-          hidePopup: true,
-        });
+    ChannelService.boot({
+      pluginKey: "26d8bb53-48e6-4ab3-aefe-b499cdb9b681",
+      customLauncherSelector: "#channel-talk-button",
+      hideChannelButtonOnBoot: true,
+      hidePopup: true,
+    })
 
-        // Listen for badge changes (unread messages)
-        ChannelService.onBadgeChanged((unread, alert) => {
-          setUnreadCount(alert)
-        });
+    // Listen for badge changes (unread messages)
+    ChannelService.onBadgeChanged((unread, alert) => {
+      setUnreadCount(alert)
+    })
 
-        // Hide button when messenger opens
-        ChannelService.onShowMessenger(() => {
-          setIsMessengerOpen(true)
-        });
+    // Hide button when messenger opens
+    ChannelService.onShowMessenger(() => {
+      setIsMessengerOpen(true)
+    })
 
-        // Show button when messenger closes
-        ChannelService.onHideMessenger(() => {
-          setIsMessengerOpen(false)
-        });
-      }
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, []);
+    // Show button when messenger closes
+    ChannelService.onHideMessenger(() => {
+      setIsMessengerOpen(false)
+    })
+  }, [])
 
   return (
     <button
