@@ -53,3 +53,25 @@
   max-width: 100% !important;
   width: 100% !important;
 }
+
+/* 본문 내용 블록 스타일 미리보기 */
+#sanity [data-testid="pt-editor"] [style*="title"] {
+  font-weight: 700 !important;
+  font-size: 30px !important;
+  line-height: 42px !important;
+  color: #333333 !important;
+}
+
+#sanity [data-testid="pt-editor"] [style*="normal"] {
+  font-weight: 400 !important;
+  font-size: 22px !important;
+  line-height: 36px !important;
+  color: #333333 !important;
+}
+
+#sanity [data-testid="pt-editor"] [style*="caption"] {
+  font-weight: 400 !important;
+  font-size: 20px !important;
+  line-height: 30px !important;
+  color: #999999 !important;
+}

@@ -89,7 +89,7 @@ export default function LocationPage() {
 
       {/* Main Content */}
       <section
-        className="bg-white pb-[calc(100vw*300/1920)] max-[439px]:!pb-[calc(100vw*160/375)] pt-[220px] max-[440px]:!pt-[116px]"
+        className="bg-white pb-[calc(100vw*300/1920)] max-[440px]:!pb-[calc(100vw*160/375)] pt-[220px] max-[440px]:!pt-[116px]"
       >
         <div
           className="max-[440px]:!px-5"

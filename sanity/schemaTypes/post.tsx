@@ -1,4 +1,24 @@
 import { defineField, defineType } from 'sanity'
+import React from 'react'
+
+// 커스텀 블록 스타일 렌더 컴포넌트
+const TitleStyle = (props: any) => (
+  <span style={{ fontWeight: 700, fontSize: '24px' }}>
+    {props.children}
+  </span>
+)
+
+const MainTextStyle = (props: any) => (
+  <span style={{ fontWeight: 400, fontSize: '18px' }}>
+    {props.children}
+  </span>
+)
+
+const CaptionStyle = (props: any) => (
+  <span style={{ fontWeight: 400, fontSize: '16px', color: '#999999' }}>
+    {props.children}
+  </span>
+)
 
 export default defineType({
   name: 'post',
@@ -72,9 +92,9 @@ export default defineType({
         {
           type: 'block',
           styles: [
-            { title: 'Title', value: 'title' },
-            { title: 'Main Text', value: 'normal' },
-            { title: 'Caption', value: 'caption' },
+            { title: 'Main Text', value: 'normal', component: MainTextStyle },
+            { title: 'Title', value: 'title', component: TitleStyle },
+            { title: 'Caption', value: 'caption', component: CaptionStyle },
           ],
         },
         { type: 'image' },

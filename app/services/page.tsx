@@ -128,7 +128,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Section */}
-      <section className="pt-20 bg-white pb-[calc(100vw*300/1920)] max-[440px]:pt-12 max-[440px]:pb-[160px]">
+      <section className="pt-[136px] bg-white pb-[calc(100vw*300/1920)] max-[440px]:pt-12 max-[440px]:pb-[160px]">
         <div
           className="max-[440px]:!px-5"
           style={{
@@ -156,7 +156,7 @@ export default function ServicesPage() {
 
                     <h3 className="font-bold text-[#111111] mb-[10px] max-[440px]:mb-[6px] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[28px] leading-[39px] min-[441px]:px-[10px]">{service.title}</h3>
 
-                    <p className="text-gray-600 max-[440px]:text-[14px] max-[440px]:leading-[20px] text-[22px] leading-[31px] min-[441px]:px-[10px]">{service.description}</p>
+                    <p className="text-[#333333] max-[440px]:text-[14px] max-[440px]:leading-[20px] text-[22px] leading-[31px] min-[441px]:px-[10px]">{service.description}</p>
                   </Link>
                 ))}
               </div>

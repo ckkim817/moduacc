@@ -95,7 +95,7 @@ export async function BlogSection() {
             ))}
           </div>
 
-          <div className="max-[439px]:block min-[440px]:hidden space-y-[30px]">
+          <div className="max-[440px]:block min-[440px]:hidden space-y-[30px]">
             {/* First post with image */}
             <Link href={`/blog/${posts[0].slug}`}>
               <div className="space-y-4 pb-[30px]">

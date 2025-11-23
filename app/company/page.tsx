@@ -56,7 +56,7 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      <section className="bg-white pb-[calc(100vw*300/1920)] max-[440px]:pt-12 max-[439px]:!pb-[calc(100vw*160/375)] pt-[100px]">
+      <section className="bg-white pb-[calc(100vw*300/1920)] max-[440px]:pt-12 max-[440px]:!pb-[calc(100vw*160/375)] pt-[100px]">
         <div
           className="max-[440px]:!px-5"
           style={{ paddingLeft: "calc(100vw / 5.5)", paddingRight: "calc(100vw / 5.5)" }}
