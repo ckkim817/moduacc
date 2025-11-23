@@ -13,33 +13,18 @@ const formatDate = (date: string) => date?.replace(/-/g, '.') || ''
 // PortableText용 커스텀 스타일 컴포넌트
 const ptComponents = {
   block: {
-    normal: ({children}: any) => (
-      <p className="leading-relaxed mb-6 max-[440px]:text-[17px] max-[440px]:leading-[26px] text-[22px] leading-[36px]" style={{ color: "#333333" }}>
-        {children}
-      </p>
-    ),
-    h1: ({children}: any) => (
-      <h1 className="font-bold mt-12 mb-6 max-[440px]:text-[24px] max-[440px]:leading-[34px]" style={{ color: "#111111", fontSize: "36px", lineHeight: "50px" }}>
-        {children}
-      </h1>
-    ),
-    h2: ({children}: any) => (
-      <h2 className="font-bold mt-12 mb-6 max-[440px]:text-[22px] max-[440px]:leading-[31px]" style={{ color: "#111111", fontSize: "30px", lineHeight: "42px" }}>
+    title: ({children}: any) => (
+      <h2 className="font-bold mb-6 max-[440px]:text-[22px] max-[440px]:leading-[31px] text-[30px] leading-[42px]" style={{ color: "#333333" }}>
         {children}
       </h2>
     ),
-    h3: ({children}: any) => (
-      <h3 className="font-semibold mt-10 mb-4 max-[440px]:text-[18px] max-[440px]:leading-[26px]" style={{ color: "#111111", fontSize: "24px", lineHeight: "34px" }}>
+    normal: ({children}: any) => (
+      <p className="mb-6 max-[440px]:text-[17px] max-[440px]:leading-[26px] text-[22px] leading-[36px]" style={{ color: "#333333" }}>
         {children}
-      </h3>
+      </p>
     ),
-    blockquote: ({children}: any) => (
-      <blockquote className="border-l-4 border-gray-300 pl-4 my-6 italic max-[440px]:text-[17px] max-[440px]:leading-[26px]" style={{ color: "#555555", fontSize: "20px", lineHeight: "32px" }}>
-        {children}
-      </blockquote>
-    ),
-    note: ({children}: any) => (
-      <p className="mb-6 max-[440px]:text-[16px] max-[440px]:leading-[24px]" style={{ color: "#999999", fontSize: "20px", lineHeight: "30px" }}>
+    caption: ({children}: any) => (
+      <p className="mb-6 max-[440px]:text-[15px] max-[440px]:leading-[21px] text-[20px] leading-[30px]" style={{ color: "#999999" }}>
         {children}
       </p>
     ),

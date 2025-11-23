@@ -72,12 +72,9 @@ export default defineType({
         {
           type: 'block',
           styles: [
-            { title: 'Normal', value: 'normal' },
-            { title: 'H1', value: 'h1' },
-            { title: 'H2', value: 'h2' },
-            { title: 'H3', value: 'h3' },
-            { title: 'Quote', value: 'blockquote' },
-            { title: '설명 (회색)', value: 'note' },
+            { title: 'Title', value: 'title' },
+            { title: 'Main Text', value: 'normal' },
+            { title: 'Caption', value: 'caption' },
           ],
         },
         { type: 'image' },
