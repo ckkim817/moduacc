@@ -1,8 +1,26 @@
+"use client"
+
 import Image from "next/image"
 
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <style jsx>{`
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in-up {
+          animation: fadeInUp 1s ease-out forwards;
+        }
+      `}</style>
+
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -18,7 +36,7 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6">
-        <h1 className="text-white font-bold leading-tight max-[440px]:text-[30px] text-[66px]">
+        <h1 className="text-white font-bold leading-tight max-[440px]:text-[30px] text-[66px] animate-fade-in-up">
           성장의 모든 순간,
           <br />
           모두
