@@ -123,13 +123,14 @@
   * {
     @apply border-border outline-ring/50;
   }
-  @media (max-width: 440px) {
-    html {
-      background-color: #222222;
-    }
-  }
   body {
     @apply bg-background text-foreground;
     word-break: keep-all;
+  }
+}
+
+@media (max-width: 440px) {
+  html {
+    background-color: #222222 !important;
   }
 }
