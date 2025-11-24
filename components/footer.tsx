@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="text-white pt-[100px] pb-[120px] max-[440px]:pt-[60px] max-[440px]:pb-[80px]" style={{ backgroundColor: "#222222", fontFamily: "Pretendard, sans-serif" }}>
+    <footer className="text-white pt-[100px] pb-[120px] max-[440px]:pt-[60px] max-[440px]:pb-[calc(80px+env(safe-area-inset-bottom))]" style={{ backgroundColor: "#222222", fontFamily: "Pretendard, sans-serif" }}>
       <div className="max-w-[1240px] mx-auto px-5">
             {/* Logo */}
             <div className="mb-8">

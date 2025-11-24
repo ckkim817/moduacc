@@ -21,6 +21,7 @@
 /* Portable Text 에디터 (본문 내용) 너비 */
 #sanity [data-testid="pt-editor"] {
   max-width: 100% !important;
+  min-height: 800px !important;
 }
 
 #sanity [data-testid="pt-editor"] [data-slate-editor="true"] {

@@ -50,6 +50,17 @@ export default defineType({
       name: 'category',
       title: '카테고리',
       type: 'string',
+      options: {
+        list: [
+          { title: '세무', value: '세무' },
+          { title: '회계', value: '회계' },
+          { title: '상속·증여', value: '상속·증여' },
+          { title: '양도소득세', value: '양도소득세' },
+          { title: '법인세', value: '법인세' },
+          { title: '종합소득세', value: '종합소득세' },
+        ],
+        layout: 'dropdown',
+      },
       validation: (rule) => rule.required(),
     }),
     defineField({
