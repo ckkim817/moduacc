@@ -108,10 +108,10 @@ export function TeamSection() {
                           />
                         </div>
                         <div className="absolute left-4 bottom-4 lg:left-[40px] lg:bottom-[40px] flex flex-col items-start">
-                          <p className="text-white font-normal text-xs lg:text-[18px] mb-1 lg:mb-[8px]">
+                          <p className="text-white font-semibold text-[13px] lg:font-bold lg:text-[14px] mb-1">
                             {member.role}
                           </p>
-                          <h3 className="text-white font-bold text-lg lg:text-[32px]">{member.name}</h3>
+                          <h3 className="text-white font-bold text-[18px] lg:text-[30px]">{member.name}</h3>
                         </div>
                       </Card>
                     </Link>
@@ -138,10 +138,10 @@ export function TeamSection() {
                           />
                         </div>
                         <div className="absolute left-4 bottom-4 lg:left-[40px] lg:bottom-[40px] flex flex-col items-start">
-                          <p className="text-white font-normal text-xs lg:text-[18px] mb-1 lg:mb-[8px]">
+                          <p className="text-white font-semibold text-[13px] lg:font-bold lg:text-[14px] mb-1">
                             {member.role}
                           </p>
-                          <h3 className="text-white font-bold text-lg lg:text-[32px]">{member.name}</h3>
+                          <h3 className="text-white font-bold text-[18px] lg:text-[30px]">{member.name}</h3>
                         </div>
                       </Card>
                     </Link>

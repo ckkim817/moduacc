@@ -25,13 +25,11 @@ export function Footer() {
             </div>
 
             <div
-              className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-[16px] max-[440px]:text-[13px] pt-8 max-[440px]:pt-4"
+              className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 max-[440px]:gap-[40px] text-[16px] max-[440px]:text-[13px] pt-8 max-[440px]:pt-4"
               style={{ color: "#BDBDBD" }}
             >
               <div className="flex flex-wrap gap-2 max-[440px]:flex-col max-[440px]:gap-1">
                 <Link href="/privacy" className="hover:text-[#FFFFFF] transition-colors">개인정보처리방침</Link>
-                <span className="max-[440px]:hidden">|</span>
-                <span>개인정보처리부서 : OOO</span>
               </div>
               <div>
                 <p>@ Copyright 2025 Modoo Accounting Firm</p>

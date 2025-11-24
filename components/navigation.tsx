@@ -18,11 +18,11 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
   const [isCompanySubmenuOpen, setIsCompanySubmenuOpen] = useState(false)
   const pathname = usePathname()
 
-  const isCompanyActive = pathname.startsWith("/company") || pathname === "/location"
-  const isServicesActive = pathname.startsWith("/services")
-  const isExpertsActive = pathname.startsWith("/experts")
-  const isBlogActive = pathname.startsWith("/blog")
-  const isMainPage = pathname === "/"
+  const isCompanyActive = pathname?.startsWith("/company") || pathname === "/location"
+  const isServicesActive = pathname?.startsWith("/services")
+  const isExpertsActive = pathname?.startsWith("/experts")
+  const isBlogActive = pathname?.startsWith("/blog")
+  const isMainPage = !pathname || pathname === "/"
 
   useEffect(() => {
     if (forceWhiteMode) {

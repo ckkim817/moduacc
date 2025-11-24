@@ -52,7 +52,7 @@ export default function CompanyPage() {
         </div>
 
         <div className="relative w-full mx-auto aspect-[1920/400] max-[440px]:aspect-[375/440]">
-          <Image src="/images/company-hero.png" alt="Modern office building" fill className="object-cover" />
+          <Image src="/images/company-hero.jpeg" alt="Modern office building" fill className="object-cover" />
         </div>
       </section>
 

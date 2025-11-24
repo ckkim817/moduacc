@@ -31,14 +31,14 @@ export default function ServicesPage() {
     },
     {
       slug: "inheritance",
-      title: "상속/증여/양도",
+      title: "상속·증여·양도",
       description:
         "자산 이전 과정에서 발생할 수 있는 세금 부담을 최소화할 수 있도록 맞춤형 절세 전략을 수립하고, 안정적인 자산 관리 및 승계를 지원합니다.",
       image: "/images/service-inheritance.png",
     },
     {
       slug: "tax-appeal",
-      title: "경정청구/조세불복",
+      title: "경정청구·조세불복",
       description:
         "잘못 납부한 세금을 돌려받을 수 있는 경정청구부터 국세청 과세처분에 대한 조세불복까지, 풍부한 실무 경험을 바탕으로 유리한 해결책을 제시합니다.",
       image: "/images/service-tax-appeal.png",
@@ -118,7 +118,7 @@ export default function ServicesPage() {
         {/* Full-width hero image */}
         <div className="relative w-full mx-auto aspect-[1920/400] max-[440px]:aspect-[375/440]">
           <Image
-            src="/images/services-hero.png"
+            src="/images/services-hero.jpeg"
             alt="Modern office workspace"
             fill
             unoptimized
@@ -144,7 +144,7 @@ export default function ServicesPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 max-[440px]:gap-[40px] gap-x-5 gap-y-[100px]">
                 {services.map((service, index) => (
                   <Link key={index} href={`/services/${service.slug}`} className="flex flex-col cursor-pointer group">
-                    <div className="w-full relative rounded-[30px] overflow-hidden mb-[30px] max-[440px]:mb-4 max-[440px]:rounded-[20px] max-[440px]:[aspect-ratio:335/200]" style={{ aspectRatio: "590 / 400" }}>
+                    <div className="w-full relative rounded-[24px] overflow-hidden mb-[24px] max-[440px]:mb-4 max-[440px]:rounded-[20px] max-[440px]:[aspect-ratio:335/200]" style={{ aspectRatio: "590 / 400" }}>
                       <Image
                         src={service.image || "/placeholder.svg"}
                         alt={service.title}
@@ -154,7 +154,7 @@ export default function ServicesPage() {
                       />
                     </div>
 
-                    <h3 className="font-bold text-[#111111] mb-[10px] max-[440px]:mb-[6px] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[28px] leading-[39px] min-[441px]:px-[10px]">{service.title}</h3>
+                    <h3 className="font-bold text-[#111111] mb-[6px] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[26px] leading-[39px] min-[441px]:px-[10px]">{service.title}</h3>
 
                     <p className="text-[#333333] max-[440px]:text-[14px] max-[440px]:leading-[20px] text-[22px] leading-[31px] min-[441px]:px-[10px]">{service.description}</p>
                   </Link>

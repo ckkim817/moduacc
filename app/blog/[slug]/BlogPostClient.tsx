@@ -144,7 +144,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
 
         {/* Posting Image */}
         <div
-          className="w-full mb-20 overflow-hidden max-w-[1200px] mx-auto rounded-[30px] aspect-[5/2] max-[440px]:!-mx-5 max-[440px]:!w-[100vw] max-[440px]:max-w-none max-[440px]:!aspect-[375/240] max-[440px]:!rounded-none max-[440px]:!mb-[40px]"
+          className="w-full mb-20 overflow-hidden max-w-[1200px] mx-auto rounded-[24px] aspect-[5/2] max-[440px]:!-mx-5 max-[440px]:!w-[100vw] max-[440px]:max-w-none max-[440px]:!aspect-[375/240] max-[440px]:!rounded-none max-[440px]:!mb-[40px]"
         >
           <Image
             src={post.image || "/placeholder.svg"}

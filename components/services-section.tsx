@@ -46,7 +46,7 @@ export function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 mt-20 max-[440px]:mt-[40px] max-[440px]:gap-[40px] gap-x-5 gap-y-[100px]">
           {services.map((service, index) => (
             <Link key={index} href={`/services/${service.slug}`} className="flex flex-col cursor-pointer group">
-              <div className="w-full relative rounded-[30px] overflow-hidden mb-[30px] max-[440px]:mb-4 max-[440px]:rounded-[20px] max-[440px]:[aspect-ratio:335/200]" style={{ aspectRatio: "590 / 400" }}>
+              <div className="w-full relative rounded-[24px] overflow-hidden mb-[24px] max-[440px]:mb-4 max-[440px]:rounded-[20px] max-[440px]:[aspect-ratio:335/200]" style={{ aspectRatio: "590 / 400" }}>
                 <Image
                   src={service.image || "/placeholder.svg"}
                   alt={service.title}
@@ -56,7 +56,7 @@ export function ServicesSection() {
                 />
               </div>
 
-              <h3 className="font-bold text-[#111111] mb-[10px] max-[440px]:mb-[6px] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[28px] leading-[39px] min-[441px]:px-[10px]">{service.title}</h3>
+              <h3 className="font-bold text-[#111111] mb-[6px] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[26px] leading-[39px] min-[441px]:px-[10px]">{service.title}</h3>
 
               <p className="text-[#333333] max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[22px] leading-[31px] min-[441px]:px-[10px]">{service.description}</p>
             </Link>
