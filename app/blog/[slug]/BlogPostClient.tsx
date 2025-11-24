@@ -6,6 +6,7 @@ import Image from "next/image"
 import { CommonButton } from "@/components/common-button"
 import { PortableText } from "@portabletext/react"
 import { urlFor } from "@/sanity/lib/image"
+import React from "react"
 
 // 날짜 형식 변환 (yyyy-MM-dd → yyyy.MM.dd)
 const formatDate = (date: string) => date?.replace(/-/g, '.') || ''
@@ -13,21 +14,30 @@ const formatDate = (date: string) => date?.replace(/-/g, '.') || ''
 // PortableText용 커스텀 스타일 컴포넌트
 const ptComponents = {
   block: {
-    title: ({children}: any) => (
-      <h2 className="font-bold mb-6 max-[440px]:text-[22px] max-[440px]:leading-[31px] text-[30px] leading-[42px]" style={{ color: "#333333" }}>
-        {children}
-      </h2>
-    ),
-    normal: ({children}: any) => (
-      <p className="mb-6 max-[440px]:text-[17px] max-[440px]:leading-[26px] text-[22px] leading-[36px]" style={{ color: "#333333" }}>
-        {children}
-      </p>
-    ),
-    caption: ({children}: any) => (
-      <p className="mb-6 max-[440px]:text-[15px] max-[440px]:leading-[21px] text-[20px] leading-[30px]" style={{ color: "#999999" }}>
-        {children}
-      </p>
-    ),
+    title: ({children}: any) => {
+      const isEmpty = !children || (Array.isArray(children) && children.length === 0) || (React.Children.count(children) === 1 && children[0] === '')
+      return (
+        <h2 className="font-bold mb-6 max-[440px]:text-[22px] max-[440px]:leading-[31px] text-[30px] leading-[42px]" style={{ color: "#333333" }}>
+          {isEmpty ? <br /> : children}
+        </h2>
+      )
+    },
+    normal: ({children}: any) => {
+      const isEmpty = !children || (Array.isArray(children) && children.length === 0) || (React.Children.count(children) === 1 && children[0] === '')
+      return (
+        <p className="mb-6 max-[440px]:text-[17px] max-[440px]:leading-[26px] text-[22px] leading-[36px]" style={{ color: "#333333" }}>
+          {isEmpty ? <br /> : children}
+        </p>
+      )
+    },
+    caption: ({children}: any) => {
+      const isEmpty = !children || (Array.isArray(children) && children.length === 0) || (React.Children.count(children) === 1 && children[0] === '')
+      return (
+        <p className="mb-6 max-[440px]:text-[15px] max-[440px]:leading-[21px] text-[20px] leading-[30px]" style={{ color: "#999999" }}>
+          {isEmpty ? <br /> : children}
+        </p>
+      )
+    },
   },
   types: {
     image: ({value}: any) => {
