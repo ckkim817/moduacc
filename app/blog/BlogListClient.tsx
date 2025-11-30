@@ -136,6 +136,10 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
 
   const displayedPosts = getPostsForPage(currentPage)
 
+  // 현재 featured post의 dominant background color 가져오기
+  const currentPost = featuredPosts[currentFeatured]
+  const dynamicBgColor = currentPost?.palette?.dominant?.background || "#2D3345"
+
   // 데이터가 없을 경우 처리
   if (!blogPosts || blogPosts.length === 0) {
     return (
@@ -243,8 +247,9 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
             <div
               className="overflow-hidden rounded-[30px] max-[440px]:rounded-[20px] max-[440px]:w-[calc(100vw*335/375)] max-[440px]:!h-[calc(100vw*524/375)] max-[440px]:mx-auto max-[440px]:flex max-[440px]:flex-col group"
               style={{
-                backgroundColor: "#2D3345",
+                backgroundColor: dynamicBgColor,
                 height: "calc(100vw * 480 / 1920)",
+                transition: "background-color 0.5s ease-in-out",
               }}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}

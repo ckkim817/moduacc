@@ -15,6 +15,7 @@ export async function getPosts() {
       "date": publishedAt,
       author,
       "image": mainImage.asset->url,
+      "palette": mainImage.asset->metadata.palette,
       "body": body
     }`
   )
