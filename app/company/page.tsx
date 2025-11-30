@@ -84,7 +84,7 @@ export default function CompanyPage() {
                 </h2>
                 <div>
                   <p className="text-[#535353] max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[22px] leading-[31px] mb-5 max-[440px]:mb-[10px]">
-                    삼일, 안진 등 국내 최고 회계법인(Big 4)출신의 공인회계사와 세무사들이 회계법인 모두의 핵심 멤버입니다. 대기업과 중견 기업의 복잡한 회계 및 세무 이슈를 다루며 쌓아온 체계적인 노하우와 최고 수준의 전문성을 바탕으로 고객에게 한 차원 높은 서비스를 제공합니다.
+                    삼일, 안진 등 국내 최고 회계법인(Big 4)출신의 공인회계사와 세무사들이 모두세무회계그룹의 핵심 멤버입니다. 대기업과 중견 기업의 복잡한 회계 및 세무 이슈를 다루며 쌓아온 체계적인 노하우와 최고 수준의 전문성을 바탕으로 고객에게 한 차원 높은 서비스를 제공합니다.
                   </p>
                   <Link href="/experts" className="text-[#355CBA] inline-flex items-center gap-0.5 font-bold max-[440px]:text-[16px] text-[20px]">
                     전문가 소개

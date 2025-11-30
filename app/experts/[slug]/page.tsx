@@ -32,7 +32,7 @@ export default function ExpertDetailPage() {
       <Navigation forceWhiteMode />
 
       {/* Hero Section with Expert Image and Info */}
-      <section className="relative bg-white max-[440px]:!pt-[56px]" style={{ paddingTop: "calc(110px)" }}>
+      <section className="relative bg-white max-[440px]:!pt-[48px]" style={{ paddingTop: "calc(110px)" }}>
         <div
           className="relative mx-auto max-[440px]:hidden"
           style={{
@@ -98,8 +98,9 @@ export default function ExpertDetailPage() {
                   {expert.name} {expert.title}
                 </h1>
 
-                <div
-                  className="absolute flex items-center text-white opacity-50"
+                <a
+                  href={`mailto:${expert.email}`}
+                  className="absolute flex items-center text-white opacity-50 hover:opacity-100 transition-opacity cursor-pointer"
                   style={{
                     left: "min(80px, calc(100vw * 80 / 1920))",
                     bottom: "min(70px, calc(100vw * 70 / 1920))",
@@ -122,7 +123,7 @@ export default function ExpertDetailPage() {
                   >
                     {expert.email}
                   </span>
-                </div>
+                </a>
               </div>
             </div>
 
@@ -213,7 +214,10 @@ export default function ExpertDetailPage() {
                 </div>
 
                 {/* Email icon */}
-                <div className="absolute top-3 right-3 z-40">
+                <a
+                  href={`mailto:${expert.email}`}
+                  className="absolute top-3 right-3 z-40 cursor-pointer"
+                >
                   <Image
                     src="/images/icon_email.svg"
                     alt="email"
@@ -222,7 +226,7 @@ export default function ExpertDetailPage() {
                     unoptimized
                     className="opacity-40"
                   />
-                </div>
+                </a>
 
                 {/* Text content - on top of gradient */}
                 <div className="absolute bottom-6 left-0 right-0 z-40 text-white text-center px-6">

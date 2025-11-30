@@ -37,7 +37,7 @@ export function InquiryButton() {
   return (
     <button
       id="channel-talk-button"
-      className={`fixed z-50 hover:scale-105 transition-transform max-[440px]:bottom-4 max-[440px]:right-4 min-[440px]:bottom-[40px] min-[440px]:right-[40px] ${isMessengerOpen ? 'invisible' : 'visible'}`}
+      className={`fixed z-50 cursor-pointer hover:scale-105 transition-transform max-[440px]:bottom-4 max-[440px]:right-4 min-[440px]:bottom-[40px] min-[440px]:right-[40px] ${isMessengerOpen ? 'invisible' : 'visible'}`}
       aria-label="문의하기"
     >
       <div className="relative">

@@ -32,7 +32,7 @@ export function Footer() {
                 <Link href="/privacy" className="hover:text-[#FFFFFF] transition-colors">개인정보처리방침</Link>
               </div>
               <div>
-                <p>@ Copyright 2025 Modoo Accounting Firm</p>
+                <p>@ Copyright 2025 Modu Accounting Firm</p>
               </div>
             </div>
       </div>
