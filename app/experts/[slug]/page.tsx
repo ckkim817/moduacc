@@ -100,7 +100,7 @@ export default function ExpertDetailPage() {
 
                 <a
                   href={`mailto:${expert.email}`}
-                  className="absolute flex items-center text-white opacity-50 hover:opacity-100 transition-opacity cursor-pointer"
+                  className="absolute flex items-center text-white opacity-50 cursor-pointer"
                   style={{
                     left: "min(80px, calc(100vw * 80 / 1920))",
                     bottom: "min(70px, calc(100vw * 70 / 1920))",
