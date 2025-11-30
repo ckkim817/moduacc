@@ -86,14 +86,16 @@ export default async function RootLayout({
         className="font-sans antialiased"
         style={{ fontFamily: "Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif" }}
       >
-        {isDraftMode ? (
-          <PreviewProvider token={process.env.SANITY_API_READ_TOKEN!}>
-            {children}
-            <VisualEditing />
-          </PreviewProvider>
-        ) : (
-          children
-        )}
+        <div className="bg-background min-h-[100dvh] w-full flex flex-col relative">
+          {isDraftMode ? (
+            <PreviewProvider token={process.env.SANITY_API_READ_TOKEN!}>
+              {children}
+              <VisualEditing />
+            </PreviewProvider>
+          ) : (
+            children
+          )}
+        </div>
       </body>
     </html>
   )
