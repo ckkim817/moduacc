@@ -27,6 +27,10 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
   useEffect(() => {
     if (forceWhiteMode) {
       setIsScrolled(true)
+      // forceWhiteMode인 경우 모바일에서 html 배경 흰색
+      if (typeof window !== 'undefined' && window.innerWidth <= 440) {
+        document.documentElement.style.backgroundColor = '#FFFFFF'
+      }
       return
     }
 
@@ -36,13 +40,23 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
       const heroHeight = window.innerHeight
       const navHeight = 110
       const scrollThreshold = heroHeight - navHeight / 2
+      const shouldBeScrolled = window.scrollY > scrollThreshold
 
-      setIsScrolled(window.scrollY > scrollThreshold)
+      setIsScrolled(shouldBeScrolled)
+
+      // 모바일에서 스크롤 위치에 따라 html 배경색 변경
+      if (window.innerWidth <= 440) {
+        document.documentElement.style.backgroundColor = shouldBeScrolled ? '#FFFFFF' : '#222222'
+      }
     }
 
     handleScroll()
     window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    window.addEventListener("resize", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("resize", handleScroll)
+    }
   }, [forceWhiteMode])
 
   useEffect(() => {
