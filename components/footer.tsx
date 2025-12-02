@@ -13,14 +13,18 @@ export function Footer() {
             <div className="mb-8 max-[440px]:mb-6">
               <div className="text-[16px] max-[440px]:text-[13px] space-y-2" style={{ color: "#BDBDBD" }}>
                 <p className="max-[440px]:hidden">
-                  모두세무회계그룹 | 회계·세무 | 대표자 : 이원준 | 사업자등록번호 : 162-21-01995
+                  모두세무회계그룹  |  회계·세무  |  대표자 : 이원준  |  사업자등록번호 : 162-21-01995
                 </p>
                 <div className="hidden max-[440px]:block space-y-2">
-                  <p>모두세무회계그룹 | 회계·세무</p>
-                  <p>대표자 : 이원준 | 사업자등록번호 : 162-21-01995</p>
+                  <p>모두세무회계그룹  |  회계·세무</p>
+                  <p>대표자 : 이원준  |  사업자등록번호 : 162-21-01995</p>
                 </div>
                 <p>경기도 용인시 기흥구 흥덕1로 79번길 2, 가은프라자 717호(영덕동)</p>
-                <p>Fax. 070-8282-2199 | contact@moduacc.com</p>
+                <p className="max-[440px]:hidden">Tel. 031-8067-6309  |  Fax. 070-8282-2199  |  contact@moduacc.com</p>
+                <div className="hidden max-[440px]:block space-y-2">
+                  <p>Tel. 031-8067-6309  |  Fax. 070-8282-2199</p>
+                  <p>contact@moduacc.com</p>
+                </div>
               </div>
             </div>
 
