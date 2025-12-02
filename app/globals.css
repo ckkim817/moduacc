@@ -123,9 +123,16 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  /* html과 body의 배경을 모두 푸터 색상(#222222)으로 강제 설정 */
+  html, body {
+    background-color: #222222;
+    margin: 0;
+    padding: 0;
+  }
+
   body {
     @apply text-foreground;
     word-break: keep-all;
-    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 50%, #222222 50%, #222222 100%) fixed !important;
   }
 }
