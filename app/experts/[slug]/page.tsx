@@ -113,7 +113,7 @@ export default function ExpertDetailPage() {
                       marginLeft: "min(6px, calc(100vw * 6 / 1920))",
                     }}
                   >
-                    email
+                    e-mail
                   </span>
                   <span
                     className="text-base"

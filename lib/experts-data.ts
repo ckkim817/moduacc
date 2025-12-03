@@ -18,7 +18,7 @@ export const expertsData: Expert[] = [
     name: "이원준",
     title: "회계사",
     tagline: "복잡한 회계 문제를 명확한 해답으로 풀어내는 전문가",
-    email: "modu123@naver.com",
+    email: "wjleecpa@moduacc.com",
     description:
       "이원준 회계사는 다년간의 세무 및 회계 경험을 바탕으로 스타트업부터 대기업까지 다양한 고객에게 신뢰할 수 있는 전문 서비스를 제공합니다.",
     image: "/images/expert-lee-won-jun.png",
@@ -36,7 +36,7 @@ export const expertsData: Expert[] = [
     name: "임형진",
     title: "세무사",
     tagline: "복잡한 회계 문제를 명확한 해답으로 풀어내는 전문가",
-    email: "modu123@naver.com",
+    email: "limtaxx@moduacc.com",
     description:
       "임형진 세무사는 중소기업 법인세무조사 대응과 회계 시스템 안정화에 특화된 전문가입니다. 다년간의 실무 경험을 통해 축적된 노하우로 예기치 못한 세무 리스크를 최소화하고, 기업의 재무 건전성을 확보하는 가장 확실한 솔루션을 제공합니다.",
     image: "/images/expert-im-hyeong-jin.png",
@@ -55,7 +55,7 @@ export const expertsData: Expert[] = [
     name: "김민준",
     title: "회계사",
     tagline: "복잡한 회계 문제를 명확한 해답으로 풀어내는 전문가",
-    email: "modu123@naver.com",
+    email: "mjkimcpa@moduacc.com",
     description:
       "김민준 회계사는 풍부한 실무 경험과 전문성을 기반으로 복잡한 세무, 회계 환경 속에서도 정확한 해결책을 제시하여 고객의 안정적인 성장을 지원하는 것을 최우선 가치로 삼고 있습니다.",
     image: "/images/expert-kim-min-jun.png",
@@ -72,7 +72,7 @@ export const expertsData: Expert[] = [
     name: "김지섭",
     title: "회계사",
     tagline: "복잡한 회계 문제를 명확한 해답으로 풀어내는 전문가",
-    email: "modu123@naver.com",
+    email: "jskimcpa@moduacc.com",
     description:
       "김지섭 회계사는 국내 최고 상장사들의 세무업무를 진행했던 경험을 바탕으로 대한민국 조세와 관련된 모든 업무에 대해 신뢰할 수 있는 전문 서비스를 제공합니다.",
     image: "/images/expert-kim-ji-seop.png",
@@ -89,7 +89,7 @@ export const expertsData: Expert[] = [
     name: "최인규",
     title: "회계사",
     tagline: "복잡한 회계 문제를 명확한 해답으로 풀어내는 전문가",
-    email: "modu123@naver.com",
+    email: "ikchoicpa@moduacc.com",
     description:
       "최인규 회계사는 감사본부와 재무재문 본부를 거치며 다양한 업종에 대한 많은 경험을 쌓았습니다. 상장 대기업에서부터 스타트업까지, 신뢰와 전문성을 바탕으로 고객에게 최적의 솔루션을 제공합니다.",
     image: "/images/expert-choi-in-gyu.png",
@@ -108,7 +108,7 @@ export const expertsData: Expert[] = [
     name: "정광화",
     title: "회계사",
     tagline: "복잡한 회계 문제를 명확한 해답으로 풀어내는 전문가",
-    email: "modu123@naver.com",
+    email: "ghjungcpa@moduacc.com",
     description:
       "정광화 회계사는 2018년 삼정회계법인 감사본부에 입사하여 전력 인프라 및 제조업의 회계감사 및 회계자문용역을 수행하였으며, 삼도 회계법인에서 회계감사, 재무실사 및 비상장 주식 가치 평가 등의 업무를 수행하였습니다. 다년간의 업무 경험을 바탕으로 개별 기업에 특화된 전문 서비스를 제공합니다.",
     image: "/images/expert-jeong-gwang-hwa.png",
