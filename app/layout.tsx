@@ -10,6 +10,11 @@ export const metadata: Metadata = {
   description: "성장의 모든 순간, 모두와 함께. 전문 세무사와 회계사가 제공하는 원스톱 회계·세무 솔루션",
   themeColor: "#000000",
   generator: "v0.app",
+  verification: {
+    other: {
+      'naver-site-verification': '552bd3cbe08a94693507715744a4050b14bf3b50'
+    }
+  },
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },

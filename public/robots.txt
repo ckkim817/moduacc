@@ -1,0 +1,23 @@
+# 모두세무회계그룹 robots.txt
+# 모든 검색엔진 로봇 수집 허용
+# Sanity Studio는 수집 비허용
+
+User-agent: *
+Allow: /
+
+# Sanity Studio 경로 수집 비허용
+Disallow: /studio/
+
+# Favicon 수집 명시적 허용
+Allow: /favicon.ico
+Allow: /favicon-16x16.png
+Allow: /favicon-32x32.png
+Allow: /favicon-96x96.png
+Allow: /apple-touch-icon.png
+
+# 네이버 검색 최적화를 위한 자바스크립트 및 CSS 수집 허용
+Allow: /_next/
+Allow: /images/
+
+# Sitemap 위치 (실제 배포 도메인으로 변경 필요)
+Sitemap: https://www.moduacc.com/sitemap.xml
