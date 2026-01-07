@@ -22,6 +22,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
   const isServicesActive = pathname?.startsWith("/services")
   const isExpertsActive = pathname?.startsWith("/experts")
   const isBlogActive = pathname?.startsWith("/blog")
+  const isContactActive = pathname?.startsWith("/contact")
   const isMainPage = !pathname || pathname === "/"
 
   useEffect(() => {
@@ -110,6 +111,15 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
 
   const handleBlogClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (pathname === "/blog") {
+      e.preventDefault()
+      if (typeof window !== 'undefined') {
+        window.scrollTo({ top: 0, behavior: "smooth" })
+      }
+    }
+  }
+
+  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname === "/contact") {
       e.preventDefault()
       if (typeof window !== 'undefined') {
         window.scrollTo({ top: 0, behavior: "smooth" })
@@ -243,6 +253,20 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
                 <span className="inline-flex flex-col items-center after:content-['BLOG'] after:font-bold after:h-0 after:overflow-hidden after:invisible">BLOG</span>
               </Link>
 
+              <Link
+                href="/contact"
+                onClick={handleContactClick}
+                className={`text-lg transition-all px-4 py-2 rounded-[10px] block ${
+                  isContactActive || isMainPage ? "font-bold" : "font-medium"
+                } ${
+                  forceWhiteMode || isScrolled
+                    ? "text-[#414141] hover:bg-gray-200/80"
+                    : "text-white hover:bg-gray-700/80"
+                }`}
+              >
+                <span className="inline-flex flex-col items-center after:content-['CONTACT'] after:font-bold after:h-0 after:overflow-hidden after:invisible">CONTACT</span>
+              </Link>
+
               <a
                 href="https://lp.appplay.co.kr/cnsl_appc_001.act?k=f85e86ec-25d0-449f-9426-2fcf0f3b1692"
                 target="_blank"
@@ -334,6 +358,11 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
             {/* BLOG */}
             <Link href="/blog" onClick={handleBlogClick} className="block text-base font-bold text-[#111111] py-2 mb-4">
               BLOG
+            </Link>
+
+            {/* CONTACT */}
+            <Link href="/contact" onClick={handleContactClick} className="block text-base font-bold text-[#111111] py-2 mb-4">
+              CONTACT
             </Link>
 
             {/* Tax Refund Application */}

@@ -9,13 +9,15 @@ interface CommonButtonProps {
   href?: string
   onClick?: () => void
   className?: string
+  bgColor?: string
+  textColor?: string
 }
 
-export function CommonButton({ children, href, onClick, className = "" }: CommonButtonProps) {
+export function CommonButton({ children, href, onClick, className = "", bgColor, textColor }: CommonButtonProps) {
   const buttonClasses = `relative inline-flex items-center justify-center font-bold rounded-full text-[15px] leading-[22px] px-5 py-3 lg:text-[24px] lg:leading-[34px] lg:px-[44px] lg:py-[22.5px] transition-colors cursor-pointer overflow-hidden before:absolute before:inset-0 before:bg-black/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-200 ${className}`
   const buttonStyles = {
-    backgroundColor: "#F5F5F5",
-    color: "#535353",
+    backgroundColor: bgColor || "#F5F5F5",
+    color: textColor || "#535353",
   }
 
   if (href) {
