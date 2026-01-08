@@ -173,7 +173,7 @@ export default function ContactPage() {
                   </label>
                   <div className="flex items-center min-[441px]:gap-[22px] max-[440px]:gap-[6px] max-[440px]:w-full max-[440px]:min-w-0">
                     <Select value={formData.phone1} onValueChange={(value) => setFormData(prev => ({ ...prev, phone1: value }))}>
-                      <SelectTrigger className="group min-[441px]:w-[280px] min-[441px]:h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden">
+                      <SelectTrigger className="group min-[441px]:w-[280px] min-[441px]:!h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:!h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden">
                         <SelectValue />
                         <Image src="/images/icon_arrow_small_down.svg" alt="" width={24} height={24} className="max-[440px]:w-4 max-[440px]:h-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                       </SelectTrigger>
@@ -228,7 +228,7 @@ export default function ContactPage() {
                       className="w-[270px] h-[60px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[20px] font-normal focus:outline-none placeholder:text-[#B7B7B7]"
                     />
                     <Select value={formData.emailDomainSelect} onValueChange={(value) => handleEmailDomainChange(value)}>
-                      <SelectTrigger className="group w-[280px] h-[60px] ml-[20px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[20px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden">
+                      <SelectTrigger className="group w-[280px] !h-[60px] ml-[20px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[20px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden">
                         <SelectValue placeholder="직접 입력" />
                         <Image src="/images/icon_arrow_small_down.svg" alt="" width={24} height={24} className="transition-transform duration-300 group-data-[state=open]:rotate-180" />
                       </SelectTrigger>
@@ -261,7 +261,7 @@ export default function ContactPage() {
                       />
                     ) : (
                       <Select value={formData.emailDomainSelect} onValueChange={(value) => handleEmailDomainChange(value, true)}>
-                        <SelectTrigger className="group flex-1 min-w-0 h-[48px] px-3 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden">
+                        <SelectTrigger className="group flex-1 min-w-0 !h-[48px] px-3 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden">
                           <SelectValue placeholder="직접 입력" />
                           <Image src="/images/icon_arrow_small_down.svg" alt="" width={16} height={16} className="transition-transform duration-300 group-data-[state=open]:rotate-180" />
                         </SelectTrigger>
@@ -283,7 +283,7 @@ export default function ContactPage() {
                     문의 서비스 <span className="text-[#355CBA]">*</span>
                   </label>
                   <Select value={formData.service} onValueChange={(value) => setFormData(prev => ({ ...prev, service: value }))}>
-                    <SelectTrigger className={`group min-[441px]:w-[885px] min-[441px]:h-[60px] max-[440px]:w-full max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden ${!formData.service ? 'text-[#B7B7B7]' : 'text-[#111111]'}`}>
+                    <SelectTrigger className={`group min-[441px]:w-[885px] min-[441px]:!h-[60px] max-[440px]:w-full max-[440px]:!h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden ${!formData.service ? 'text-[#B7B7B7]' : 'text-[#111111]'}`}>
                       <SelectValue placeholder="카테고리를 선택해 주세요" />
                       <Image src="/images/icon_arrow_small_down.svg" alt="" width={24} height={24} className="max-[440px]:w-4 max-[440px]:h-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                     </SelectTrigger>
