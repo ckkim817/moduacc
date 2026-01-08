@@ -5,6 +5,13 @@ import Image from "next/image"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { CommonButton } from "@/components/common-button"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 export default function ContactPage() {
   useEffect(() => {
@@ -49,14 +56,14 @@ export default function ContactPage() {
   ]
 
   const handleEmailDomainChange = (value: string, isMobile = false) => {
-    if (value === "") {
+    if (value === "" || value === "direct-input") {
       // "직접 입력" selected
       if (isMobile) {
         setIsMobileDirectInput(true)
       }
       setFormData(prev => ({
         ...prev,
-        emailDomainSelect: value,
+        emailDomainSelect: "",
         emailDomain: "",
       }))
     } else {
@@ -155,7 +162,7 @@ export default function ContactPage() {
                     value={formData.name}
                     onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
                     placeholder="성함을 입력해 주세요"
-                    className="min-[441px]:w-[885px] min-[441px]:h-[60px] max-[440px]:w-full max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-4 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal focus:outline-none focus:border-[#355CBA] placeholder:text-[#B7B7B7]"
+                    className="min-[441px]:w-[885px] min-[441px]:h-[60px] max-[440px]:w-full max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-4 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal focus:outline-none placeholder:text-[#B7B7B7]"
                   />
                 </div>
 
@@ -165,25 +172,27 @@ export default function ContactPage() {
                     연락처 <span className="text-[#355CBA]">*</span>
                   </label>
                   <div className="flex items-center min-[441px]:gap-[22px] max-[440px]:gap-[6px] max-[440px]:w-full max-[440px]:min-w-0">
-                    <select
-                      value={formData.phone1}
-                      onChange={(e) => setFormData(prev => ({ ...prev, phone1: e.target.value }))}
-                      className="min-[441px]:w-[280px] min-[441px]:h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-10 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal text-left focus:outline-none focus:border-[#355CBA] bg-white appearance-none bg-[url('/images/icon_arrow_small_down.svg')] bg-no-repeat bg-[length:24px_24px] max-[440px]:bg-[length:16px_16px] bg-[right_16px_center] max-[440px]:bg-[right_12px_center]"
-                    >
-                      <option value="010">010</option>
-                      <option value="011">011</option>
-                      <option value="016">016</option>
-                      <option value="017">017</option>
-                      <option value="018">018</option>
-                      <option value="019">019</option>
-                    </select>
+                    <Select value={formData.phone1} onValueChange={(value) => setFormData(prev => ({ ...prev, phone1: value }))}>
+                      <SelectTrigger className="group min-[441px]:w-[280px] min-[441px]:h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden">
+                        <SelectValue />
+                        <Image src="/images/icon_arrow_small_down.svg" alt="" width={24} height={24} className="max-[440px]:w-4 max-[440px]:h-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                      </SelectTrigger>
+                      <SelectContent align="end" className="min-[441px]:min-w-[280px] max-[440px]:min-w-[100px] border-[#DFDFDF] rounded-[16px] max-[440px]:rounded-[8px]">
+                        <SelectItem value="010" className="min-[441px]:text-[20px] max-[440px]:text-[14px]">010</SelectItem>
+                        <SelectItem value="011" className="min-[441px]:text-[20px] max-[440px]:text-[14px]">011</SelectItem>
+                        <SelectItem value="016" className="min-[441px]:text-[20px] max-[440px]:text-[14px]">016</SelectItem>
+                        <SelectItem value="017" className="min-[441px]:text-[20px] max-[440px]:text-[14px]">017</SelectItem>
+                        <SelectItem value="018" className="min-[441px]:text-[20px] max-[440px]:text-[14px]">018</SelectItem>
+                        <SelectItem value="019" className="min-[441px]:text-[20px] max-[440px]:text-[14px]">019</SelectItem>
+                      </SelectContent>
+                    </Select>
                     <span className="text-[#777777] text-[14px] min-[441px]:hidden shrink-0">-</span>
                     <input
                       type="text"
                       value={formData.phone2}
                       onChange={(e) => setFormData(prev => ({ ...prev, phone2: e.target.value.replace(/[^0-9]/g, '').slice(0, 4) }))}
                       placeholder="1234"
-                      className="min-[441px]:w-[280px] min-[441px]:h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal text-left focus:outline-none focus:border-[#355CBA] placeholder:text-[#B7B7B7]"
+                      className="min-[441px]:w-[280px] min-[441px]:h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal text-left focus:outline-none placeholder:text-[#B7B7B7]"
                     />
                     <span className="text-[#777777] text-[14px] min-[441px]:hidden shrink-0">-</span>
                     <input
@@ -191,7 +200,7 @@ export default function ContactPage() {
                       value={formData.phone3}
                       onChange={(e) => setFormData(prev => ({ ...prev, phone3: e.target.value.replace(/[^0-9]/g, '').slice(0, 4) }))}
                       placeholder="1234"
-                      className="min-[441px]:w-[280px] min-[441px]:h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal text-left focus:outline-none focus:border-[#355CBA] placeholder:text-[#B7B7B7]"
+                      className="min-[441px]:w-[280px] min-[441px]:h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal text-left focus:outline-none placeholder:text-[#B7B7B7]"
                     />
                   </div>
                 </div>
@@ -208,7 +217,7 @@ export default function ContactPage() {
                       value={formData.emailId}
                       onChange={(e) => setFormData(prev => ({ ...prev, emailId: e.target.value }))}
                       placeholder="abcd1234"
-                      className="w-[270px] h-[60px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[20px] font-normal focus:outline-none focus:border-[#355CBA] placeholder:text-[#B7B7B7]"
+                      className="w-[270px] h-[60px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[20px] font-normal focus:outline-none placeholder:text-[#B7B7B7]"
                     />
                     <span className="text-[24px] font-normal text-[#777777] mx-[12px]">@</span>
                     <input
@@ -216,19 +225,21 @@ export default function ContactPage() {
                       value={formData.emailDomain}
                       onChange={(e) => setFormData(prev => ({ ...prev, emailDomain: e.target.value, emailDomainSelect: "" }))}
                       placeholder="naver.com"
-                      className="w-[270px] h-[60px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[20px] font-normal focus:outline-none focus:border-[#355CBA] placeholder:text-[#B7B7B7]"
+                      className="w-[270px] h-[60px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[20px] font-normal focus:outline-none placeholder:text-[#B7B7B7]"
                     />
-                    <select
-                      value={formData.emailDomainSelect}
-                      onChange={(e) => handleEmailDomainChange(e.target.value)}
-                      className="w-[280px] h-[60px] ml-[20px] pl-[24px] pr-10 border border-[#DFDFDF] rounded-[16px] text-[20px] font-normal focus:outline-none focus:border-[#355CBA] bg-white appearance-none bg-[url('/images/icon_arrow_small_down.svg')] bg-no-repeat bg-[length:24px_24px] bg-[right_16px_center]"
-                    >
-                      {emailDomains.map((domain) => (
-                        <option key={domain.value} value={domain.value}>
-                          {domain.label}
-                        </option>
-                      ))}
-                    </select>
+                    <Select value={formData.emailDomainSelect} onValueChange={(value) => handleEmailDomainChange(value)}>
+                      <SelectTrigger className="group w-[280px] h-[60px] ml-[20px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[20px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden">
+                        <SelectValue placeholder="직접 입력" />
+                        <Image src="/images/icon_arrow_small_down.svg" alt="" width={24} height={24} className="transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                      </SelectTrigger>
+                      <SelectContent align="end" className="min-w-[280px] border-[#DFDFDF] rounded-[16px]">
+                        {emailDomains.map((domain) => (
+                          <SelectItem key={domain.value || "direct"} value={domain.value || "direct-input"} className="text-[20px]">
+                            {domain.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   </div>
                   {/* Mobile: emailId @ select/input (1줄) */}
                   <div className="min-[441px]:hidden flex items-center gap-[6px] w-full min-w-0">
@@ -237,7 +248,7 @@ export default function ContactPage() {
                       value={formData.emailId}
                       onChange={(e) => setFormData(prev => ({ ...prev, emailId: e.target.value }))}
                       placeholder="abcd1234"
-                      className="flex-1 min-w-0 h-[48px] px-3 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal focus:outline-none focus:border-[#355CBA] placeholder:text-[#B7B7B7]"
+                      className="flex-1 min-w-0 h-[48px] px-3 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal focus:outline-none placeholder:text-[#B7B7B7]"
                     />
                     <span className="text-[14px] font-normal text-[#777777] shrink-0">@</span>
                     {isMobileDirectInput ? (
@@ -246,20 +257,22 @@ export default function ContactPage() {
                         value={formData.emailDomain}
                         onChange={(e) => setFormData(prev => ({ ...prev, emailDomain: e.target.value }))}
                         placeholder="직접 입력"
-                        className="flex-1 min-w-0 h-[48px] px-3 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal focus:outline-none focus:border-[#355CBA] placeholder:text-[#B7B7B7]"
+                        className="flex-1 min-w-0 h-[48px] px-3 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal focus:outline-none placeholder:text-[#B7B7B7]"
                       />
                     ) : (
-                      <select
-                        value={formData.emailDomainSelect}
-                        onChange={(e) => handleEmailDomainChange(e.target.value, true)}
-                        className="flex-1 min-w-0 h-[48px] px-3 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal focus:outline-none focus:border-[#355CBA] bg-white appearance-none bg-[url('/images/icon_arrow_small_down.svg')] bg-no-repeat bg-[length:16px_16px] bg-[right_12px_center]"
-                      >
-                        {emailDomains.map((domain) => (
-                          <option key={domain.value} value={domain.value}>
-                            {domain.label}
-                          </option>
-                        ))}
-                      </select>
+                      <Select value={formData.emailDomainSelect} onValueChange={(value) => handleEmailDomainChange(value, true)}>
+                        <SelectTrigger className="group flex-1 min-w-0 h-[48px] px-3 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden">
+                          <SelectValue placeholder="직접 입력" />
+                          <Image src="/images/icon_arrow_small_down.svg" alt="" width={16} height={16} className="transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                        </SelectTrigger>
+                        <SelectContent align="end" className="border-[#DFDFDF] rounded-[8px]">
+                          {emailDomains.map((domain) => (
+                            <SelectItem key={domain.value || "direct"} value={domain.value || "direct-input"} className="text-[14px]">
+                              {domain.label}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
                     )}
                   </div>
                 </div>
@@ -269,18 +282,19 @@ export default function ContactPage() {
                   <label className="text-[24px] font-bold text-[#111111] min-[441px]:mb-0 max-[440px]:mb-[8px] max-[440px]:text-[16px]">
                     문의 서비스 <span className="text-[#355CBA]">*</span>
                   </label>
-                  <select
-                    value={formData.service}
-                    onChange={(e) => setFormData(prev => ({ ...prev, service: e.target.value }))}
-                    className={`min-[441px]:w-[885px] min-[441px]:h-[60px] max-[440px]:w-full max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-10 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal focus:outline-none focus:border-[#355CBA] bg-white appearance-none bg-[url('/images/icon_arrow_small_down.svg')] bg-no-repeat bg-[length:24px_24px] max-[440px]:bg-[length:16px_16px] bg-[right_16px_center] max-[440px]:bg-[right_12px_center] ${!formData.service ? 'text-[#B7B7B7]' : 'text-[#111111]'}`}
-                  >
-                    <option value="" disabled className="text-[#B7B7B7]">카테고리를 선택해 주세요</option>
-                    {services.map((service) => (
-                      <option key={service} value={service}>
-                        {service}
-                      </option>
-                    ))}
-                  </select>
+                  <Select value={formData.service} onValueChange={(value) => setFormData(prev => ({ ...prev, service: value }))}>
+                    <SelectTrigger className={`group min-[441px]:w-[885px] min-[441px]:h-[60px] max-[440px]:w-full max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden ${!formData.service ? 'text-[#B7B7B7]' : 'text-[#111111]'}`}>
+                      <SelectValue placeholder="카테고리를 선택해 주세요" />
+                      <Image src="/images/icon_arrow_small_down.svg" alt="" width={24} height={24} className="max-[440px]:w-4 max-[440px]:h-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                    </SelectTrigger>
+                    <SelectContent align="end" className="min-[441px]:min-w-[885px] max-[440px]:min-w-[calc(100vw-40px)] border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px]">
+                      {services.map((service) => (
+                        <SelectItem key={service} value={service} className="min-[441px]:text-[20px] max-[440px]:text-[14px]">
+                          {service}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 {/* 문의 내용 */}
@@ -292,7 +306,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
                     placeholder="문의 내용을 입력해 주세요"
-                    className="min-[441px]:w-[885px] min-[441px]:h-[200px] max-[440px]:w-full max-[440px]:h-[150px] min-[441px]:pl-[24px] min-[441px]:pr-4 min-[441px]:py-4 max-[440px]:p-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal focus:outline-none focus:border-[#355CBA] resize-none placeholder:text-[#B7B7B7]"
+                    className="min-[441px]:w-[885px] min-[441px]:h-[200px] max-[440px]:w-full max-[440px]:h-[150px] min-[441px]:pl-[24px] min-[441px]:pr-4 min-[441px]:py-4 max-[440px]:p-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal focus:outline-none resize-none placeholder:text-[#B7B7B7]"
                   />
                 </div>
 
