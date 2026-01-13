@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { CommonButton } from "@/components/common-button"
@@ -26,13 +27,13 @@ export default function ContactPage() {
     phone2: "",
     phone3: "",
     emailId: "",
-    emailDomain: "naver.com",
-    emailDomainSelect: "naver.com",
+    emailDomain: "",
+    emailDomainSelect: "",
     service: "",
     message: "",
     agreePrivacy: false,
   })
-  const [isMobileDirectInput, setIsMobileDirectInput] = useState(false)
+  const [isMobileDirectInput, setIsMobileDirectInput] = useState(true)
 
   const services = [
     "기장",
@@ -162,7 +163,7 @@ export default function ContactPage() {
                     value={formData.name}
                     onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
                     placeholder="성함을 입력해 주세요"
-                    className="min-[441px]:w-[885px] min-[441px]:h-[60px] max-[440px]:w-full max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-4 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal focus:outline-none placeholder:text-[#B7B7B7]"
+                    className="min-[441px]:w-[885px] min-[441px]:h-[60px] max-[440px]:w-full max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-4 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
                   />
                 </div>
 
@@ -192,7 +193,7 @@ export default function ContactPage() {
                       value={formData.phone2}
                       onChange={(e) => setFormData(prev => ({ ...prev, phone2: e.target.value.replace(/[^0-9]/g, '').slice(0, 4) }))}
                       placeholder="1234"
-                      className="min-[441px]:w-[280px] min-[441px]:h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal text-left focus:outline-none placeholder:text-[#B7B7B7]"
+                      className="min-[441px]:w-[280px] min-[441px]:h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal text-left focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
                     />
                     <span className="text-[#777777] text-[14px] min-[441px]:hidden shrink-0">-</span>
                     <input
@@ -200,7 +201,7 @@ export default function ContactPage() {
                       value={formData.phone3}
                       onChange={(e) => setFormData(prev => ({ ...prev, phone3: e.target.value.replace(/[^0-9]/g, '').slice(0, 4) }))}
                       placeholder="1234"
-                      className="min-[441px]:w-[280px] min-[441px]:h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal text-left focus:outline-none placeholder:text-[#B7B7B7]"
+                      className="min-[441px]:w-[280px] min-[441px]:h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal text-left focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
                     />
                   </div>
                 </div>
@@ -217,7 +218,7 @@ export default function ContactPage() {
                       value={formData.emailId}
                       onChange={(e) => setFormData(prev => ({ ...prev, emailId: e.target.value }))}
                       placeholder="abcd1234"
-                      className="w-[270px] h-[60px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[20px] font-normal focus:outline-none placeholder:text-[#B7B7B7]"
+                      className="w-[270px] h-[60px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[20px] font-normal focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
                     />
                     <span className="text-[24px] font-normal text-[#777777] mx-[12px]">@</span>
                     <input
@@ -225,10 +226,10 @@ export default function ContactPage() {
                       value={formData.emailDomain}
                       onChange={(e) => setFormData(prev => ({ ...prev, emailDomain: e.target.value, emailDomainSelect: "" }))}
                       placeholder="naver.com"
-                      className="w-[270px] h-[60px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[20px] font-normal focus:outline-none placeholder:text-[#B7B7B7]"
+                      className="w-[270px] h-[60px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[20px] font-normal focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
                     />
                     <Select value={formData.emailDomainSelect} onValueChange={(value) => handleEmailDomainChange(value)}>
-                      <SelectTrigger className="group w-[280px] !h-[60px] ml-[20px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[20px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden">
+                      <SelectTrigger className="group w-[280px] !h-[60px] ml-[20px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[20px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden text-[#111111]">
                         <SelectValue placeholder="직접 입력" />
                         <Image src="/images/icon_arrow_small_down.svg" alt="" width={24} height={24} className="transition-transform duration-300 group-data-[state=open]:rotate-180" />
                       </SelectTrigger>
@@ -248,7 +249,7 @@ export default function ContactPage() {
                       value={formData.emailId}
                       onChange={(e) => setFormData(prev => ({ ...prev, emailId: e.target.value }))}
                       placeholder="abcd1234"
-                      className="flex-1 min-w-0 h-[48px] px-3 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal focus:outline-none placeholder:text-[#B7B7B7]"
+                      className="flex-1 min-w-0 h-[48px] px-3 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
                     />
                     <span className="text-[14px] font-normal text-[#777777] shrink-0">@</span>
                     {isMobileDirectInput ? (
@@ -257,11 +258,11 @@ export default function ContactPage() {
                         value={formData.emailDomain}
                         onChange={(e) => setFormData(prev => ({ ...prev, emailDomain: e.target.value }))}
                         placeholder="직접 입력"
-                        className="flex-1 min-w-0 h-[48px] px-3 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal focus:outline-none placeholder:text-[#B7B7B7]"
+                        className="flex-1 min-w-0 h-[48px] px-3 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
                       />
                     ) : (
                       <Select value={formData.emailDomainSelect} onValueChange={(value) => handleEmailDomainChange(value, true)}>
-                        <SelectTrigger className="group flex-1 min-w-0 !h-[48px] px-3 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden">
+                        <SelectTrigger className="group flex-1 min-w-0 !h-[48px] px-3 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden text-[#111111]">
                           <SelectValue placeholder="직접 입력" />
                           <Image src="/images/icon_arrow_small_down.svg" alt="" width={16} height={16} className="transition-transform duration-300 group-data-[state=open]:rotate-180" />
                         </SelectTrigger>
@@ -283,7 +284,7 @@ export default function ContactPage() {
                     문의 서비스 <span className="text-[#355CBA]">*</span>
                   </label>
                   <Select value={formData.service} onValueChange={(value) => setFormData(prev => ({ ...prev, service: value }))}>
-                    <SelectTrigger className={`group min-[441px]:w-[885px] min-[441px]:!h-[60px] max-[440px]:w-full max-[440px]:!h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden ${!formData.service ? 'text-[#B7B7B7]' : 'text-[#111111]'}`}>
+                    <SelectTrigger className={`group min-[441px]:w-[885px] min-[441px]:!h-[60px] max-[440px]:w-full max-[440px]:!h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden data-[placeholder]:text-[#B7B7B7] ${!formData.service ? 'text-[#B7B7B7]' : 'text-[#111111]'}`}>
                       <SelectValue placeholder="카테고리를 선택해 주세요" />
                       <Image src="/images/icon_arrow_small_down.svg" alt="" width={24} height={24} className="max-[440px]:w-4 max-[440px]:h-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                     </SelectTrigger>
@@ -306,15 +307,15 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
                     placeholder="문의 내용을 입력해 주세요"
-                    className="min-[441px]:w-[885px] min-[441px]:h-[200px] max-[440px]:w-full max-[440px]:h-[150px] min-[441px]:pl-[24px] min-[441px]:pr-4 min-[441px]:py-4 max-[440px]:p-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal focus:outline-none resize-none placeholder:text-[#B7B7B7]"
+                    className="min-[441px]:w-[885px] min-[441px]:h-[200px] max-[440px]:w-full max-[440px]:h-[150px] min-[441px]:px-[25px] min-[441px]:py-[20px] max-[440px]:px-[16px] max-[440px]:py-[20px] scroll-pb-[20px] border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal focus:outline-none resize-none placeholder:text-[#B7B7B7] caret-[#355CBA] [&::-webkit-scrollbar]:w-[12px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-track]:my-[8px] [&::-webkit-scrollbar-thumb]:bg-[#DFDFDF] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:border-[3px] [&::-webkit-scrollbar-thumb]:border-solid [&::-webkit-scrollbar-thumb]:border-transparent [&::-webkit-scrollbar-thumb]:bg-clip-padding"
                   />
                 </div>
 
                 {/* 개인정보 동의 */}
                 <div className="flex justify-center min-[441px]:!mt-[100px] max-[440px]:!mt-[40px]">
                   <p className="min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal text-[#777777] max-[440px]:text-center">
-                    <span className="min-[441px]:inline max-[440px]:hidden">상담 신청 시 <span className="underline cursor-pointer">개인정보 수집 및 이용</span>에 동의하는 것으로 간주됩니다.</span>
-                    <span className="min-[441px]:hidden max-[440px]:inline">상담 신청 시 <span className="underline cursor-pointer">개인정보 수집 및 이용</span>에<br />동의하는 것으로 간주됩니다.</span>
+                    <span className="min-[441px]:inline max-[440px]:hidden">상담 신청 시 <Link href="/privacy" className="underline cursor-pointer hover:text-[#111111] transition-colors">개인정보 수집 및 이용</Link>에 동의하는 것으로 간주됩니다.</span>
+                    <span className="min-[441px]:hidden max-[440px]:inline">상담 신청 시 <Link href="/privacy" className="underline cursor-pointer hover:text-[#111111] transition-colors">개인정보 수집 및 이용</Link>에<br />동의하는 것으로 간주됩니다.</span>
                   </p>
                 </div>
 
@@ -327,7 +328,7 @@ export default function ContactPage() {
                     }}
                     bgColor={isFormComplete ? '#223B77' : undefined}
                     textColor={isFormComplete ? '#FFFFFF' : '#B7B7B7'}
-                    className="max-[440px]:w-full"
+                    className="max-[440px]:text-[16px] max-[440px]:leading-[22px] max-[440px]:px-[30px] max-[440px]:py-[16px]"
                   >
                     상담 신청하기
                   </CommonButton>
