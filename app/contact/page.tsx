@@ -33,8 +33,7 @@ export default function ContactPage() {
     message: "",
     agreePrivacy: false,
   })
-  const [isMobileDirectInput, setIsMobileDirectInput] = useState(true)
-
+  
   const services = [
     "기장",
     "회계감사",
@@ -56,21 +55,15 @@ export default function ContactPage() {
     { value: "kakao.com", label: "kakao.com" },
   ]
 
-  const handleEmailDomainChange = (value: string, isMobile = false) => {
+  const handleEmailDomainChange = (value: string) => {
     if (value === "" || value === "direct-input") {
       // "직접 입력" selected
-      if (isMobile) {
-        setIsMobileDirectInput(true)
-      }
       setFormData(prev => ({
         ...prev,
         emailDomainSelect: "",
         emailDomain: "",
       }))
     } else {
-      if (isMobile) {
-        setIsMobileDirectInput(false)
-      }
       setFormData(prev => ({
         ...prev,
         emailDomainSelect: value,
@@ -229,7 +222,7 @@ export default function ContactPage() {
                       className="w-[270px] h-[60px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[20px] font-normal focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
                     />
                     <Select value={formData.emailDomainSelect} onValueChange={(value) => handleEmailDomainChange(value)}>
-                      <SelectTrigger className="group w-[280px] !h-[60px] ml-[20px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[20px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden text-[#111111]">
+                      <SelectTrigger className="group w-[280px] !h-[60px] ml-[20px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[20px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden text-[#111111] data-[placeholder]:text-[#111111]">
                         <SelectValue placeholder="직접 입력" />
                         <Image src="/images/icon_arrow_small_down.svg" alt="" width={24} height={24} className="transition-transform duration-300 group-data-[state=open]:rotate-180" />
                       </SelectTrigger>
@@ -243,27 +236,25 @@ export default function ContactPage() {
                     </Select>
                   </div>
                   {/* Mobile: emailId @ select/input (1줄) */}
-                  <div className="min-[441px]:hidden flex items-center gap-[6px] w-full min-w-0">
+                  <div className="min-[441px]:hidden grid grid-cols-[1fr_auto_1fr] items-center gap-[6px] w-full">
                     <input
                       type="text"
                       value={formData.emailId}
                       onChange={(e) => setFormData(prev => ({ ...prev, emailId: e.target.value }))}
                       placeholder="abcd1234"
-                      className="flex-1 min-w-0 h-[48px] px-3 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
+                      className="w-full min-w-0 h-[48px] px-3 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
                     />
-                    <span className="text-[14px] font-normal text-[#777777] shrink-0">@</span>
-                    {isMobileDirectInput ? (
+                    <span className="text-[14px] font-normal text-[#777777]">@</span>
+                    <div className="relative w-full min-w-0">
                       <input
                         type="text"
                         value={formData.emailDomain}
-                        onChange={(e) => setFormData(prev => ({ ...prev, emailDomain: e.target.value }))}
+                        onChange={(e) => setFormData(prev => ({ ...prev, emailDomain: e.target.value, emailDomainSelect: "" }))}
                         placeholder="직접 입력"
-                        className="flex-1 min-w-0 h-[48px] px-3 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
+                        className="w-full h-[48px] pl-3 pr-9 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA] text-[#111111]"
                       />
-                    ) : (
-                      <Select value={formData.emailDomainSelect} onValueChange={(value) => handleEmailDomainChange(value, true)}>
-                        <SelectTrigger className="group flex-1 min-w-0 !h-[48px] px-3 border border-[#DFDFDF] rounded-[8px] text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden text-[#111111]">
-                          <SelectValue placeholder="직접 입력" />
+                      <Select value={formData.emailDomainSelect || ""} onValueChange={(value) => handleEmailDomainChange(value)}>
+                        <SelectTrigger className="group absolute right-2 top-1/2 -translate-y-1/2 w-auto h-auto p-0 border-0 bg-transparent shadow-none focus:ring-0 [&>svg]:hidden">
                           <Image src="/images/icon_arrow_small_down.svg" alt="" width={16} height={16} className="transition-transform duration-300 group-data-[state=open]:rotate-180" />
                         </SelectTrigger>
                         <SelectContent align="end" className="border-[#DFDFDF] rounded-[8px]">
@@ -274,7 +265,7 @@ export default function ContactPage() {
                           ))}
                         </SelectContent>
                       </Select>
-                    )}
+                    </div>
                   </div>
                 </div>
 
