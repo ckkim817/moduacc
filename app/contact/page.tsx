@@ -155,7 +155,7 @@ export default function ContactPage() {
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                    placeholder="성함을 입력해 주세요"
+                    placeholder="성함을 입력해 주세요."
                     className="min-[441px]:w-[885px] min-[441px]:h-[60px] max-[440px]:w-full max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-4 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
                   />
                 </div>
@@ -276,7 +276,7 @@ export default function ContactPage() {
                   </label>
                   <Select value={formData.service} onValueChange={(value) => setFormData(prev => ({ ...prev, service: value }))}>
                     <SelectTrigger className={`group min-[441px]:w-[885px] min-[441px]:!h-[60px] max-[440px]:w-full max-[440px]:!h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden data-[placeholder]:text-[#B7B7B7] ${!formData.service ? 'text-[#B7B7B7]' : 'text-[#111111]'}`}>
-                      <SelectValue placeholder="카테고리를 선택해 주세요" />
+                      <SelectValue placeholder="카테고리를 선택해 주세요." />
                       <Image src="/images/icon_arrow_small_down.svg" alt="" width={24} height={24} className="max-[440px]:w-4 max-[440px]:h-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                     </SelectTrigger>
                     <SelectContent align="end" className="min-[441px]:min-w-[885px] max-[440px]:min-w-[calc(100vw-40px)] border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px]">
@@ -297,7 +297,7 @@ export default function ContactPage() {
                   <textarea
                     value={formData.message}
                     onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-                    placeholder="문의 내용을 입력해 주세요"
+                    placeholder="문의 내용을 입력해 주세요."
                     className="min-[441px]:w-[885px] min-[441px]:h-[200px] max-[440px]:w-full max-[440px]:h-[150px] min-[441px]:px-[25px] min-[441px]:py-[20px] max-[440px]:px-[16px] max-[440px]:py-[20px] scroll-pb-[20px] border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[20px] max-[440px]:text-[14px] font-normal focus:outline-none resize-none placeholder:text-[#B7B7B7] caret-[#355CBA] [&::-webkit-scrollbar]:w-[12px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-track]:my-[8px] [&::-webkit-scrollbar-thumb]:bg-[#DFDFDF] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:border-[3px] [&::-webkit-scrollbar-thumb]:border-solid [&::-webkit-scrollbar-thumb]:border-transparent [&::-webkit-scrollbar-thumb]:bg-clip-padding"
                   />
                 </div>

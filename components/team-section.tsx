@@ -24,6 +24,12 @@ const leftColumnMembers = [
     slug: "choi-in-gyu",
     image: "/images/expert-choi-in-gyu-bg.png",
   },
+  {
+    name: "차재영",
+    role: "회계사",
+    slug: "cha-jae-young",
+    image: "/images/expert-cha-jae-young-bg.png",
+  },
 ]
 
 const rightColumnMembers = [
