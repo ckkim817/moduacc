@@ -56,7 +56,7 @@ export default function ExpertsPage() {
               <button
                 key={expert.slug}
                 onClick={() => router.push(`/experts/${expert.slug}`)}
-                className="relative aspect-[387/512] rounded-[30px] max-[440px]:rounded-[20px] overflow-hidden cursor-pointer group"
+                className="relative aspect-[387/512] rounded-[30px] max-[440px]:rounded-[20px] overflow-hidden cursor-pointer group isolate"
               >
                 <Image
                   src={expert.imageWithBackground || expert.image || "/placeholder.svg"}
