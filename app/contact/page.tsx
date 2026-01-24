@@ -33,6 +33,7 @@ export default function ContactPage() {
     message: "",
     agreePrivacy: false,
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
   
   const services = [
     "기장",
@@ -74,7 +75,7 @@ export default function ContactPage() {
 
   const isFormComplete = formData.name && formData.phone2 && formData.phone3 && formData.emailId && formData.emailDomain && formData.service && formData.message
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     if (!formData.name || !formData.phone2 || !formData.phone3 || !formData.emailId || !formData.emailDomain || !formData.service || !formData.message) {
@@ -90,8 +91,41 @@ export default function ContactPage() {
       message: formData.message,
     }
 
-    console.log("상담 신청 데이터:", submitData)
-    alert("상담 신청이 완료되었습니다.")
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbwrNmgdyoxseXaYhbhHdeFlQTuzpCPA5r2c6_k7O7Uwl65ezYX9JXyfmPLMaIbYnvgE/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(submitData),
+        }
+      )
+
+      // no-cors 모드에서는 response를 읽을 수 없으므로 성공으로 간주
+      alert("상담 신청이 완료되었습니다.")
+      setFormData({
+        name: "",
+        phone1: "010",
+        phone2: "",
+        phone3: "",
+        emailId: "",
+        emailDomain: "",
+        emailDomainSelect: "",
+        service: "",
+        message: "",
+        agreePrivacy: false,
+      })
+    } catch (error) {
+      console.error("제출 오류:", error)
+      alert("상담 신청 중 오류가 발생했습니다. 다시 시도해주세요.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -314,14 +348,15 @@ export default function ContactPage() {
                 <div className="flex justify-center min-[441px]:!mt-[40px] max-[440px]:!mt-[24px]">
                   <CommonButton
                     onClick={() => {
+                      if (isSubmitting) return
                       const form = document.querySelector('form')
                       if (form) form.requestSubmit()
                     }}
-                    bgColor={isFormComplete ? '#223B77' : undefined}
-                    textColor={isFormComplete ? '#FFFFFF' : '#B7B7B7'}
-                    className="max-[440px]:text-[16px] max-[440px]:leading-[22px] max-[440px]:px-[30px] max-[440px]:py-[16px]"
+                    bgColor={isFormComplete && !isSubmitting ? '#223B77' : undefined}
+                    textColor={isFormComplete && !isSubmitting ? '#FFFFFF' : '#B7B7B7'}
+                    className={`max-[440px]:text-[16px] max-[440px]:leading-[22px] max-[440px]:px-[30px] max-[440px]:py-[16px] ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                   >
-                    상담 신청하기
+                    {isSubmitting ? '신청 중...' : '상담 신청하기'}
                   </CommonButton>
                 </div>
               </form>
