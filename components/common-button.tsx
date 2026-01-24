@@ -29,7 +29,7 @@ export function CommonButton({ children, href, onClick, className = "", bgColor,
   }
 
   return (
-    <button onClick={onClick} className={buttonClasses} style={buttonStyles}>
+    <button type="button" onClick={onClick} className={buttonClasses} style={buttonStyles}>
       <span className="relative z-10">{children}</span>
     </button>
   )
