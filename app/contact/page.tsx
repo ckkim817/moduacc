@@ -95,7 +95,7 @@ export default function ContactPage() {
 
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbwrNmgdyoxseXaYhbhHdeFlQTuzpCPA5r2c6_k7O7Uwl65ezYX9JXyfmPLMaIbYnvgE/exec",
+        "https://script.google.com/macros/s/AKfycby515QbVEGjfSgeb-eVUQZLmmAjxx9WC2Ar5MsUFZf4M44uPB020ZrhcN3JlNRp8Vzf/exec",
         {
           method: "POST",
           mode: "no-cors",
