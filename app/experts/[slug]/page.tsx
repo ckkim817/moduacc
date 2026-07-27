@@ -159,7 +159,7 @@ export default function ExpertDetailPage() {
           >
             <div
               style={{
-                paddingTop: "calc(min(70px, 100vw * 70 / 1920) + 50px)",
+                paddingTop: "calc(min(70px, 100vw * 70 / 1920) + 40px)",
                 paddingBottom: "50px",
                 paddingLeft: "80px",
                 paddingRight: "80px",
@@ -262,7 +262,7 @@ export default function ExpertDetailPage() {
 
       {/* Details Section */}
       <section
-        className="bg-white max-[440px]:!px-5 pt-[60px] max-[440px]:!pt-[20px]"
+        className="bg-white max-[440px]:!px-5 pt-[40px] max-[440px]:!pt-[20px]"
         style={{
           paddingLeft: "calc(100vw * 360 / 1920)",
           paddingRight: "calc(100vw * 360 / 1920)",

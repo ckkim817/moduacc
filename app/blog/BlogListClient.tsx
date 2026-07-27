@@ -222,7 +222,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
                 <p
                   className="max-[440px]:text-[16px] max-[440px]:leading-[24px] max-[440px]:!mb-[60px] text-2xl font-semibold"
                   style={{
-                    marginBottom: "calc(100vw * 140 / 1920)",
+                    marginBottom: "calc(100vw * 100 / 1920)",
                     color: "rgba(17, 17, 17, 0.5)",
                   }}
                 >
@@ -265,7 +265,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
                   <div>
                     <div
                       className="font-semibold text-[18px]"
-                      style={{ color: "#FFFFFF", marginBottom: "calc(100vw * 16 / 1920)" }}
+                      style={{ color: "#FFFFFF", marginBottom: "calc(100vw * 10 / 1920)" }}
                     >
                       오늘의 커버스토리
                     </div>

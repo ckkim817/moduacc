@@ -123,7 +123,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
         }}
       >
         {/* Category */}
-        <div className="text-center mb-6 max-[440px]:mb-[5px]">
+        <div className="text-center mb-3 max-[440px]:mb-[5px]">
           <span
             className="font-bold max-[440px]:text-[14px] text-[20px]"
             style={{
@@ -135,7 +135,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
         </div>
 
         {/* Title */}
-        <h1 className="font-bold text-center text-balance text-5xl leading-[64px] max-[440px]:text-[24px] max-[440px]:leading-[34px] max-[440px]:mb-[5px] mb-[20px]">
+        <h1 className="font-bold text-center text-balance text-5xl leading-[64px] max-[440px]:text-[24px] max-[440px]:leading-[34px] max-[440px]:mb-[5px] mb-[12px]">
           {post.title}
         </h1>
 
@@ -177,7 +177,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
         </div>
 
         {/* Previous/Next Post Navigation */}
-        <div className="w-full mb-[160px] max-[440px]:mb-[100px] max-w-[1200px] mx-auto">
+        <div className="w-full mb-[120px] max-[440px]:mb-[100px] max-w-[1200px] mx-auto">
           {previousPost && (
             <Link
               href={`/blog/${previousPost.slug}`}

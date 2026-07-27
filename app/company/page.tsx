@@ -62,7 +62,7 @@ export default function CompanyPage() {
           style={{ paddingLeft: "calc(100vw / 5.5)", paddingRight: "calc(100vw / 5.5)" }}
         >
           <div className="container mx-auto px-6 max-[440px]:px-0">
-            <div className="max-w-7xl mx-auto space-y-16 max-[440px]:space-y-[60px]">
+            <div className="max-w-7xl mx-auto space-y-[50px] max-[440px]:space-y-[60px]">
               {/* Section 1 */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-[440px]:gap-[10px] items-start">
                 <h2 className="font-bold text-[#111111] max-[440px]:text-[20px] max-[440px]:leading-[25px] text-[30px] leading-[42px]">
@@ -83,7 +83,7 @@ export default function CompanyPage() {
                   구성된 핵심멤버
                 </h2>
                 <div>
-                  <p className="text-[#535353] max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[22px] leading-[31px] mb-5 max-[440px]:mb-[10px]">
+                  <p className="text-[#535353] max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[22px] leading-[31px] mb-[10px] max-[440px]:mb-[10px]">
                     삼일, 안진 등 국내 최고 회계법인(Big 4)출신의 공인회계사와 세무사들이 모두세무회계그룹의 핵심 멤버입니다. 대기업과 중견 기업의 복잡한 회계 및 세무 이슈를 다루며 쌓아온 체계적인 노하우와 최고 수준의 전문성을 바탕으로 고객에게 한 차원 높은 서비스를 제공합니다.
                   </p>
                   <Link href="/experts" className="text-[#355CBA] inline-flex items-center gap-0.5 font-bold max-[440px]:text-[16px] text-[20px]">
@@ -101,7 +101,7 @@ export default function CompanyPage() {
                   아우르는 종합 솔루션
                 </h2>
                 <div>
-                  <p className="text-[#535353] max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[22px] leading-[31px] mb-5 max-[440px]:mb-[10px]">
+                  <p className="text-[#535353] max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[22px] leading-[31px] mb-[10px] max-[440px]:mb-[10px]">
                     전통적인 기장 대리, 결산 및 세무조정 업무를 넘어 M&A, 상속·증여, 세무조사 등 복잡하고 특수한 세무 이슈까지 모두 대응이 가능합니다.
                     <br />
                     다양한 산업과 비즈니스 형태에 대한 깊은 이해를 바탕으로 기업이 마주할 수 있는 어떤 세무/회계 문제에도 막힘없는 원스톱(One-Stop) 솔루션을 제시합니다.

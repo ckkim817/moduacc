@@ -43,7 +43,7 @@ export function ServicesSection() {
           회계·세무 원스톱 솔루션
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-20 max-[440px]:mt-[40px] max-[440px]:gap-[40px] gap-x-5 gap-y-[100px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-10 max-[440px]:mt-[40px] max-[440px]:gap-[40px] gap-x-5 gap-y-[60px]">
           {services.map((service, index) => (
             <Link key={index} href={`/services/${service.slug}`} className="flex flex-col cursor-pointer group">
               <div className="w-full relative rounded-[24px] overflow-hidden mb-[24px] max-[440px]:mb-4 max-[440px]:rounded-[20px] max-[440px]:[aspect-ratio:335/200]" style={{ aspectRatio: "590 / 400" }}>
