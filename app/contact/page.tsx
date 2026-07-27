@@ -199,9 +199,10 @@ export default function ContactPage() {
                   <label className="text-[22px] font-bold text-[#111111] min-[441px]:mb-0 max-[440px]:mb-[8px] max-[440px]:text-[16px]">
                     연락처 <span className="text-[#355CBA]">*</span>
                   </label>
-                  <div className="flex items-center min-[441px]:gap-[22px] max-[440px]:gap-[6px] max-[440px]:w-full max-[440px]:min-w-0">
+                  {/* PC 는 885px 안에서 "-" 구분자 2개를 두고 세 필드가 남은 폭을 균등 분배한다 (디자인 271/272/272) */}
+                  <div className="flex items-center min-[441px]:w-[885px] min-[441px]:gap-[12px] max-[440px]:gap-[6px] max-[440px]:w-full max-[440px]:min-w-0">
                     <Select value={formData.phone1} onValueChange={(value) => setFormData(prev => ({ ...prev, phone1: value }))}>
-                      <SelectTrigger className="group min-[441px]:w-[280px] min-[441px]:!h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:!h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[18px] min-[441px]:leading-[25.2px] max-[440px]:text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden">
+                      <SelectTrigger className="group min-[441px]:flex-1 min-[441px]:min-w-0 min-[441px]:!h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:!h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[18px] min-[441px]:leading-[25.2px] max-[440px]:text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden">
                         <SelectValue />
                         <Image src="/images/icon_arrow_small_down.svg" alt="" width={24} height={24} className="max-[440px]:w-4 max-[440px]:h-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                       </SelectTrigger>
@@ -214,21 +215,21 @@ export default function ContactPage() {
                         <SelectItem value="019" className="min-[441px]:text-[18px] min-[441px]:leading-[25.2px] max-[440px]:text-[14px]">019</SelectItem>
                       </SelectContent>
                     </Select>
-                    <span className="text-[#777777] text-[14px] min-[441px]:hidden shrink-0">-</span>
+                    <span className="text-[#777777] text-[14px] min-[441px]:text-[24px] shrink-0">-</span>
                     <input
                       type="text"
                       value={formData.phone2}
                       onChange={(e) => setFormData(prev => ({ ...prev, phone2: e.target.value.replace(/[^0-9]/g, '').slice(0, 4) }))}
                       placeholder="1234"
-                      className="min-[441px]:w-[280px] min-[441px]:h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[18px] min-[441px]:leading-[25.2px] max-[440px]:text-[14px] font-normal text-left focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
+                      className="min-[441px]:flex-1 min-[441px]:min-w-0 min-[441px]:h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[18px] min-[441px]:leading-[25.2px] max-[440px]:text-[14px] font-normal text-left focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
                     />
-                    <span className="text-[#777777] text-[14px] min-[441px]:hidden shrink-0">-</span>
+                    <span className="text-[#777777] text-[14px] min-[441px]:text-[24px] shrink-0">-</span>
                     <input
                       type="text"
                       value={formData.phone3}
                       onChange={(e) => setFormData(prev => ({ ...prev, phone3: e.target.value.replace(/[^0-9]/g, '').slice(0, 4) }))}
                       placeholder="1234"
-                      className="min-[441px]:w-[280px] min-[441px]:h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[18px] min-[441px]:leading-[25.2px] max-[440px]:text-[14px] font-normal text-left focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
+                      className="min-[441px]:flex-1 min-[441px]:min-w-0 min-[441px]:h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[18px] min-[441px]:leading-[25.2px] max-[440px]:text-[14px] font-normal text-left focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
                     />
                   </div>
                 </div>
