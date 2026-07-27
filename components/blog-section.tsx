@@ -21,7 +21,7 @@ export async function BlogSection() {
         <div className="max-[440px]:space-y-[30px] min-[440px]:space-y-[50px]">
           <div>
             <h2
-              className="font-bold max-[440px]:text-[24px] max-[440px]:leading-[34px] text-[48px] leading-[64px]"
+              className="font-bold max-[440px]:text-[24px] max-[440px]:leading-[34px] text-[40px] leading-[56px]"
               style={{ color: "#111111" }}
             >
               전문가가 전하는
@@ -50,10 +50,10 @@ export async function BlogSection() {
                     <div className="text-[14px] lg:text-[20px] font-semibold mb-3 min-[440px]:mb-[16px]" style={{ color: "#355CBA" }}>
                       {posts[0].category}
                     </div>
-                    <h3 className="font-bold leading-snug mb-4 text-3xl" style={{ color: "#000000" }}>
+                    <h3 className="font-bold mb-4 text-[24px] leading-[33.6px]" style={{ color: "#000000" }}>
                       {posts[0].title}
                     </h3>
-                    <div className="font-normal text-base" style={{ color: "#777777" }}>
+                    <div className="font-normal text-[18px]" style={{ color: "#777777" }}>
                       {formatDate(posts[0].date)}
                     </div>
                   </div>
@@ -85,7 +85,7 @@ export async function BlogSection() {
                       <div className="text-[14px] lg:text-[20px] font-semibold mb-[12px]" style={{ color: "#355CBA" }}>
                         {post.category}
                       </div>
-                      <h3 className="font-bold leading-snug text-2xl" style={{ color: "#000000" }}>
+                      <h3 className="font-bold text-[24px] leading-[33.6px]" style={{ color: "#000000" }}>
                         {post.title}
                       </h3>
                     </div>
@@ -142,7 +142,7 @@ export async function BlogSection() {
         </div>
 
         <div className="mt-[120px] max-[440px]:mt-[50px] text-center">
-          <CommonButton href="/blog">전체 블로그 보기</CommonButton>
+          <CommonButton href="/blog" size="lg">전체 블로그 보기</CommonButton>
         </div>
       </div>
     </section>

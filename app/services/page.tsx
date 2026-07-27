@@ -97,13 +97,13 @@ export default function ServicesPage() {
         <div className="max-[440px]:!px-5">
           <div className="container mx-auto px-6 max-[440px]:px-0">
             <div className="max-w-7xl mx-auto text-center">
-              <h1 className="font-bold text-[#111111] mb-6 leading-tight max-[440px]:text-[30px] max-[440px]:leading-[39px] text-6xl">
+              <h1 className="font-bold text-[#111111] mb-6 leading-[56px] max-[440px]:text-[30px] max-[440px]:leading-[39px] text-[40px]">
                 원스톱
                 <br />
                 회계·세무 서비스
               </h1>
               <p
-                className="max-[440px]:text-[16px] max-[440px]:leading-[24px] max-[440px]:!mb-[60px] font-semibold text-2xl"
+                className="max-[440px]:text-[16px] max-[440px]:leading-[24px] max-[440px]:!mb-[60px] font-semibold text-[18px] leading-[25.2px]"
                 style={{
                   marginBottom: "calc(100vw * 100 / 1920)",
                   color: "rgba(17, 17, 17, 0.5)",
@@ -138,7 +138,7 @@ export default function ServicesPage() {
         >
           <div className="container mx-auto px-6 max-[440px]:px-0">
             <div className="max-w-7xl mx-auto">
-              <h2 className="font-bold text-[#111111] mb-8 max-[440px]:mb-[14px] max-[440px]:text-lg text-3xl">서비스</h2>
+              <h2 className="font-bold text-[#111111] mb-8 max-[440px]:mb-[14px] max-[440px]:text-lg text-[24px] min-[440px]:leading-[33.6px]">서비스</h2>
 
               {/* Services Grid - 2 columns */}
               <div className="grid grid-cols-1 md:grid-cols-2 max-[440px]:gap-[40px] gap-x-5 gap-y-[60px]">
@@ -154,9 +154,9 @@ export default function ServicesPage() {
                       />
                     </div>
 
-                    <h3 className="font-bold text-[#111111] mb-[6px] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[26px] leading-[39px] min-[441px]:px-[10px]">{service.title}</h3>
+                    <h3 className="font-bold text-[#111111] mb-[6px] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[24px] leading-[33.6px] min-[441px]:px-[10px]">{service.title}</h3>
 
-                    <p className="text-[#333333] max-[440px]:text-[14px] max-[440px]:leading-[20px] text-[22px] leading-[31px] min-[441px]:px-[10px]">{service.description}</p>
+                    <p className="text-[#333333] max-[440px]:text-[14px] max-[440px]:leading-[20px] text-[18px] leading-[25.2px] min-[441px]:px-[10px]">{service.description}</p>
                   </Link>
                 ))}
               </div>

@@ -28,12 +28,12 @@ export default function ExpertsPage() {
         >
           <div className="container mx-auto px-6">
             <div className="max-w-7xl mx-auto text-center">
-              <h1 className="font-bold text-[#111111] mb-6 max-[440px]:mb-[10px] leading-tight max-[440px]:text-[30px] max-[440px]:leading-[39px] text-6xl">
+              <h1 className="font-bold text-[#111111] mb-6 max-[440px]:mb-[10px] leading-[56px] max-[440px]:text-[30px] max-[440px]:leading-[39px] text-[40px]">
                 숫자 너머의 가치를
                 <br />
                 함께 만드는 파트너
               </h1>
-              <p className="max-[440px]:text-[16px] max-[440px]:leading-[24px] text-2xl font-semibold" style={{ color: "rgba(17, 17, 17, 0.5)" }}>
+              <p className="max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[18px] leading-[25.2px] font-semibold" style={{ color: "rgba(17, 17, 17, 0.5)" }}>
                 각 분야의 전문성을 갖춘 회계사들이 비즈니스의 든든한 동반자가 됩니다.
               </p>
             </div>
@@ -85,13 +85,13 @@ export default function ExpertsPage() {
                   <p
                     className="font-semibold max-[440px]:!text-[16px] max-[440px]:!mb-1"
                     style={{
-                      fontSize: "17px",
+                      fontSize: "16px",
                       marginBottom: "min(8px, calc(100vw * 8 / 1920))",
                     }}
                   >
                     {expert.title}
                   </p>
-                  <h3 className="font-bold max-[440px]:text-[24px]" style={{ fontSize: "30px" }}>{expert.name}</h3>
+                  <h3 className="font-bold max-[440px]:text-[24px]" style={{ fontSize: "24px" }}>{expert.name}</h3>
                 </div>
               </button>
             ))}

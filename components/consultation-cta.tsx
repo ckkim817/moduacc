@@ -12,7 +12,7 @@ export function ConsultationCTA() {
 
       {/* Content */}
       <div className="relative z-10 text-center py-12 max-w-[1240px] mx-auto px-5">
-        <h2 className="text-white text-4xl max-[440px]:text-[20px] max-[440px]:leading-[28px] max-[440px]:w-[315px] max-[440px]:h-[56px] font-bold mb-8 leading-tight">
+        <h2 className="text-white text-[30px] max-[440px]:text-[20px] max-[440px]:leading-[28px] max-[440px]:w-[315px] max-[440px]:h-[56px] font-bold mb-8 leading-[42px]">
           복잡한 회계,
           <br />
           지금 바로 전문가에게 맡겨보세요

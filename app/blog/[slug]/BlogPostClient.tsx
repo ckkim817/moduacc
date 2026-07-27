@@ -17,7 +17,7 @@ const ptComponents = {
     title: ({children}: any) => {
       const isEmpty = !children || (Array.isArray(children) && children.length === 0) || (React.Children.count(children) === 1 && children[0] === '')
       return (
-        <h2 className="font-bold mb-6 max-[440px]:text-[22px] max-[440px]:leading-[31px] text-[30px] leading-[42px]" style={{ color: "#333333" }}>
+        <h2 className="font-bold mb-6 max-[440px]:text-[22px] max-[440px]:leading-[31px] text-[24px] leading-[33.6px]" style={{ color: "#333333" }}>
           {isEmpty ? <br /> : children}
         </h2>
       )
@@ -25,7 +25,7 @@ const ptComponents = {
     normal: ({children}: any) => {
       const isEmpty = !children || (Array.isArray(children) && children.length === 0) || (React.Children.count(children) === 1 && children[0] === '')
       return (
-        <p className="mb-6 max-[440px]:text-[17px] max-[440px]:leading-[26px] text-[22px] leading-[36px]" style={{ color: "#333333" }}>
+        <p className="mb-6 max-[440px]:text-[17px] max-[440px]:leading-[26px] text-[18px] leading-[25.2px]" style={{ color: "#333333" }}>
           {isEmpty ? <br /> : children}
         </p>
       )
@@ -99,7 +99,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Post Not Found</h1>
           <Link href="/blog">
-            <CommonButton>목록으로 돌아가기</CommonButton>
+            <CommonButton size="sm">목록으로 돌아가기</CommonButton>
           </Link>
         </div>
       </div>
@@ -125,7 +125,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
         {/* Category */}
         <div className="text-center mb-3 max-[440px]:mb-[5px]">
           <span
-            className="font-bold max-[440px]:text-[14px] text-[20px]"
+            className="font-bold max-[440px]:text-[14px] text-[18px] min-[440px]:leading-[25.2px]"
             style={{
               color: "#355CBA",
             }}
@@ -135,7 +135,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
         </div>
 
         {/* Title */}
-        <h1 className="font-bold text-center text-balance text-5xl leading-[64px] max-[440px]:text-[24px] max-[440px]:leading-[34px] max-[440px]:mb-[5px] mb-[12px]">
+        <h1 className="font-bold text-center text-balance text-[40px] leading-[56px] max-[440px]:text-[24px] max-[440px]:leading-[34px] max-[440px]:mb-[5px] mb-[12px]">
           {post.title}
         </h1>
 
@@ -147,7 +147,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
             marginBottom: "calc(100vw * 120 / 1920)",
           }}
         >
-          <span className="font-medium max-[440px]:text-[14px] text-[20px]">
+          <span className="font-medium max-[440px]:text-[14px] text-[18px] min-[440px]:leading-[25.2px]">
             {formatDate(post.date)} · {post.author || '김정선 회계사'} 작성
           </span>
         </div>
@@ -170,7 +170,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
           {post.body ? (
             <PortableText value={post.body} components={ptComponents} />
           ) : (
-            <p className="leading-relaxed mb-6 max-[440px]:text-[17px] max-[440px]:leading-[26px] text-[22px] leading-[36px]" style={{ color: "#333333" }}>
+            <p className="mb-6 max-[440px]:text-[17px] max-[440px]:leading-[26px] text-[18px] leading-[25.2px]" style={{ color: "#333333" }}>
               내용이 없습니다.
             </p>
           )}
@@ -185,7 +185,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
             >
               <div className="flex items-center flex-1 max-[440px]:flex-col max-[440px]:items-start max-[440px]:gap-[6px]" style={{ gap: "calc(100vw * 30 / 1920)" }}>
                 <div className="flex justify-between max-[440px]:w-full">
-                  <span className="whitespace-nowrap font-bold text-[20px] max-[440px]:text-[16px] max-[440px]:leading-[24px]" style={{ color: "#535353" }}>
+                  <span className="whitespace-nowrap font-bold text-[18px] max-[440px]:text-[16px] max-[440px]:leading-[24px]" style={{ color: "#535353" }}>
                     이전 글
                   </span>
                   <Image
@@ -196,7 +196,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
                     className="flex-shrink-0 hidden max-[440px]:block"
                   />
                 </div>
-                <span className="transition-opacity font-normal text-[20px] max-[440px]:text-[16px] max-[440px]:leading-[22px] max-[440px]:w-full" style={{ color: "#777777" }}>
+                <span className="transition-opacity font-normal text-[18px] max-[440px]:text-[16px] max-[440px]:leading-[22px] max-[440px]:w-full" style={{ color: "#777777" }}>
                   {previousPost.title}
                 </span>
               </div>
@@ -224,7 +224,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
             >
               <div className="flex items-center flex-1 max-[440px]:flex-col max-[440px]:items-start max-[440px]:gap-[6px]" style={{ gap: "calc(100vw * 30 / 1920)" }}>
                 <div className="flex justify-between max-[440px]:w-full">
-                  <span className="whitespace-nowrap font-bold text-[20px] max-[440px]:text-[16px] max-[440px]:leading-[24px]" style={{ color: "#535353" }}>
+                  <span className="whitespace-nowrap font-bold text-[18px] max-[440px]:text-[16px] max-[440px]:leading-[24px]" style={{ color: "#535353" }}>
                     다음 글
                   </span>
                   <Image
@@ -235,7 +235,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
                     className="flex-shrink-0 hidden max-[440px]:block"
                   />
                 </div>
-                <span className="transition-opacity font-normal text-[20px] max-[440px]:text-[16px] max-[440px]:leading-[22px] max-[440px]:w-full" style={{ color: "#777777" }}>
+                <span className="transition-opacity font-normal text-[18px] max-[440px]:text-[16px] max-[440px]:leading-[22px] max-[440px]:w-full" style={{ color: "#777777" }}>
                   {nextPost.title}
                 </span>
               </div>
@@ -256,7 +256,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
         {/* Back to List Button */}
         <div className="flex justify-center">
           <Link href="/blog">
-            <CommonButton>목록으로 돌아가기</CommonButton>
+            <CommonButton size="sm">목록으로 돌아가기</CommonButton>
           </Link>
         </div>
       </div>

@@ -172,7 +172,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
                 <Link
                   href="/company"
                   onClick={handleCompanyClick}
-                  className={`text-lg transition-all px-4 py-2 rounded-[10px] block ${
+                  className={`text-[18px] transition-all px-4 py-2 rounded-[10px] block ${
                     isCompanyActive || isMainPage ? "font-bold" : "font-medium"
                   } ${
                     forceWhiteMode || isScrolled
@@ -195,14 +195,14 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
                       <Link
                         href="/company"
                         onClick={handleCompanyClick}
-                        className="block px-4 py-2 text-lg font-medium text-[#333333] hover:text-[#355CBA] transition-colors text-center"
+                        className="block px-4 py-2 text-[18px] font-medium text-[#333333] hover:text-[#355CBA] transition-colors text-center"
                       >
                         ABOUT
                       </Link>
                       <Link
                         href="/location"
                         onClick={handleLocationClick}
-                        className="block px-4 py-2 text-lg font-medium text-[#333333] hover:text-[#355CBA] transition-colors text-center"
+                        className="block px-4 py-2 text-[18px] font-medium text-[#333333] hover:text-[#355CBA] transition-colors text-center"
                       >
                         LOCATION
                       </Link>
@@ -214,7 +214,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
               <Link
                 href="/services"
                 onClick={handleServicesClick}
-                className={`text-lg transition-all px-4 py-2 rounded-[10px] block ${
+                className={`text-[18px] transition-all px-4 py-2 rounded-[10px] block ${
                   isServicesActive || isMainPage ? "font-bold" : "font-medium"
                 } ${
                   forceWhiteMode || isScrolled
@@ -228,7 +228,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
               <Link
                 href="/experts"
                 onClick={handleExpertsClick}
-                className={`text-lg transition-all px-4 py-2 rounded-[10px] block ${
+                className={`text-[18px] transition-all px-4 py-2 rounded-[10px] block ${
                   isExpertsActive || isMainPage ? "font-bold" : "font-medium"
                 } ${
                   forceWhiteMode || isScrolled
@@ -242,7 +242,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
               <Link
                 href="/blog"
                 onClick={handleBlogClick}
-                className={`text-lg transition-all px-4 py-2 rounded-[10px] block ${
+                className={`text-[18px] transition-all px-4 py-2 rounded-[10px] block ${
                   isBlogActive || isMainPage ? "font-bold" : "font-medium"
                 } ${
                   forceWhiteMode || isScrolled
@@ -256,7 +256,7 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
               <Link
                 href="/contact"
                 onClick={handleContactClick}
-                className={`text-lg transition-all px-4 py-2 rounded-[10px] block ${
+                className={`text-[18px] transition-all px-4 py-2 rounded-[10px] block ${
                   isContactActive || isMainPage ? "font-bold" : "font-medium"
                 } ${
                   forceWhiteMode || isScrolled

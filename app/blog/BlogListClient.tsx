@@ -154,13 +154,13 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
             >
               <div className="container mx-auto px-6">
                 <div className="max-w-7xl mx-auto text-center">
-                  <h1 className="font-bold text-[#111111] mb-6 max-[440px]:mb-[10px] leading-tight max-[440px]:text-[30px] max-[440px]:leading-[39px] text-6xl">
+                  <h1 className="font-bold text-[#111111] mb-6 max-[440px]:mb-[10px] leading-[56px] max-[440px]:text-[30px] max-[440px]:leading-[39px] text-[40px]">
                     회계사가 쉽게 풀어주는
                     <br />
                     재무와 세무의 모든 것
                   </h1>
                   <p
-                    className="max-[440px]:text-[16px] max-[440px]:leading-[24px] text-2xl font-semibold"
+                    className="max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[18px] leading-[25.2px] font-semibold"
                     style={{
                       color: "rgba(17, 17, 17, 0.5)",
                     }}
@@ -184,7 +184,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
                   className="mx-auto max-[440px]:w-[100px] max-[440px]:h-[100px]"
                 />
                 <p
-                  className="mt-[8px] max-[440px]:mt-[4px] text-[22px] leading-[32px] max-[440px]:text-[16px] max-[440px]:leading-[22px]"
+                  className="mt-[8px] max-[440px]:mt-[4px] text-[18px] leading-[25.2px] max-[440px]:text-[16px] max-[440px]:leading-[22px]"
                   style={{ color: "#999999" }}
                 >
                   현재 게시글을 준비하고 있습니다.
@@ -214,13 +214,13 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
           >
             <div className="container mx-auto px-6">
               <div className="max-w-7xl mx-auto text-center">
-                <h1 className="font-bold text-[#111111] mb-6 max-[440px]:mb-[10px] leading-tight max-[440px]:text-[30px] max-[440px]:leading-[39px] text-6xl">
+                <h1 className="font-bold text-[#111111] mb-6 max-[440px]:mb-[10px] leading-[56px] max-[440px]:text-[30px] max-[440px]:leading-[39px] text-[40px]">
                   회계사가 쉽게 풀어주는
                   <br />
                   재무와 세무의 모든 것
                 </h1>
                 <p
-                  className="max-[440px]:text-[16px] max-[440px]:leading-[24px] max-[440px]:!mb-[60px] text-2xl font-semibold"
+                  className="max-[440px]:text-[16px] max-[440px]:leading-[24px] max-[440px]:!mb-[60px] text-[18px] leading-[25.2px] font-semibold"
                   style={{
                     marginBottom: "calc(100vw * 100 / 1920)",
                     color: "rgba(17, 17, 17, 0.5)",
@@ -270,7 +270,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
                       오늘의 커버스토리
                     </div>
                     <h2
-                      className="font-bold leading-tight max-[440px]:text-[20px] max-[440px]:leading-[28px] text-[28px] leading-[39px]"
+                      className="font-bold max-[440px]:text-[20px] max-[440px]:leading-[28px] text-[24px] leading-[33.6px]"
                       style={{
                         color: "#FFFFFF",
                         marginBottom: "calc(100vw * 16 / 1920)",
@@ -279,7 +279,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
                       {featuredPosts[currentFeatured]?.title}
                     </h2>
                     <div
-                      className="text-[18px]"
+                      className="text-[16px]"
                       style={{
                         color: "rgba(255, 255, 255, 0.5)",
                       }}
@@ -398,7 +398,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
             className="max-[440px]:!px-5"
             style={{ paddingLeft: "calc(100vw * 3 / 16)", paddingRight: "calc(100vw * 3 / 16)" }}
           >
-            <h2 className="font-bold mb-6 max-[440px]:mb-[16px] max-[440px]:ml-[2px] text-3xl max-[440px]:text-[18px] max-[440px]:leading-[25px]" style={{ color: "#111111" }}>
+            <h2 className="font-bold mb-6 max-[440px]:mb-[16px] max-[440px]:ml-[2px] text-[24px] leading-[33.6px] max-[440px]:text-[18px] max-[440px]:leading-[25px]" style={{ color: "#111111" }}>
               모든 글
             </h2>
 
@@ -415,10 +415,10 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
                     />
                   </div>
                   <div className="max-[440px]:flex-1 max-[440px]:pt-[8px]">
-                    <div className="font-semibold mb-[6px] max-[440px]:mb-[2px] max-[440px]:text-[12px] text-[18px]" style={{ color: "#355CBA" }}>
+                    <div className="font-semibold mb-[6px] max-[440px]:mb-[2px] max-[440px]:text-[12px] text-[16px]" style={{ color: "#355CBA" }}>
                       {post.category}
                     </div>
-                    <h3 className="font-bold text-[22px] leading-[31px] max-[440px]:text-[16px] max-[440px]:leading-[24px] max-[440px]:line-clamp-2" style={{ color: "#111111" }}>
+                    <h3 className="font-bold text-[18px] leading-[25.2px] max-[440px]:text-[16px] max-[440px]:leading-[24px] max-[440px]:line-clamp-2" style={{ color: "#111111" }}>
                       {post.title}
                     </h3>
                   </div>
@@ -442,7 +442,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
                   <button
                     key={page}
                     onClick={() => handlePageChange(page)}
-                    className={`w-10 h-10 flex items-center justify-center rounded-full transition-colors ${
+                    className={`w-10 h-10 flex items-center justify-center rounded-full transition-colors min-[440px]:text-[18px] ${
                       page === currentPage
                         ? "bg-[#F5F5F5] text-[#333333] font-semibold"
                         : "text-[#999999] hover:bg-gray-50"

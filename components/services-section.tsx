@@ -37,7 +37,7 @@ export function ServicesSection() {
   return (
     <section className="bg-white pt-[200px] pb-[300px] max-[440px]:!pt-[78px] max-[440px]:!pb-[160px]">
       <div className="max-w-[1240px] mx-auto px-5">
-        <h2 className="font-bold text-[#111111] text-balance max-[440px]:text-[24px] max-[440px]:leading-[34px] max-[440px]:text-center text-[48px] leading-[64px]">
+        <h2 className="font-bold text-[#111111] text-balance max-[440px]:text-[24px] max-[440px]:leading-[34px] max-[440px]:text-center text-[40px] leading-[56px]">
           비즈니스 전 과정을 아우르는
           <br />
           회계·세무 원스톱 솔루션
@@ -56,15 +56,15 @@ export function ServicesSection() {
                 />
               </div>
 
-              <h3 className="font-bold text-[#111111] mb-[6px] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[26px] leading-[39px] min-[441px]:px-[10px]">{service.title}</h3>
+              <h3 className="font-bold text-[#111111] mb-[6px] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[24px] leading-[33.6px] min-[441px]:px-[10px]">{service.title}</h3>
 
-              <p className="text-[#333333] max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[22px] leading-[31px] min-[441px]:px-[10px]">{service.description}</p>
+              <p className="text-[#333333] max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[18px] leading-[25.2px] min-[441px]:px-[10px]">{service.description}</p>
             </Link>
           ))}
         </div>
 
         <div className="text-center max-[440px]:mt-[50px] mt-[120px]">
-          <CommonButton href="/services">서비스 전체 보기</CommonButton>
+          <CommonButton href="/services" size="md">서비스 전체 보기</CommonButton>
         </div>
       </div>
     </section>

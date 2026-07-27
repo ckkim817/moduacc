@@ -36,7 +36,7 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6">
-        <h1 className="text-white font-bold leading-tight max-[440px]:text-[30px] text-[66px] animate-fade-in-up">
+        <h1 className="text-white font-bold leading-[84px] max-[440px]:text-[30px] max-[440px]:leading-tight text-[66px] animate-fade-in-up">
           성장의 모든 순간,
           <br />
           모두

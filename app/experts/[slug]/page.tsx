@@ -69,10 +69,10 @@ export default function ExpertDetailPage() {
                     gap: "min(14px, calc(100vw * 14 / 1920))",
                   }}
                 >
-                  <p className="text-white text-[20px] font-semibold">
+                  <p className="text-white text-[16px] leading-[22.4px] font-semibold">
                     {expert.tagline}
                   </p>
-                  <h1 className="text-white font-bold text-[48px] leading-[64px]">
+                  <h1 className="text-white font-bold text-[40px] leading-[56px]">
                     {expert.name} {expert.title}
                   </h1>
                 </div>
@@ -108,7 +108,7 @@ export default function ExpertDetailPage() {
                 >
                   <Image src="/images/icon_email.svg" alt="email" width={24} height={24} unoptimized />
                   <span
-                    className="text-base"
+                    className="text-[18px]"
                     style={{
                       marginLeft: "min(6px, calc(100vw * 6 / 1920))",
                     }}
@@ -116,7 +116,7 @@ export default function ExpertDetailPage() {
                     e-mail
                   </span>
                   <span
-                    className="text-base"
+                    className="text-[18px]"
                     style={{
                       marginLeft: "min(10px, calc(100vw * 10 / 1920))",
                     }}
@@ -165,7 +165,7 @@ export default function ExpertDetailPage() {
                 paddingRight: "80px",
               }}
             >
-              <p className="text-[#333333] text-[22px] leading-[36px] font-medium">{expert.description}</p>
+              <p className="text-[#333333] text-[18px] leading-[25.2px] font-medium">{expert.description}</p>
             </div>
           </div>
         </div>
@@ -271,10 +271,10 @@ export default function ExpertDetailPage() {
         <div className="mx-auto max-[440px]:!w-full max-w-[1200px]" style={{ width: "calc(100vw * 1200 / 1920)", margin: "0 auto" }}>
           {/* Education & Qualifications */}
           <div className="grid grid-cols-[200px_1fr] gap-8 py-[60px] max-[440px]:py-[40px] max-[440px]:grid-cols-1 max-[440px]:gap-4">
-            <h2 className="font-bold text-[#111111] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[26px] leading-[40px]">학력 및 자격</h2>
+            <h2 className="font-bold text-[#111111] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[20px] leading-[28px]">학력 및 자격</h2>
             <div className="space-y-2">
               {expert.education.map((item, index) => (
-                <p key={index} className="text-[#333333] max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[22px] leading-[36px] whitespace-pre-line">
+                <p key={index} className="text-[#333333] max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[18px] leading-[25.2px] whitespace-pre-line">
                   {item}
                 </p>
               ))}
@@ -286,10 +286,10 @@ export default function ExpertDetailPage() {
 
           {/* Career */}
           <div className="grid grid-cols-[200px_1fr] gap-8 py-[60px] max-[440px]:py-[40px] max-[440px]:grid-cols-1 max-[440px]:gap-4">
-            <h2 className="font-bold text-[#111111] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[26px] leading-[40px]">경력</h2>
+            <h2 className="font-bold text-[#111111] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[20px] leading-[28px]">경력</h2>
             <div className="space-y-2">
               {expert.career.map((item, index) => (
-                <p key={index} className="text-[#333333] max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[22px] leading-[36px] whitespace-pre-line">
+                <p key={index} className="text-[#333333] max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[18px] leading-[25.2px] whitespace-pre-line">
                   {item}
                 </p>
               ))}
@@ -301,10 +301,10 @@ export default function ExpertDetailPage() {
 
           {/* Main Work Areas */}
           <div className="grid grid-cols-[200px_1fr] gap-8 py-[60px] max-[440px]:py-[40px] max-[440px]:grid-cols-1 max-[440px]:gap-4">
-            <h2 className="font-bold text-[#111111] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[26px] leading-[40px]">주요 업무분야</h2>
+            <h2 className="font-bold text-[#111111] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[20px] leading-[28px]">주요 업무분야</h2>
             <div className="flex flex-col gap-[20px] max-[440px]:gap-[16px]">
               {expert.workAreas.map((item, index) => (
-                <p key={index} className="text-[#333333] max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[22px] leading-[36px] whitespace-pre-line">
+                <p key={index} className="text-[#333333] max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[18px] leading-[25.2px] whitespace-pre-line">
                   {item}
                 </p>
               ))}
@@ -314,7 +314,7 @@ export default function ExpertDetailPage() {
           <div
             className="flex justify-center pt-[60px] pb-[300px] max-[440px]:!pt-[20px] max-[440px]:!pb-[160px]"
           >
-            <CommonButton onClick={() => router.push("/experts")}>목록으로 돌아가기</CommonButton>
+            <CommonButton size="sm" onClick={() => router.push("/experts")}>목록으로 돌아가기</CommonButton>
           </div>
         </div>
       </section>
