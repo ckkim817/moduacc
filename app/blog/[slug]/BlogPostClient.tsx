@@ -99,7 +99,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Post Not Found</h1>
           <Link href="/blog">
-            <CommonButton size="sm">목록으로 돌아가기</CommonButton>
+            <CommonButton size="sub">목록으로 돌아가기</CommonButton>
           </Link>
         </div>
       </div>
@@ -256,7 +256,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
         {/* Back to List Button */}
         <div className="flex justify-center">
           <Link href="/blog">
-            <CommonButton size="sm">목록으로 돌아가기</CommonButton>
+            <CommonButton size="sub">목록으로 돌아가기</CommonButton>
           </Link>
         </div>
       </div>

@@ -616,8 +616,7 @@ function QnAItem({ question, answer, isOpen, onToggle, isLast }: any) {
         }`}
       >
         <div className="flex-1 flex max-[440px]:items-start items-center max-[440px]:gap-[10px] gap-[20px]">
-          {/* 펼쳐진 항목만 28px 로 커진다 (디자인 의도) */}
-          <span className={`text-[#355CBA] font-bold flex-shrink-0 max-[440px]:text-[18px] max-[440px]:leading-[25px] ${isOpen ? "text-[28px] leading-[39px]" : "text-[24px] leading-[33.6px]"}`}>Q</span>
+          <span className="text-[#355CBA] font-bold flex-shrink-0 max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[24px] leading-[33.6px]">Q</span>
           <span className="text-[#111111] font-bold max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[24px] leading-[33.6px]">{question}</span>
         </div>
         <div className="flex-shrink-0">
@@ -636,7 +635,7 @@ function QnAItem({ question, answer, isOpen, onToggle, isLast }: any) {
         }`}
       >
         <div className="flex items-start max-[440px]:gap-[10px] gap-[20px] max-[440px]:pt-[12px] pt-[20px] max-[440px]:pb-[24px] pb-[40px]">
-          <span className="text-[#999999] font-bold flex-shrink-0 max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[28px] leading-[39px]">A</span>
+          <span className="text-[#999999] font-bold flex-shrink-0 max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[24px] leading-[33.6px]">A</span>
           <p className="text-[#535353] font-medium whitespace-pre-line max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[18px] leading-[25.2px]">{answer}</p>
         </div>
       </div>
@@ -704,7 +703,7 @@ export default function ServiceDetailPage() {
 
             {/* Text Content */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-              <h1 className="text-white font-bold mb-6 max-[440px]:mb-[10px] max-[440px]:text-[30px] max-[440px]:leading-[39px] text-[40px] leading-[56px]">{service.title}</h1>
+              <h1 className="text-white font-bold mb-[10px] max-[440px]:text-[30px] max-[440px]:leading-[39px] text-[40px] leading-[56px]">{service.title}</h1>
               {/* PC version */}
               <p className="text-white max-w-3xl font-semibold text-[18px] leading-[25.2px] opacity-70 whitespace-pre-line max-[440px]:hidden">
                 {service.description}
@@ -742,7 +741,7 @@ export default function ServiceDetailPage() {
       {/* Back to List Button */}
       <section className="pt-[40px] max-[440px]:pt-[4px] bg-white pb-[calc(100vw*300/1920)] max-[440px]:!pb-[calc(100vw*160/375)]">
         <div className="max-w-4xl mx-auto text-center">
-          <CommonButton size="sm" onClick={() => router.push("/services")}>목록으로 돌아가기</CommonButton>
+          <CommonButton size="sub" onClick={() => router.push("/services")}>목록으로 돌아가기</CommonButton>
         </div>
       </section>
 

@@ -84,7 +84,7 @@ export function TeamSection() {
             </h2>
 
             <div className="hidden min-[1070px]:block mt-[50px]">
-              <CommonButton href="/experts" size="md">파트너 모두 보기</CommonButton>
+              <CommonButton href="/experts" size="main">파트너 모두 보기</CommonButton>
             </div>
           </div>
 
@@ -159,7 +159,7 @@ export function TeamSection() {
 
           {/* Mobile Button */}
           <div className="flex justify-center min-[1070px]:hidden">
-            <CommonButton href="/experts" size="md">파트너 모두 보기</CommonButton>
+            <CommonButton href="/experts" size="main">파트너 모두 보기</CommonButton>
           </div>
         </div>
       </div>
