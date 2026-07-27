@@ -178,7 +178,9 @@ export default function ContactPage() {
             paddingRight: "min(calc(100vw * 420 / 1920), 420px)",
           }}
         >
-          <div className="w-full">
+          {/* 좌우 패딩이 1920 에서 420px 로 상한에 걸리는데 필드는 안 늘어나므로,
+              폼을 디자인 기준폭(1080px)에서 묶지 않으면 라벨↔필드 간격만 계속 벌어진다 */}
+          <div className="w-full min-[441px]:max-w-[1080px] min-[441px]:mx-auto">
               <form onSubmit={handleSubmit} className="w-full min-[441px]:space-y-[40px] max-[440px]:space-y-[24px]">
                 {/* 성함 */}
                 <div className="flex flex-col max-[440px]:flex-col min-[441px]:flex-row min-[441px]:items-center min-[441px]:justify-between">
@@ -190,7 +192,7 @@ export default function ContactPage() {
                     value={formData.name}
                     onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
                     placeholder="성함을 입력해 주세요."
-                    className="min-[441px]:w-[885px] min-[441px]:h-[60px] max-[440px]:w-full max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-4 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[18px] min-[441px]:leading-[25.2px] max-[440px]:text-[14px] font-normal focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
+                    className="min-[441px]:w-[81.944%] min-[441px]:h-[60px] max-[440px]:w-full max-[440px]:h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-4 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[18px] min-[441px]:leading-[25.2px] max-[440px]:text-[14px] font-normal focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
                   />
                 </div>
 
@@ -200,13 +202,13 @@ export default function ContactPage() {
                     연락처 <span className="text-[#355CBA]">*</span>
                   </label>
                   {/* PC 는 885px 안에서 "-" 구분자 2개를 두고 세 필드가 남은 폭을 균등 분배한다 (디자인 271/272/272) */}
-                  <div className="flex items-center min-[441px]:w-[885px] min-[441px]:gap-[12px] max-[440px]:gap-[6px] max-[440px]:w-full max-[440px]:min-w-0">
+                  <div className="flex items-center min-[441px]:w-[81.944%] min-[441px]:gap-[12px] max-[440px]:gap-[6px] max-[440px]:w-full max-[440px]:min-w-0">
                     <Select value={formData.phone1} onValueChange={(value) => setFormData(prev => ({ ...prev, phone1: value }))}>
                       <SelectTrigger className="group min-[441px]:flex-1 min-[441px]:min-w-0 min-[441px]:!h-[60px] max-[440px]:flex-1 max-[440px]:min-w-0 max-[440px]:!h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[18px] min-[441px]:leading-[25.2px] max-[440px]:text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden">
                         <SelectValue />
                         <Image src="/images/icon_arrow_small_down.svg" alt="" width={24} height={24} className="max-[440px]:w-4 max-[440px]:h-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                       </SelectTrigger>
-                      <SelectContent align="end" className="min-[441px]:min-w-[280px] max-[440px]:min-w-[100px] border-[#DFDFDF] rounded-[16px] max-[440px]:rounded-[8px]">
+                      <SelectContent align="end" className="max-[440px]:min-w-[100px] border-[#DFDFDF] rounded-[16px] max-[440px]:rounded-[8px]">
                         <SelectItem value="010" className="min-[441px]:text-[18px] min-[441px]:leading-[25.2px] max-[440px]:text-[14px]">010</SelectItem>
                         <SelectItem value="011" className="min-[441px]:text-[18px] min-[441px]:leading-[25.2px] max-[440px]:text-[14px]">011</SelectItem>
                         <SelectItem value="016" className="min-[441px]:text-[18px] min-[441px]:leading-[25.2px] max-[440px]:text-[14px]">016</SelectItem>
@@ -240,24 +242,24 @@ export default function ContactPage() {
                     이메일 <span className="text-[#355CBA]">*</span>
                   </label>
                   {/* Desktop: emailId @ domain input + select */}
-                  <div className="min-[441px]:flex items-center max-[440px]:hidden">
+                  <div className="min-[441px]:flex items-center min-[441px]:w-[81.944%] max-[440px]:hidden">
                     <input
                       type="text"
                       value={formData.emailId}
                       onChange={(e) => setFormData(prev => ({ ...prev, emailId: e.target.value }))}
                       placeholder="abcd1234"
-                      className="w-[270px] h-[60px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[18px] leading-[25.2px] font-normal focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
+                      className="flex-1 min-w-0 h-[60px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[18px] leading-[25.2px] font-normal focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
                     />
-                    <span className="text-[20px] leading-[28px] font-normal text-[#777777] mx-[12px]">@</span>
+                    <span className="text-[20px] leading-[28px] font-normal text-[#777777] mx-[12px] shrink-0">@</span>
                     <input
                       type="text"
                       value={formData.emailDomain}
                       onChange={(e) => setFormData(prev => ({ ...prev, emailDomain: e.target.value, emailDomainSelect: "" }))}
                       placeholder="naver.com"
-                      className="w-[270px] h-[60px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[18px] leading-[25.2px] font-normal focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
+                      className="flex-1 min-w-0 h-[60px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[18px] leading-[25.2px] font-normal focus:outline-none placeholder:text-[#B7B7B7] caret-[#355CBA]"
                     />
                     <Select value={formData.emailDomainSelect} onValueChange={(value) => handleEmailDomainChange(value)}>
-                      <SelectTrigger className="group w-[280px] !h-[60px] ml-[20px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[18px] leading-[25.2px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden text-[#111111] data-[placeholder]:text-[#111111]">
+                      <SelectTrigger className="group w-[280px] shrink-0 !h-[60px] ml-[20px] pl-[24px] pr-4 border border-[#DFDFDF] rounded-[16px] text-[18px] leading-[25.2px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden text-[#111111] data-[placeholder]:text-[#111111]">
                         <SelectValue placeholder="직접 입력" />
                         <Image src="/images/icon_arrow_small_down.svg" alt="" width={24} height={24} className="transition-transform duration-300 group-data-[state=open]:rotate-180" />
                       </SelectTrigger>
@@ -310,11 +312,11 @@ export default function ContactPage() {
                     문의 서비스 <span className="text-[#355CBA]">*</span>
                   </label>
                   <Select value={formData.service} onValueChange={(value) => setFormData(prev => ({ ...prev, service: value }))}>
-                    <SelectTrigger className={`group min-[441px]:w-[885px] min-[441px]:!h-[60px] max-[440px]:w-full max-[440px]:!h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[18px] min-[441px]:leading-[25.2px] max-[440px]:text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden data-[placeholder]:text-[#B7B7B7] ${!formData.service ? 'text-[#B7B7B7]' : 'text-[#111111]'}`}>
+                    <SelectTrigger className={`group min-[441px]:w-[81.944%] min-[441px]:!h-[60px] max-[440px]:w-full max-[440px]:!h-[48px] min-[441px]:pl-[24px] min-[441px]:pr-4 max-[440px]:px-3 border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[18px] min-[441px]:leading-[25.2px] max-[440px]:text-[14px] font-normal bg-white shadow-none focus:ring-0 focus:border-[#DFDFDF] [&>svg]:hidden data-[placeholder]:text-[#B7B7B7] ${!formData.service ? 'text-[#B7B7B7]' : 'text-[#111111]'}`}>
                       <SelectValue placeholder="카테고리를 선택해 주세요." />
                       <Image src="/images/icon_arrow_small_down.svg" alt="" width={24} height={24} className="max-[440px]:w-4 max-[440px]:h-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                     </SelectTrigger>
-                    <SelectContent align="end" className="min-[441px]:min-w-[885px] max-[440px]:min-w-[calc(100vw-40px)] border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px]">
+                    <SelectContent align="end" className="max-[440px]:min-w-[calc(100vw-40px)] border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px]">
                       {services.map((service) => (
                         <SelectItem key={service} value={service} className="min-[441px]:text-[18px] min-[441px]:leading-[25.2px] max-[440px]:text-[14px]">
                           {service}
@@ -333,7 +335,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
                     placeholder="문의 내용을 입력해 주세요."
-                    className="min-[441px]:w-[885px] min-[441px]:h-[200px] max-[440px]:w-full max-[440px]:h-[150px] min-[441px]:px-[25px] min-[441px]:py-[20px] max-[440px]:px-[16px] max-[440px]:py-[20px] scroll-pb-[20px] border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[18px] min-[441px]:leading-[25.2px] max-[440px]:text-[14px] font-normal focus:outline-none resize-none placeholder:text-[#B7B7B7] caret-[#355CBA] [&::-webkit-scrollbar]:w-[12px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-track]:my-[8px] [&::-webkit-scrollbar-thumb]:bg-[#DFDFDF] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:border-[3px] [&::-webkit-scrollbar-thumb]:border-solid [&::-webkit-scrollbar-thumb]:border-transparent [&::-webkit-scrollbar-thumb]:bg-clip-padding"
+                    className="min-[441px]:w-[81.944%] min-[441px]:h-[200px] max-[440px]:w-full max-[440px]:h-[150px] min-[441px]:px-[25px] min-[441px]:py-[20px] max-[440px]:px-[16px] max-[440px]:py-[20px] scroll-pb-[20px] border border-[#DFDFDF] min-[441px]:rounded-[16px] max-[440px]:rounded-[8px] min-[441px]:text-[18px] min-[441px]:leading-[25.2px] max-[440px]:text-[14px] font-normal focus:outline-none resize-none placeholder:text-[#B7B7B7] caret-[#355CBA] [&::-webkit-scrollbar]:w-[12px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-track]:my-[8px] [&::-webkit-scrollbar-thumb]:bg-[#DFDFDF] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:border-[3px] [&::-webkit-scrollbar-thumb]:border-solid [&::-webkit-scrollbar-thumb]:border-transparent [&::-webkit-scrollbar-thumb]:bg-clip-padding"
                   />
                 </div>
 
