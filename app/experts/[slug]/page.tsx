@@ -66,7 +66,7 @@ export default function ExpertDetailPage() {
                   style={{
                     left: "min(80px, calc(100vw * 80 / 1920))",
                     top: "min(70px, calc(100vw * 70 / 1920))",
-                    gap: "min(14px, calc(100vw * 14 / 1920))",
+                    gap: "min(4px, calc(100vw * 4 / 1920))",
                   }}
                 >
                   <p className="text-white text-[16px] leading-[22.4px] font-semibold">

@@ -86,7 +86,7 @@ export default function ExpertsPage() {
                     className="font-semibold max-[441px]:!text-[16px] max-[441px]:!mb-1"
                     style={{
                       fontSize: "16px",
-                      marginBottom: "min(8px, calc(100vw * 8 / 1920))",
+                      marginBottom: "min(4px, calc(100vw * 4 / 1920))",
                     }}
                   >
                     {expert.title}
