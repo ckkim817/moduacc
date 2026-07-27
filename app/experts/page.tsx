@@ -21,19 +21,19 @@ export default function ExpertsPage() {
     <div className="min-h-screen bg-white">
       <Navigation forceWhiteMode />
 
-      <section className="bg-white pt-[220px] max-[440px]:!pt-[116px]">
+      <section className="bg-white pt-[220px] max-[441px]:!pt-[116px]">
         <div
-          className="max-[440px]:!px-5"
+          className="max-[441px]:!px-5"
           style={{ paddingLeft: "calc(100vw / 5.5)", paddingRight: "calc(100vw / 5.5)" }}
         >
           <div className="container mx-auto px-6">
             <div className="max-w-7xl mx-auto text-center">
-              <h1 className="font-bold text-[#111111] mb-6 max-[440px]:mb-[10px] leading-[56px] max-[440px]:text-[30px] max-[440px]:leading-[39px] text-[40px]">
+              <h1 className="font-bold text-[#111111] mb-6 max-[441px]:mb-[10px] leading-[56px] max-[441px]:text-[30px] max-[441px]:leading-[39px] text-[40px]">
                 숫자 너머의 가치를
                 <br />
                 함께 만드는 파트너
               </h1>
-              <p className="max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[18px] leading-[25.2px] font-semibold" style={{ color: "rgba(17, 17, 17, 0.5)" }}>
+              <p className="max-[441px]:text-[16px] max-[441px]:leading-[24px] text-[18px] leading-[25.2px] font-semibold" style={{ color: "rgba(17, 17, 17, 0.5)" }}>
                 각 분야의 전문성을 갖춘 회계사들이 비즈니스의 든든한 동반자가 됩니다.
               </p>
             </div>
@@ -42,48 +42,48 @@ export default function ExpertsPage() {
       </section>
 
       <section
-        className="bg-white pb-[calc(100vw*300/1920)] max-[440px]:!pb-[160px] max-[440px]:!mt-[calc(100vw*60/375)]"
+        className="bg-white pb-[calc(100vw*300/1920)] max-[441px]:!pb-[160px] max-[441px]:!mt-[calc(100vw*60/375)]"
         style={{
           marginTop: "calc(100vw * 140 / 1920)",
         }}
       >
         <div
-          className="max-[440px]:!px-5"
+          className="max-[441px]:!px-5"
           style={{ paddingLeft: "calc(100vw * 360 / 1920)", paddingRight: "calc(100vw * 360 / 1920)" }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-[440px]:gap-[10px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-[441px]:gap-[10px]">
             {expertsData.map((expert) => (
               <button
                 key={expert.slug}
                 onClick={() => router.push(`/experts/${expert.slug}`)}
-                className="relative aspect-[387/512] rounded-[30px] max-[440px]:rounded-[20px] overflow-hidden cursor-pointer group"
+                className="relative aspect-[387/512] rounded-[30px] max-[441px]:rounded-[20px] overflow-hidden cursor-pointer group"
               >
                 <Image
                   src={expert.imageWithBackground || expert.image || "/placeholder.svg"}
                   alt={`${expert.title} ${expert.name}`}
                   fill
-                  className="object-cover object-top min-[440px]:group-hover:scale-105 transition-transform duration-300"
+                  className="object-cover object-top min-[441px]:group-hover:scale-105 transition-transform duration-300"
                 />
                 <div
-                  className="absolute bottom-0 left-0 right-0 pointer-events-none max-[440px]:hidden"
+                  className="absolute bottom-0 left-0 right-0 pointer-events-none max-[441px]:hidden"
                   style={{
                     height: "calc(100vw * 180 / 1920)",
                   }}
                 >
                   <Image src="/images/design-mode/gradient-overlay-pc.png" alt="" fill className="object-cover" />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 pointer-events-none hidden max-[440px]:block max-[440px]:h-[calc(100vw*140/375)] max-[440px]:w-[calc(100vw*335/375)] max-[440px]:mx-auto">
+                <div className="absolute bottom-0 left-0 right-0 pointer-events-none hidden max-[441px]:block max-[441px]:h-[calc(100vw*140/375)] max-[441px]:w-[calc(100vw*335/375)] max-[441px]:mx-auto">
                   <Image src="/images/design-mode/gradient-overlay-mobile.png" alt="" fill className="object-cover" />
                 </div>
                 <div
-                  className="absolute flex flex-col items-start text-white z-10 max-[440px]:!left-6 max-[440px]:!bottom-6"
+                  className="absolute flex flex-col items-start text-white z-10 max-[441px]:!left-6 max-[441px]:!bottom-6"
                   style={{
                     left: "calc(100vw * 40 / 1920)",
                     bottom: "calc(100vw * 40 / 1920)",
                   }}
                 >
                   <p
-                    className="font-semibold max-[440px]:!text-[16px] max-[440px]:!mb-1"
+                    className="font-semibold max-[441px]:!text-[16px] max-[441px]:!mb-1"
                     style={{
                       fontSize: "16px",
                       marginBottom: "min(8px, calc(100vw * 8 / 1920))",
@@ -91,7 +91,7 @@ export default function ExpertsPage() {
                   >
                     {expert.title}
                   </p>
-                  <h3 className="font-bold max-[440px]:text-[24px]" style={{ fontSize: "24px" }}>{expert.name}</h3>
+                  <h3 className="font-bold max-[441px]:text-[24px]" style={{ fontSize: "24px" }}>{expert.name}</h3>
                 </div>
               </button>
             ))}

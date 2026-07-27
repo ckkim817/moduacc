@@ -611,13 +611,13 @@ function QnAItem({ question, answer, isOpen, onToggle, isLast }: any) {
     <div className={isLast ? "" : "border-b border-[#EFEFEF]"}>
       <button
         onClick={onToggle}
-        className={`w-full flex max-[440px]:items-start items-center justify-between gap-4 text-left hover:bg-gray-50/50 transition-colors cursor-pointer pt-[30px] max-[440px]:pt-[24px] pb-0 ${
-          isOpen ? "" : "max-[440px]:pb-[24px] pb-[30px]"
+        className={`w-full flex max-[441px]:items-start items-center justify-between gap-4 text-left hover:bg-gray-50/50 transition-colors cursor-pointer pt-[30px] max-[441px]:pt-[24px] pb-0 ${
+          isOpen ? "" : "max-[441px]:pb-[24px] pb-[30px]"
         }`}
       >
-        <div className="flex-1 flex max-[440px]:items-start items-center max-[440px]:gap-[10px] gap-[20px]">
-          <span className="text-[#355CBA] font-bold flex-shrink-0 max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[24px] leading-[33.6px]">Q</span>
-          <span className="text-[#111111] font-bold max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[24px] leading-[33.6px]">{question}</span>
+        <div className="flex-1 flex max-[441px]:items-start items-center max-[441px]:gap-[10px] gap-[20px]">
+          <span className="text-[#355CBA] font-bold flex-shrink-0 max-[441px]:text-[18px] max-[441px]:leading-[25px] text-[24px] leading-[33.6px]">Q</span>
+          <span className="text-[#111111] font-bold max-[441px]:text-[18px] max-[441px]:leading-[25px] text-[24px] leading-[33.6px]">{question}</span>
         </div>
         <div className="flex-shrink-0">
           <Image
@@ -625,7 +625,7 @@ function QnAItem({ question, answer, isOpen, onToggle, isLast }: any) {
             alt={isOpen ? "Close" : "Open"}
             width={24}
             height={24}
-            className={`transition-transform duration-300 ease-in-out max-[440px]:w-5 max-[440px]:h-5 ${isOpen ? "rotate-180" : "rotate-0"}`}
+            className={`transition-transform duration-300 ease-in-out max-[441px]:w-5 max-[441px]:h-5 ${isOpen ? "rotate-180" : "rotate-0"}`}
           />
         </div>
       </button>
@@ -634,9 +634,9 @@ function QnAItem({ question, answer, isOpen, onToggle, isLast }: any) {
           isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="flex items-start max-[440px]:gap-[10px] gap-[20px] max-[440px]:pt-[12px] pt-[20px] max-[440px]:pb-[24px] pb-[40px]">
-          <span className="text-[#999999] font-bold flex-shrink-0 max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[24px] leading-[33.6px]">A</span>
-          <p className="text-[#535353] font-medium whitespace-pre-line max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[18px] leading-[25.2px]">{answer}</p>
+        <div className="flex items-start max-[441px]:gap-[10px] gap-[20px] max-[441px]:pt-[12px] pt-[20px] max-[441px]:pb-[24px] pb-[40px]">
+          <span className="text-[#999999] font-bold flex-shrink-0 max-[441px]:text-[16px] max-[441px]:leading-[25px] text-[24px] leading-[33.6px]">A</span>
+          <p className="text-[#535353] font-medium whitespace-pre-line max-[441px]:text-[16px] max-[441px]:leading-[25px] text-[18px] leading-[25.2px]">{answer}</p>
         </div>
       </div>
     </div>
@@ -684,32 +684,32 @@ export default function ServiceDetailPage() {
       <Navigation forceWhiteMode />
 
       {/* Hero Section with Image Overlay */}
-      <section className="pt-[110px] max-[440px]:pt-16">
+      <section className="pt-[110px] max-[441px]:pt-16">
         <div
-          className="max-[440px]:!px-0"
+          className="max-[441px]:!px-0"
           style={{ paddingLeft: "calc(100vw / 5.5)", paddingRight: "calc(100vw / 5.5)" }}
         >
-          <div className="relative w-full max-w-[1200px] mx-auto aspect-[1200/480] max-[440px]:aspect-[375/440]">
+          <div className="relative w-full max-w-[1200px] mx-auto aspect-[1200/480] max-[441px]:aspect-[375/440]">
             {/* Service Image */}
             <Image
               src={service.image || "/placeholder.svg"}
               alt={service.title}
               fill
-              className="object-cover rounded-[30px] max-[440px]:rounded-none"
+              className="object-cover rounded-[30px] max-[441px]:rounded-none"
             />
 
             {/* Dark Overlay (30% black) */}
-            <div className="absolute inset-0 bg-black/30 rounded-[30px] max-[440px]:rounded-none" />
+            <div className="absolute inset-0 bg-black/30 rounded-[30px] max-[441px]:rounded-none" />
 
             {/* Text Content */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-              <h1 className="text-white font-bold mb-[10px] max-[440px]:text-[30px] max-[440px]:leading-[39px] text-[40px] leading-[56px]">{service.title}</h1>
+              <h1 className="text-white font-bold mb-[10px] max-[441px]:text-[30px] max-[441px]:leading-[39px] text-[40px] leading-[56px]">{service.title}</h1>
               {/* PC version */}
-              <p className="text-white max-w-3xl font-semibold text-[18px] leading-[25.2px] opacity-70 whitespace-pre-line max-[440px]:hidden">
+              <p className="text-white max-w-3xl font-semibold text-[18px] leading-[25.2px] opacity-70 whitespace-pre-line max-[441px]:hidden">
                 {service.description}
               </p>
               {/* Mobile version */}
-              <p className="hidden max-[440px]:block text-white max-w-3xl font-semibold text-[16px] leading-[22px] opacity-70 whitespace-pre-line">
+              <p className="hidden max-[441px]:block text-white max-w-3xl font-semibold text-[16px] leading-[22px] opacity-70 whitespace-pre-line">
                 {service.mobileDescription}
               </p>
             </div>
@@ -718,9 +718,9 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Q&A Section */}
-      <section className="pt-20 max-[440px]:pt-12 pb-20 max-[440px]:pb-8 bg-white">
+      <section className="pt-20 max-[441px]:pt-12 pb-20 max-[441px]:pb-8 bg-white">
         <div
-          className="max-[440px]:!px-5"
+          className="max-[441px]:!px-5"
           style={{ paddingLeft: "calc(100vw / 5.5)", paddingRight: "calc(100vw / 5.5)" }}
         >
           <div className="max-w-[1200px] mx-auto">
@@ -739,7 +739,7 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Back to List Button */}
-      <section className="pt-[40px] max-[440px]:pt-[4px] bg-white pb-[calc(100vw*300/1920)] max-[440px]:!pb-[calc(100vw*160/375)]">
+      <section className="pt-[40px] max-[441px]:pt-[4px] bg-white pb-[calc(100vw*300/1920)] max-[441px]:!pb-[calc(100vw*160/375)]">
         <div className="max-w-4xl mx-auto text-center">
           <CommonButton size="sub" onClick={() => router.push("/services")}>목록으로 돌아가기</CommonButton>
         </div>

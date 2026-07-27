@@ -32,9 +32,9 @@ export default function ExpertDetailPage() {
       <Navigation forceWhiteMode />
 
       {/* Hero Section with Expert Image and Info */}
-      <section className="relative bg-white max-[440px]:!pt-[48px]" style={{ paddingTop: "calc(110px)" }}>
+      <section className="relative bg-white max-[441px]:!pt-[48px]" style={{ paddingTop: "calc(110px)" }}>
         <div
-          className="relative mx-auto max-[440px]:hidden"
+          className="relative mx-auto max-[441px]:hidden"
           style={{
             paddingLeft: "calc(100vw * 360 / 1920)",
             paddingRight: "calc(100vw * 360 / 1920)",
@@ -62,7 +62,7 @@ export default function ExpertDetailPage() {
             >
               <div className="relative w-full h-full">
                 <div
-                  className="absolute flex flex-col max-[440px]:hidden"
+                  className="absolute flex flex-col max-[441px]:hidden"
                   style={{
                     left: "min(80px, calc(100vw * 80 / 1920))",
                     top: "min(70px, calc(100vw * 70 / 1920))",
@@ -79,7 +79,7 @@ export default function ExpertDetailPage() {
 
                 {/* Mobile version */}
                 <p
-                  className="absolute text-white text-[13px] font-medium hidden max-[440px]:block"
+                  className="absolute text-white text-[13px] font-medium hidden max-[441px]:block"
                   style={{
                     left: "calc(100vw * 80 / 1920)",
                     top: "calc(100vw * 70 / 1920)",
@@ -89,7 +89,7 @@ export default function ExpertDetailPage() {
                 </p>
 
                 <h1
-                  className="absolute text-white font-bold text-[24px] leading-[34px] hidden max-[440px]:block"
+                  className="absolute text-white font-bold text-[24px] leading-[34px] hidden max-[441px]:block"
                   style={{
                     left: "calc(100vw * 80 / 1920)",
                     top: "min(calc(100vw * 104 / 1920), 104px)",
@@ -148,7 +148,7 @@ export default function ExpertDetailPage() {
 
           {/* Gray Description Section - overlaps blue by 70px, only bottom corners rounded */}
           <div
-            className="relative bg-[#F5F5F5] max-[440px]:hidden max-w-[1200px]"
+            className="relative bg-[#F5F5F5] max-[441px]:hidden max-w-[1200px]"
             style={{
               width: "calc(100vw * 1200 / 1920)",
               margin: "0 auto",
@@ -170,7 +170,7 @@ export default function ExpertDetailPage() {
           </div>
         </div>
 
-        <div className="hidden max-[440px]:block px-5">
+        <div className="hidden max-[441px]:block px-5">
           <div className="mx-auto" style={{ width: "calc(100vw * 335 / 375)" }}>
             {/* Container with extra top padding to accommodate photo overflow */}
             <div className="relative" style={{ paddingTop: "calc(100vw * 60 / 375)" }}>
@@ -251,7 +251,7 @@ export default function ExpertDetailPage() {
                   paddingBottom: "32px",
                 }}
               >
-                <p className="text-[#333333] font-medium text-[16px] leading-[22px] max-[440px]:text-center">
+                <p className="text-[#333333] font-medium text-[16px] leading-[22px] max-[441px]:text-center">
                   {expert.description}
                 </p>
               </div>
@@ -262,19 +262,19 @@ export default function ExpertDetailPage() {
 
       {/* Details Section */}
       <section
-        className="bg-white max-[440px]:!px-5 pt-[40px] max-[440px]:!pt-[20px]"
+        className="bg-white max-[441px]:!px-5 pt-[40px] max-[441px]:!pt-[20px]"
         style={{
           paddingLeft: "calc(100vw * 360 / 1920)",
           paddingRight: "calc(100vw * 360 / 1920)",
         }}
       >
-        <div className="mx-auto max-[440px]:!w-full max-w-[1200px]" style={{ width: "calc(100vw * 1200 / 1920)", margin: "0 auto" }}>
+        <div className="mx-auto max-[441px]:!w-full max-w-[1200px]" style={{ width: "calc(100vw * 1200 / 1920)", margin: "0 auto" }}>
           {/* Education & Qualifications */}
-          <div className="grid grid-cols-[200px_1fr] gap-8 py-[60px] max-[440px]:py-[40px] max-[440px]:grid-cols-1 max-[440px]:gap-4">
-            <h2 className="font-bold text-[#111111] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[20px] leading-[28px]">학력 및 자격</h2>
+          <div className="grid grid-cols-[200px_1fr] gap-8 py-[60px] max-[441px]:py-[40px] max-[441px]:grid-cols-1 max-[441px]:gap-4">
+            <h2 className="font-bold text-[#111111] max-[441px]:text-[18px] max-[441px]:leading-[25px] text-[20px] leading-[28px]">학력 및 자격</h2>
             <div className="space-y-2">
               {expert.education.map((item, index) => (
-                <p key={index} className="text-[#333333] max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[18px] leading-[25.2px] whitespace-pre-line">
+                <p key={index} className="text-[#333333] max-[441px]:text-[16px] max-[441px]:leading-[25px] text-[18px] leading-[25.2px] whitespace-pre-line">
                   {item}
                 </p>
               ))}
@@ -285,11 +285,11 @@ export default function ExpertDetailPage() {
           <div className="w-full h-[1px] bg-black/[0.07]" />
 
           {/* Career */}
-          <div className="grid grid-cols-[200px_1fr] gap-8 py-[60px] max-[440px]:py-[40px] max-[440px]:grid-cols-1 max-[440px]:gap-4">
-            <h2 className="font-bold text-[#111111] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[20px] leading-[28px]">경력</h2>
+          <div className="grid grid-cols-[200px_1fr] gap-8 py-[60px] max-[441px]:py-[40px] max-[441px]:grid-cols-1 max-[441px]:gap-4">
+            <h2 className="font-bold text-[#111111] max-[441px]:text-[18px] max-[441px]:leading-[25px] text-[20px] leading-[28px]">경력</h2>
             <div className="space-y-2">
               {expert.career.map((item, index) => (
-                <p key={index} className="text-[#333333] max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[18px] leading-[25.2px] whitespace-pre-line">
+                <p key={index} className="text-[#333333] max-[441px]:text-[16px] max-[441px]:leading-[25px] text-[18px] leading-[25.2px] whitespace-pre-line">
                   {item}
                 </p>
               ))}
@@ -300,11 +300,11 @@ export default function ExpertDetailPage() {
           <div className="w-full h-[1px] bg-black/[0.07]" />
 
           {/* Main Work Areas */}
-          <div className="grid grid-cols-[200px_1fr] gap-8 py-[60px] max-[440px]:py-[40px] max-[440px]:grid-cols-1 max-[440px]:gap-4">
-            <h2 className="font-bold text-[#111111] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[20px] leading-[28px]">주요 업무분야</h2>
-            <div className="flex flex-col gap-[20px] max-[440px]:gap-[16px]">
+          <div className="grid grid-cols-[200px_1fr] gap-8 py-[60px] max-[441px]:py-[40px] max-[441px]:grid-cols-1 max-[441px]:gap-4">
+            <h2 className="font-bold text-[#111111] max-[441px]:text-[18px] max-[441px]:leading-[25px] text-[20px] leading-[28px]">주요 업무분야</h2>
+            <div className="flex flex-col gap-[20px] max-[441px]:gap-[16px]">
               {expert.workAreas.map((item, index) => (
-                <p key={index} className="text-[#333333] max-[440px]:text-[16px] max-[440px]:leading-[25px] text-[18px] leading-[25.2px] whitespace-pre-line">
+                <p key={index} className="text-[#333333] max-[441px]:text-[16px] max-[441px]:leading-[25px] text-[18px] leading-[25.2px] whitespace-pre-line">
                   {item}
                 </p>
               ))}
@@ -312,7 +312,7 @@ export default function ExpertDetailPage() {
           </div>
 
           <div
-            className="flex justify-center pt-[60px] pb-[300px] max-[440px]:!pt-[20px] max-[440px]:!pb-[160px]"
+            className="flex justify-center pt-[60px] pb-[300px] max-[441px]:!pt-[20px] max-[441px]:!pb-[160px]"
           >
             <CommonButton size="sub" onClick={() => router.push("/experts")}>목록으로 돌아가기</CommonButton>
           </div>

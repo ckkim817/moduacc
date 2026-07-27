@@ -17,7 +17,7 @@ const ptComponents = {
     title: ({children}: any) => {
       const isEmpty = !children || (Array.isArray(children) && children.length === 0) || (React.Children.count(children) === 1 && children[0] === '')
       return (
-        <h2 className="font-bold mb-6 max-[440px]:text-[22px] max-[440px]:leading-[31px] text-[24px] leading-[33.6px]" style={{ color: "#333333" }}>
+        <h2 className="font-bold mb-6 max-[441px]:text-[22px] max-[441px]:leading-[31px] text-[24px] leading-[33.6px]" style={{ color: "#333333" }}>
           {isEmpty ? <br /> : children}
         </h2>
       )
@@ -25,7 +25,7 @@ const ptComponents = {
     normal: ({children}: any) => {
       const isEmpty = !children || (Array.isArray(children) && children.length === 0) || (React.Children.count(children) === 1 && children[0] === '')
       return (
-        <p className="mb-6 max-[440px]:text-[17px] max-[440px]:leading-[26px] text-[18px] leading-[25.2px]" style={{ color: "#333333" }}>
+        <p className="mb-6 max-[441px]:text-[17px] max-[441px]:leading-[26px] text-[18px] leading-[25.2px]" style={{ color: "#333333" }}>
           {isEmpty ? <br /> : children}
         </p>
       )
@@ -33,7 +33,7 @@ const ptComponents = {
     caption: ({children}: any) => {
       const isEmpty = !children || (Array.isArray(children) && children.length === 0) || (React.Children.count(children) === 1 && children[0] === '')
       return (
-        <p className="mb-6 max-[440px]:text-[15px] max-[440px]:leading-[21px] text-[20px] leading-[30px]" style={{ color: "#999999" }}>
+        <p className="mb-6 max-[441px]:text-[15px] max-[441px]:leading-[21px] text-[20px] leading-[30px]" style={{ color: "#999999" }}>
           {isEmpty ? <br /> : children}
         </p>
       )
@@ -108,14 +108,14 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
 
   return (
     <article
-      className="w-full max-[440px]:!pb-[160px]"
+      className="w-full max-[441px]:!pb-[160px]"
       style={{
         paddingBottom: "calc(100vw * 300 / 1920)",
       }}
     >
       {/* Header Section */}
       <div
-        className="w-full flex flex-col items-center max-[440px]:!px-5 max-[440px]:!pt-24"
+        className="w-full flex flex-col items-center max-[441px]:!px-5 max-[441px]:!pt-24"
         style={{
           paddingTop: "calc(110px + (100vw * 130 / 1920))",
           paddingLeft: "calc(100vw * 360 / 1920)",
@@ -123,9 +123,9 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
         }}
       >
         {/* Category */}
-        <div className="text-center mb-3 max-[440px]:mb-[5px]">
+        <div className="text-center mb-3 max-[441px]:mb-[5px]">
           <span
-            className="font-bold max-[440px]:text-[14px] text-[18px] min-[440px]:leading-[25.2px]"
+            className="font-bold max-[441px]:text-[14px] text-[18px] min-[441px]:leading-[25.2px]"
             style={{
               color: "#355CBA",
             }}
@@ -135,26 +135,26 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
         </div>
 
         {/* Title */}
-        <h1 className="font-bold text-center text-balance text-[40px] leading-[56px] max-[440px]:text-[24px] max-[440px]:leading-[34px] max-[440px]:mb-[5px] mb-[12px]">
+        <h1 className="font-bold text-center text-balance text-[40px] leading-[56px] max-[441px]:text-[24px] max-[441px]:leading-[34px] max-[441px]:mb-[5px] mb-[12px]">
           {post.title}
         </h1>
 
         {/* Date and Author */}
         <div
-          className="text-center max-[440px]:!mb-[60px]"
+          className="text-center max-[441px]:!mb-[60px]"
           style={{
             color: "#666666",
             marginBottom: "calc(100vw * 120 / 1920)",
           }}
         >
-          <span className="font-medium max-[440px]:text-[14px] text-[18px] min-[440px]:leading-[25.2px]">
+          <span className="font-medium max-[441px]:text-[14px] text-[18px] min-[441px]:leading-[25.2px]">
             {formatDate(post.date)} · {post.author || '김정선 회계사'} 작성
           </span>
         </div>
 
         {/* Posting Image */}
         <div
-          className="w-full mb-20 overflow-hidden max-w-[1200px] mx-auto rounded-[24px] aspect-[5/2] max-[440px]:!-mx-5 max-[440px]:!w-[100vw] max-[440px]:max-w-none max-[440px]:!aspect-[375/240] max-[440px]:!rounded-none max-[440px]:!mb-[40px]"
+          className="w-full mb-20 overflow-hidden max-w-[1200px] mx-auto rounded-[24px] aspect-[5/2] max-[441px]:!-mx-5 max-[441px]:!w-[100vw] max-[441px]:max-w-none max-[441px]:!aspect-[375/240] max-[441px]:!rounded-none max-[441px]:!mb-[40px]"
         >
           <Image
             src={post.image || "/placeholder.svg"}
@@ -166,26 +166,26 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
         </div>
 
         {/* Post Content */}
-        <div className="w-full prose prose-lg max-w-[1160px] mx-auto mb-[160px] max-[440px]:mb-[80px]">
+        <div className="w-full prose prose-lg max-w-[1160px] mx-auto mb-[160px] max-[441px]:mb-[80px]">
           {post.body ? (
             <PortableText value={post.body} components={ptComponents} />
           ) : (
-            <p className="mb-6 max-[440px]:text-[17px] max-[440px]:leading-[26px] text-[18px] leading-[25.2px]" style={{ color: "#333333" }}>
+            <p className="mb-6 max-[441px]:text-[17px] max-[441px]:leading-[26px] text-[18px] leading-[25.2px]" style={{ color: "#333333" }}>
               내용이 없습니다.
             </p>
           )}
         </div>
 
         {/* Previous/Next Post Navigation */}
-        <div className="w-full mb-[120px] max-[440px]:mb-[100px] max-w-[1200px] mx-auto">
+        <div className="w-full mb-[120px] max-[441px]:mb-[100px] max-w-[1200px] mx-auto">
           {previousPost && (
             <Link
               href={`/blog/${previousPost.slug}`}
-              className={`flex items-center justify-between py-6 pr-6 pl-5 max-[440px]:p-0 ${nextPost ? 'border-b border-gray-200' : ''} max-[440px]:border-none hover:bg-gray-50 max-[440px]:hover:bg-transparent transition-colors group`}
+              className={`flex items-center justify-between py-6 pr-6 pl-5 max-[441px]:p-0 ${nextPost ? 'border-b border-gray-200' : ''} max-[441px]:border-none hover:bg-gray-50 max-[441px]:hover:bg-transparent transition-colors group`}
             >
-              <div className="flex items-center flex-1 max-[440px]:flex-col max-[440px]:items-start max-[440px]:gap-[6px]" style={{ gap: "calc(100vw * 30 / 1920)" }}>
-                <div className="flex justify-between max-[440px]:w-full">
-                  <span className="whitespace-nowrap font-bold text-[18px] max-[440px]:text-[16px] max-[440px]:leading-[24px]" style={{ color: "#535353" }}>
+              <div className="flex items-center flex-1 max-[441px]:flex-col max-[441px]:items-start max-[441px]:gap-[6px]" style={{ gap: "calc(100vw * 30 / 1920)" }}>
+                <div className="flex justify-between max-[441px]:w-full">
+                  <span className="whitespace-nowrap font-bold text-[18px] max-[441px]:text-[16px] max-[441px]:leading-[24px]" style={{ color: "#535353" }}>
                     이전 글
                   </span>
                   <Image
@@ -193,10 +193,10 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
                     alt="Previous"
                     width={24}
                     height={24}
-                    className="flex-shrink-0 hidden max-[440px]:block"
+                    className="flex-shrink-0 hidden max-[441px]:block"
                   />
                 </div>
-                <span className="transition-opacity font-normal text-[18px] max-[440px]:text-[16px] max-[440px]:leading-[22px] max-[440px]:w-full" style={{ color: "#777777" }}>
+                <span className="transition-opacity font-normal text-[18px] max-[441px]:text-[16px] max-[441px]:leading-[22px] max-[441px]:w-full" style={{ color: "#777777" }}>
                   {previousPost.title}
                 </span>
               </div>
@@ -205,7 +205,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
                 alt="Previous"
                 width={24}
                 height={24}
-                className="flex-shrink-0 max-[440px]:hidden"
+                className="flex-shrink-0 max-[441px]:hidden"
                 style={{
                   marginLeft: "calc(100vw * 16 / 1920)",
                 }}
@@ -214,17 +214,17 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
           )}
 
           {previousPost && nextPost && (
-            <div className="hidden max-[440px]:block w-full h-[1px] my-[24px]" style={{ backgroundColor: "#EFEFEF" }} />
+            <div className="hidden max-[441px]:block w-full h-[1px] my-[24px]" style={{ backgroundColor: "#EFEFEF" }} />
           )}
 
           {nextPost && (
             <Link
               href={`/blog/${nextPost.slug}`}
-              className="flex items-center justify-between py-6 pr-6 pl-5 max-[440px]:p-0 hover:bg-gray-50 max-[440px]:hover:bg-transparent transition-colors group"
+              className="flex items-center justify-between py-6 pr-6 pl-5 max-[441px]:p-0 hover:bg-gray-50 max-[441px]:hover:bg-transparent transition-colors group"
             >
-              <div className="flex items-center flex-1 max-[440px]:flex-col max-[440px]:items-start max-[440px]:gap-[6px]" style={{ gap: "calc(100vw * 30 / 1920)" }}>
-                <div className="flex justify-between max-[440px]:w-full">
-                  <span className="whitespace-nowrap font-bold text-[18px] max-[440px]:text-[16px] max-[440px]:leading-[24px]" style={{ color: "#535353" }}>
+              <div className="flex items-center flex-1 max-[441px]:flex-col max-[441px]:items-start max-[441px]:gap-[6px]" style={{ gap: "calc(100vw * 30 / 1920)" }}>
+                <div className="flex justify-between max-[441px]:w-full">
+                  <span className="whitespace-nowrap font-bold text-[18px] max-[441px]:text-[16px] max-[441px]:leading-[24px]" style={{ color: "#535353" }}>
                     다음 글
                   </span>
                   <Image
@@ -232,10 +232,10 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
                     alt="Next"
                     width={24}
                     height={24}
-                    className="flex-shrink-0 hidden max-[440px]:block"
+                    className="flex-shrink-0 hidden max-[441px]:block"
                   />
                 </div>
-                <span className="transition-opacity font-normal text-[18px] max-[440px]:text-[16px] max-[440px]:leading-[22px] max-[440px]:w-full" style={{ color: "#777777" }}>
+                <span className="transition-opacity font-normal text-[18px] max-[441px]:text-[16px] max-[441px]:leading-[22px] max-[441px]:w-full" style={{ color: "#777777" }}>
                   {nextPost.title}
                 </span>
               </div>
@@ -244,7 +244,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
                 alt="Next"
                 width={24}
                 height={24}
-                className="flex-shrink-0 max-[440px]:hidden"
+                className="flex-shrink-0 max-[441px]:hidden"
                 style={{
                   marginLeft: "calc(100vw * 16 / 1920)",
                 }}

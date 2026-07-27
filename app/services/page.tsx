@@ -93,17 +93,17 @@ export default function ServicesPage() {
       <Navigation forceWhiteMode />
 
       {/* Hero Section */}
-      <section className="pb-16 bg-white max-[440px]:pb-8 pt-[220px] max-[440px]:!pt-[116px]">
-        <div className="max-[440px]:!px-5">
-          <div className="container mx-auto px-6 max-[440px]:px-0">
+      <section className="pb-16 bg-white max-[441px]:pb-8 pt-[220px] max-[441px]:!pt-[116px]">
+        <div className="max-[441px]:!px-5">
+          <div className="container mx-auto px-6 max-[441px]:px-0">
             <div className="max-w-7xl mx-auto text-center">
-              <h1 className="font-bold text-[#111111] mb-6 leading-[56px] max-[440px]:text-[30px] max-[440px]:leading-[39px] text-[40px]">
+              <h1 className="font-bold text-[#111111] mb-6 leading-[56px] max-[441px]:text-[30px] max-[441px]:leading-[39px] text-[40px]">
                 원스톱
                 <br />
                 회계·세무 서비스
               </h1>
               <p
-                className="max-[440px]:text-[16px] max-[440px]:leading-[24px] max-[440px]:!mb-[60px] font-semibold text-[18px] leading-[25.2px]"
+                className="max-[441px]:text-[16px] max-[441px]:leading-[24px] max-[441px]:!mb-[60px] font-semibold text-[18px] leading-[25.2px]"
                 style={{
                   marginBottom: "calc(100vw * 100 / 1920)",
                   color: "rgba(17, 17, 17, 0.5)",
@@ -116,47 +116,47 @@ export default function ServicesPage() {
         </div>
 
         {/* Full-width hero image */}
-        <div className="relative w-full mx-auto aspect-[1920/400] max-[440px]:aspect-[375/440]">
+        <div className="relative w-full mx-auto aspect-[1920/400] max-[441px]:aspect-[375/440]">
           <Image
             src="/images/services-hero.jpeg"
             alt="Modern office workspace"
             fill
             unoptimized
-            className="object-cover max-[440px]:rounded-none"
+            className="object-cover max-[441px]:rounded-none"
           />
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="pt-[96px] bg-white pb-[calc(100vw*300/1920)] max-[440px]:pt-12 max-[440px]:pb-[160px]">
+      <section className="pt-[96px] bg-white pb-[calc(100vw*300/1920)] max-[441px]:pt-12 max-[441px]:pb-[160px]">
         <div
-          className="max-[440px]:!px-5"
+          className="max-[441px]:!px-5"
           style={{
             paddingLeft: "min(calc(100vw * 360 / 1920), 360px)",
             paddingRight: "min(calc(100vw * 360 / 1920), 360px)",
           }}
         >
-          <div className="container mx-auto px-6 max-[440px]:px-0">
+          <div className="container mx-auto px-6 max-[441px]:px-0">
             <div className="max-w-7xl mx-auto">
-              <h2 className="font-bold text-[#111111] mb-8 max-[440px]:mb-[14px] max-[440px]:text-lg text-[24px] min-[440px]:leading-[33.6px]">서비스</h2>
+              <h2 className="font-bold text-[#111111] mb-8 max-[441px]:mb-[14px] max-[441px]:text-lg text-[24px] min-[441px]:leading-[33.6px]">서비스</h2>
 
               {/* Services Grid - 2 columns */}
-              <div className="grid grid-cols-1 md:grid-cols-2 max-[440px]:gap-[40px] gap-x-5 gap-y-[60px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 max-[441px]:gap-[40px] gap-x-5 gap-y-[60px]">
                 {services.map((service, index) => (
                   <Link key={index} href={`/services/${service.slug}`} className="flex flex-col cursor-pointer group">
-                    <div className="w-full relative rounded-[24px] overflow-hidden mb-[24px] max-[440px]:mb-4 max-[440px]:rounded-[20px] max-[440px]:[aspect-ratio:335/200]" style={{ aspectRatio: "590 / 400" }}>
+                    <div className="w-full relative rounded-[24px] overflow-hidden mb-[24px] max-[441px]:mb-4 max-[441px]:rounded-[20px] max-[441px]:[aspect-ratio:335/200]" style={{ aspectRatio: "590 / 400" }}>
                       <Image
                         src={service.image || "/placeholder.svg"}
                         alt={service.title}
                         fill
                         unoptimized
-                        className="object-cover min-[440px]:group-hover:scale-105 transition-transform duration-300"
+                        className="object-cover min-[441px]:group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
 
-                    <h3 className="font-bold text-[#111111] mb-[6px] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[22px] leading-[30.8px] min-[440px]:px-[10px]">{service.title}</h3>
+                    <h3 className="font-bold text-[#111111] mb-[6px] max-[441px]:text-[18px] max-[441px]:leading-[25px] text-[22px] leading-[30.8px] min-[441px]:px-[10px]">{service.title}</h3>
 
-                    <p className="text-[#333333] max-[440px]:text-[14px] max-[440px]:leading-[20px] text-[18px] leading-[25.2px] min-[440px]:px-[10px]">{service.description}</p>
+                    <p className="text-[#333333] max-[441px]:text-[14px] max-[441px]:leading-[20px] text-[18px] leading-[25.2px] min-[441px]:px-[10px]">{service.description}</p>
                   </Link>
                 ))}
               </div>

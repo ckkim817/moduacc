@@ -36,7 +36,7 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6">
-        <h1 className="text-white font-bold leading-[84px] max-[440px]:text-[30px] max-[440px]:leading-tight text-[66px] animate-fade-in-up">
+        <h1 className="text-white font-bold leading-[84px] max-[441px]:text-[30px] max-[441px]:leading-tight text-[66px] animate-fade-in-up">
           성장의 모든 순간,
           <br />
           모두
@@ -50,7 +50,7 @@ export function HeroSection() {
           alt="Scroll down"
           width={60}
           height={30}
-          className="w-[60px] h-[30px] max-[440px]:w-[50px] max-[440px]:h-[20px]"
+          className="w-[60px] h-[30px] max-[441px]:w-[50px] max-[441px]:h-[20px]"
           priority
         />
       </div>

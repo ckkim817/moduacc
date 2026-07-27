@@ -55,7 +55,7 @@ const rightColumnMembers = [
 
 export function TeamSection() {
   return (
-    <section className="bg-white relative overflow-hidden pb-[300px] max-[440px]:pt-[40px] max-[440px]:pb-[160px]">
+    <section className="bg-white relative overflow-hidden pb-[300px] max-[441px]:pt-[40px] max-[441px]:pb-[160px]">
       <style jsx>{`
         @keyframes scrollUp {
           0% {
@@ -77,7 +77,7 @@ export function TeamSection() {
         <div className="flex flex-col min-[1070px]:flex-row min-[1070px]:items-start gap-[50px] min-[1070px]:gap-0">
           {/* Left side: Title and Button */}
           <div className="flex flex-col items-center min-[1070px]:items-start text-center min-[1070px]:text-left min-[1070px]:flex-shrink-0 min-[1070px]:w-[400px]">
-            <h2 className="font-bold text-[#111111] text-balance max-[440px]:text-[24px] max-[440px]:leading-[34px] text-[40px] leading-[56px]">
+            <h2 className="font-bold text-[#111111] text-balance max-[441px]:text-[24px] max-[441px]:leading-[34px] text-[40px] leading-[56px]">
               수치 너머의 가치를
               <br />
               함께 만드는 전문가들
@@ -89,13 +89,13 @@ export function TeamSection() {
           </div>
 
           {/* Right side: Card Animation */}
-          <div className="relative w-full h-[500px] min-[1070px]:w-[630px] min-[1070px]:h-[800px] min-[440px]:max-[1069px]:h-auto min-[440px]:max-[1069px]:aspect-[630/800] overflow-hidden min-[1070px]:flex-shrink-0 min-[1070px]:ml-auto">
+          <div className="relative w-full h-[500px] min-[1070px]:w-[630px] min-[1070px]:h-[800px] min-[441px]:max-[1069px]:h-auto min-[441px]:max-[1069px]:aspect-[630/800] overflow-hidden min-[1070px]:flex-shrink-0 min-[1070px]:ml-auto">
             <div className="absolute -top-[1px] -left-[1px] -right-[1px] -bottom-[1px] pointer-events-none z-10">
               <Image src="/images/img_white_gradient.png" alt="" fill className="object-cover" priority />
             </div>
 
-            <div className="grid grid-cols-2 gap-[10px] min-[440px]:gap-[30px] pointer-events-none relative z-0">
-              <div className="flex flex-col gap-[10px] min-[440px]:gap-[30px] animate-scroll-up">
+            <div className="grid grid-cols-2 gap-[10px] min-[441px]:gap-[30px] pointer-events-none relative z-0">
+              <div className="flex flex-col gap-[10px] min-[441px]:gap-[30px] animate-scroll-up">
                 {[...Array(6)].flatMap((_, arrayIndex) =>
                   leftColumnMembers.map((member, index) => (
                     <Link
@@ -125,7 +125,7 @@ export function TeamSection() {
                 )}
               </div>
 
-              <div className="flex flex-col gap-[10px] min-[440px]:gap-[30px] animate-scroll-up pt-10 min-[440px]:pt-[80px]">
+              <div className="flex flex-col gap-[10px] min-[441px]:gap-[30px] animate-scroll-up pt-10 min-[441px]:pt-[80px]">
                 {[...Array(6)].flatMap((_, arrayIndex) =>
                   rightColumnMembers.map((member, index) => (
                     <Link

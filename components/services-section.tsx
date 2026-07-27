@@ -35,35 +35,35 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="bg-white pt-[200px] pb-[300px] max-[440px]:!pt-[78px] max-[440px]:!pb-[160px]">
+    <section className="bg-white pt-[200px] pb-[300px] max-[441px]:!pt-[78px] max-[441px]:!pb-[160px]">
       <div className="max-w-[1240px] mx-auto px-5">
-        <h2 className="font-bold text-[#111111] text-balance max-[440px]:text-[24px] max-[440px]:leading-[34px] max-[440px]:text-center text-[40px] leading-[56px]">
+        <h2 className="font-bold text-[#111111] text-balance max-[441px]:text-[24px] max-[441px]:leading-[34px] max-[441px]:text-center text-[40px] leading-[56px]">
           비즈니스 전 과정을 아우르는
           <br />
           회계·세무 원스톱 솔루션
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-10 max-[440px]:mt-[40px] max-[440px]:gap-[40px] gap-x-5 gap-y-[60px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-10 max-[441px]:mt-[40px] max-[441px]:gap-[40px] gap-x-5 gap-y-[60px]">
           {services.map((service, index) => (
             <Link key={index} href={`/services/${service.slug}`} className="flex flex-col cursor-pointer group">
-              <div className="w-full relative rounded-[24px] overflow-hidden mb-[24px] max-[440px]:mb-4 max-[440px]:rounded-[20px] max-[440px]:[aspect-ratio:335/200]" style={{ aspectRatio: "590 / 400" }}>
+              <div className="w-full relative rounded-[24px] overflow-hidden mb-[24px] max-[441px]:mb-4 max-[441px]:rounded-[20px] max-[441px]:[aspect-ratio:335/200]" style={{ aspectRatio: "590 / 400" }}>
                 <Image
                   src={service.image || "/placeholder.svg"}
                   alt={service.title}
                   fill
                   unoptimized
-                  className="object-cover min-[440px]:group-hover:scale-105 transition-transform duration-300"
+                  className="object-cover min-[441px]:group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
 
-              <h3 className="font-bold text-[#111111] mb-[6px] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[24px] leading-[33.6px] min-[440px]:px-[10px]">{service.title}</h3>
+              <h3 className="font-bold text-[#111111] mb-[6px] max-[441px]:text-[18px] max-[441px]:leading-[25px] text-[24px] leading-[33.6px] min-[441px]:px-[10px]">{service.title}</h3>
 
-              <p className="text-[#333333] max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[18px] leading-[25.2px] min-[440px]:px-[10px]">{service.description}</p>
+              <p className="text-[#333333] max-[441px]:text-[16px] max-[441px]:leading-[24px] text-[18px] leading-[25.2px] min-[441px]:px-[10px]">{service.description}</p>
             </Link>
           ))}
         </div>
 
-        <div className="text-center max-[440px]:mt-[50px] mt-[120px]">
+        <div className="text-center max-[441px]:mt-[50px] mt-[120px]">
           <CommonButton href="/services" size="main">서비스 전체 보기</CommonButton>
         </div>
       </div>

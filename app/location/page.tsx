@@ -89,53 +89,53 @@ export default function LocationPage() {
 
       {/* Main Content */}
       <section
-        className="bg-white pb-[calc(100vw*300/1920)] max-[440px]:!pb-[calc(100vw*160/375)] pt-[220px] max-[440px]:!pt-[116px]"
+        className="bg-white pb-[calc(100vw*300/1920)] max-[441px]:!pb-[calc(100vw*160/375)] pt-[220px] max-[441px]:!pt-[116px]"
       >
         <div
-          className="max-[440px]:!px-5"
+          className="max-[441px]:!px-5"
           style={{ paddingLeft: "calc(100vw / 5.5)", paddingRight: "calc(100vw / 5.5)" }}
         >
-          <div className="container mx-auto px-6 max-[440px]:px-0">
+          <div className="container mx-auto px-6 max-[441px]:px-0">
             <div className="max-w-7xl mx-auto">
               {/* Page Title */}
-              <h1 className="font-bold text-[#111111] text-center max-[440px]:text-[30px] max-[440px]:leading-[39px] max-[440px]:mb-[60px] text-[40px] leading-[56px] mb-[100px]">
+              <h1 className="font-bold text-[#111111] text-center max-[441px]:text-[30px] max-[441px]:leading-[39px] max-[441px]:mb-[60px] text-[40px] leading-[56px] mb-[100px]">
                 오시는 길
               </h1>
 
               {/* Map Container */}
               <div
                 ref={mapRef}
-                className="w-full mx-auto mb-12 aspect-[12/5] max-[440px]:aspect-[375/440] max-[440px]:mb-[60px] max-[440px]:!-mx-5 max-[440px]:!w-[100vw]"
+                className="w-full mx-auto mb-12 aspect-[12/5] max-[441px]:aspect-[375/440] max-[441px]:mb-[60px] max-[441px]:!-mx-5 max-[441px]:!w-[100vw]"
                 style={{
                   maxWidth: "1200px",
                 }}
               />
 
               {/* Location Information */}
-              <div className="mx-auto space-y-6 mb-[40px] max-[440px]:space-y-8 max-[440px]:mb-[40px]" style={{ maxWidth: "1200px" }}>
-                <div className="flex gap-4 max-[440px]:flex-col max-[440px]:gap-2">
-                  <div className="font-bold text-[#111111] min-w-[100px] max-[440px]:min-w-0 max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[18px] leading-[25.2px]">주소</div>
-                  <div className="text-[#535353] max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[18px] leading-[25.2px]">경기도 용인시 기흥구 흥덕1로 79번길 2, 가은프라자 717호(영덕동)</div>
+              <div className="mx-auto space-y-6 mb-[40px] max-[441px]:space-y-8 max-[441px]:mb-[40px]" style={{ maxWidth: "1200px" }}>
+                <div className="flex gap-4 max-[441px]:flex-col max-[441px]:gap-2">
+                  <div className="font-bold text-[#111111] min-w-[100px] max-[441px]:min-w-0 max-[441px]:text-[18px] max-[441px]:leading-[25px] text-[18px] leading-[25.2px]">주소</div>
+                  <div className="text-[#535353] max-[441px]:text-[16px] max-[441px]:leading-[24px] text-[18px] leading-[25.2px]">경기도 용인시 기흥구 흥덕1로 79번길 2, 가은프라자 717호(영덕동)</div>
                 </div>
 
-                <div className="flex gap-4 max-[440px]:flex-col max-[440px]:gap-2">
-                  <div className="font-bold text-[#111111] min-w-[100px] max-[440px]:min-w-0 max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[18px] leading-[25.2px]">대중교통</div>
-                  <div className="text-[#535353] max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[18px] leading-[25.2px]">상현역 2번 출구에서 55번 버스 탑승 (15분 소요)</div>
+                <div className="flex gap-4 max-[441px]:flex-col max-[441px]:gap-2">
+                  <div className="font-bold text-[#111111] min-w-[100px] max-[441px]:min-w-0 max-[441px]:text-[18px] max-[441px]:leading-[25px] text-[18px] leading-[25.2px]">대중교통</div>
+                  <div className="text-[#535353] max-[441px]:text-[16px] max-[441px]:leading-[24px] text-[18px] leading-[25.2px]">상현역 2번 출구에서 55번 버스 탑승 (15분 소요)</div>
                 </div>
 
-                <div className="flex gap-4 max-[440px]:flex-col max-[440px]:gap-2">
-                  <div className="font-bold text-[#111111] min-w-[100px] max-[440px]:min-w-0 max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[18px] leading-[25.2px]">주차장</div>
-                  <div className="text-[#535353] max-[440px]:text-[16px] max-[440px]:leading-[24px] text-[18px] leading-[25.2px]">건물 내 주차 가능 (무료)</div>
+                <div className="flex gap-4 max-[441px]:flex-col max-[441px]:gap-2">
+                  <div className="font-bold text-[#111111] min-w-[100px] max-[441px]:min-w-0 max-[441px]:text-[18px] max-[441px]:leading-[25px] text-[18px] leading-[25.2px]">주차장</div>
+                  <div className="text-[#535353] max-[441px]:text-[16px] max-[441px]:leading-[24px] text-[18px] leading-[25.2px]">건물 내 주차 가능 (무료)</div>
                 </div>
               </div>
 
               {/* Kakao Map Button */}
-              <div className="mx-auto flex justify-start max-[440px]:justify-center" style={{ maxWidth: "1200px" }}>
+              <div className="mx-auto flex justify-start max-[441px]:justify-center" style={{ maxWidth: "1200px" }}>
                 <Link
                   href="https://place.map.kakao.com/1394637530"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border-2 max-[440px]:border text-[#355CBA] border-[#355CBA] hover:bg-[#355CBA] hover:text-white transition-colors font-bold max-[440px]:w-[calc(100vw*335/375)] max-[440px]:px-6 max-[440px]:py-3 max-[440px]:gap-1 max-[440px]:text-[15px] max-[440px]:leading-[22px] px-[30px] py-[18px] gap-[6px] text-[18px]"
+                  className="inline-flex items-center justify-center rounded-full border-2 max-[441px]:border text-[#355CBA] border-[#355CBA] hover:bg-[#355CBA] hover:text-white transition-colors font-bold max-[441px]:w-[calc(100vw*335/375)] max-[441px]:px-6 max-[441px]:py-3 max-[441px]:gap-1 max-[441px]:text-[15px] max-[441px]:leading-[22px] px-[30px] py-[18px] gap-[6px] text-[18px]"
                   onMouseEnter={() => setIsButtonHovered(true)}
                   onMouseLeave={() => setIsButtonHovered(false)}
                 >
@@ -144,7 +144,7 @@ export default function LocationPage() {
                     alt=""
                     width={24}
                     height={24}
-                    className="max-[440px]:w-5 max-[440px]:h-5"
+                    className="max-[441px]:w-5 max-[441px]:h-5"
                   />
                   카카오맵 보러 가기
                 </Link>
