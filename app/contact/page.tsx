@@ -350,7 +350,6 @@ export default function ContactPage() {
                 {/* 제출 버튼 */}
                 <div className="flex justify-center min-[441px]:!mt-[40px] max-[441px]:!mt-[24px]">
                   <CommonButton
-                    size="sub"
                     onClick={() => {
                       if (isSubmitting) return
                       const form = document.querySelector('form')

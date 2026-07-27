@@ -314,7 +314,7 @@ export default function ExpertDetailPage() {
           <div
             className="flex justify-center pt-[60px] pb-[300px] max-[441px]:!pt-[20px] max-[441px]:!pb-[160px]"
           >
-            <CommonButton size="sub" onClick={() => router.push("/experts")}>목록으로 돌아가기</CommonButton>
+            <CommonButton onClick={() => router.push("/experts")}>목록으로 돌아가기</CommonButton>
           </div>
         </div>
       </section>

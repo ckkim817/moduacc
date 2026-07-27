@@ -741,7 +741,7 @@ export default function ServiceDetailPage() {
       {/* Back to List Button */}
       <section className="pt-[40px] max-[441px]:pt-[4px] bg-white pb-[calc(100vw*300/1920)] max-[441px]:!pb-[calc(100vw*160/375)]">
         <div className="max-w-4xl mx-auto text-center">
-          <CommonButton size="sub" onClick={() => router.push("/services")}>목록으로 돌아가기</CommonButton>
+          <CommonButton onClick={() => router.push("/services")}>목록으로 돌아가기</CommonButton>
         </div>
       </section>
 

@@ -64,7 +64,7 @@ export function ServicesSection() {
         </div>
 
         <div className="text-center max-[441px]:mt-[50px] mt-[120px]">
-          <CommonButton href="/services" size="main">서비스 전체 보기</CommonButton>
+          <CommonButton href="/services">서비스 전체 보기</CommonButton>
         </div>
       </div>
     </section>

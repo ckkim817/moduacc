@@ -142,7 +142,7 @@ export async function BlogSection() {
         </div>
 
         <div className="mt-[120px] max-[441px]:mt-[50px] text-center">
-          <CommonButton href="/blog" size="main">전체 블로그 보기</CommonButton>
+          <CommonButton href="/blog">전체 블로그 보기</CommonButton>
         </div>
       </div>
     </section>
