@@ -42,7 +42,7 @@ export async function BlogSection() {
                       src={posts[0].image || "/placeholder.svg"}
                       alt={posts[0].title}
                       fill
-                      className="object-cover min-[441px]:group-hover:scale-105 transition-transform duration-300"
+                      className="object-cover min-[440px]:group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 640px) 100vw, 720px"
                     />
                   </div>
@@ -77,7 +77,7 @@ export async function BlogSection() {
                         src={post.image || "/placeholder.svg"}
                         alt={post.title}
                         fill
-                        className="object-cover min-[441px]:group-hover:scale-105 transition-transform duration-300"
+                        className="object-cover min-[440px]:group-hover:scale-105 transition-transform duration-300"
                         sizes="360px"
                       />
                     </div>

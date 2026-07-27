@@ -150,13 +150,13 @@ export default function ServicesPage() {
                         alt={service.title}
                         fill
                         unoptimized
-                        className="object-cover min-[441px]:group-hover:scale-105 transition-transform duration-300"
+                        className="object-cover min-[440px]:group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
 
-                    <h3 className="font-bold text-[#111111] mb-[6px] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[22px] leading-[30.8px] min-[441px]:px-[10px]">{service.title}</h3>
+                    <h3 className="font-bold text-[#111111] mb-[6px] max-[440px]:text-[18px] max-[440px]:leading-[25px] text-[22px] leading-[30.8px] min-[440px]:px-[10px]">{service.title}</h3>
 
-                    <p className="text-[#333333] max-[440px]:text-[14px] max-[440px]:leading-[20px] text-[18px] leading-[25.2px] min-[441px]:px-[10px]">{service.description}</p>
+                    <p className="text-[#333333] max-[440px]:text-[14px] max-[440px]:leading-[20px] text-[18px] leading-[25.2px] min-[440px]:px-[10px]">{service.description}</p>
                   </Link>
                 ))}
               </div>

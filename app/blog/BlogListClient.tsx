@@ -314,7 +314,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
                     src={featuredPosts[currentFeatured]?.image || "/placeholder.svg"}
                     alt={featuredPosts[currentFeatured]?.title || ""}
                     fill
-                    className="object-cover min-[441px]:group-hover:scale-105 transition-all duration-300"
+                    className="object-cover min-[440px]:group-hover:scale-105 transition-all duration-300"
                     style={{
                       opacity: isFading ? 0 : 1,
                     }}
@@ -333,7 +333,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
                     src={featuredPosts[currentFeatured]?.image || "/placeholder.svg"}
                     alt={featuredPosts[currentFeatured]?.title || ""}
                     fill
-                    className="object-cover min-[441px]:group-hover:scale-105 transition-all duration-300"
+                    className="object-cover min-[440px]:group-hover:scale-105 transition-all duration-300"
                     style={{
                       opacity: isFading ? 0 : 1,
                     }}
@@ -410,7 +410,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
                       src={post.image || "/placeholder.svg"}
                       alt={post.title}
                       fill
-                      className="object-cover min-[441px]:group-hover:scale-105 transition-transform duration-300"
+                      className="object-cover min-[440px]:group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   </div>
