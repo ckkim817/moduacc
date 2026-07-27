@@ -43,3 +43,9 @@ next-env.d.ts
 # figma comment tooling
 .figma-shots/
 .figma-cache/
+
+# 디자인 QA 문서·스크립트 (저장소에 올리지 않음).
+# Tailwind v4 는 .gitignore 를 존중하므로, 여기 두면 문서 안의 클래스명 예시가
+# CSS 번들로 딸려 들어가는 것도 같이 막힌다.
+docs/
+scripts/
