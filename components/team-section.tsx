@@ -25,10 +25,10 @@ const leftColumnMembers = [
     image: "/images/expert-choi-in-gyu-bg.png",
   },
   {
-    name: "차재영",
+    name: "전환주",
     role: "회계사",
-    slug: "cha-jae-young",
-    image: "/images/expert-cha-jae-young-bg.png",
+    slug: "jeon-hwan-ju",
+    image: "/images/expert-jeon-hwan-ju-bg.png",
   },
 ]
 
@@ -50,6 +50,12 @@ const rightColumnMembers = [
     role: "회계사",
     slug: "jeong-gwang-hwa",
     image: "/images/expert-jeong-gwang-hwa-bg.png",
+  },
+  {
+    name: "유재일",
+    role: "회계사",
+    slug: "yu-jae-il",
+    image: "/images/expert-yu-jae-il-bg.png",
   },
 ]
 
