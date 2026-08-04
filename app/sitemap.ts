@@ -1,6 +1,9 @@
 import { MetadataRoute } from 'next'
-import { getPosts } from '@/lib/sanity-utils'
+import { getPosts, postLastModified } from '@/lib/sanity-utils'
 import { expertsData } from '@/lib/experts-data'
+
+// 빌드 시점에 고정되지 않도록 최대 1시간 주기로 재생성 (새 글 발행 시 자동 반영)
+export const revalidate = 3600
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.moduacc.com'
@@ -19,41 +22,35 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'subsidy',
   ]
 
-  // 정적 페이지들
+  // 정적 페이지들 — 실제 수정 시각을 알 수 없으므로 lastmod는 생략 (빌드 시각으로 위장하지 않음)
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1,
     },
     {
       url: `${baseUrl}/company`,
-      lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/services`,
-      lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/experts`,
-      lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/privacy`,
-      lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.3,
     },
@@ -62,7 +59,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 서비스 상세 페이지들
   const servicesPages: MetadataRoute.Sitemap = servicesSlugs.map((slug) => ({
     url: `${baseUrl}/services/${slug}`,
-    lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
@@ -70,7 +66,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 전문가 상세 페이지들
   const expertsPages: MetadataRoute.Sitemap = expertsData.map((expert) => ({
     url: `${baseUrl}/experts/${expert.slug}`,
-    lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
@@ -79,9 +74,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let blogPages: MetadataRoute.Sitemap = []
   try {
     const posts = await getPosts()
-    blogPages = posts.map((post) => ({
-      url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: post.date ? new Date(post.date) : new Date(),
+    blogPages = posts.map((post: any) => ({
+      url: `${baseUrl}/blog/${encodeURIComponent(post.slug)}`,
+      lastModified: postLastModified(post),
       changeFrequency: 'weekly' as const,
       priority: 0.6,
     }))

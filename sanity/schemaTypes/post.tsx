@@ -1,5 +1,6 @@
 import { defineField, defineType } from 'sanity'
 import React from 'react'
+import { koreanTitleSlugify } from '../lib/slugify'
 
 // 커스텀 블록 스타일 렌더 컴포넌트
 const TitleStyle = (props: any) => (
@@ -35,16 +36,13 @@ export default defineType({
       name: 'slug',
       title: '슬러그 (URL 주소)',
       type: 'slug',
+      description:
+        '글 주소(URL)입니다. 비워두고 발행하면 제목에서 자동으로 만들어집니다. 짧은 주소를 원하면 Generate 버튼으로 만든 뒤 핵심 키워드만 남기고 다듬어 주세요. (예: 가업상속공제-총정리)',
       options: {
         source: 'title',
         maxLength: 96,
-        slugify: input => input
-          .toLowerCase()
-          .replace(/\s+/g, '-')
-          .replace(/[^\w\-가-힣]/g, '')
-          .slice(0, 96)
+        slugify: koreanTitleSlugify,
       },
-      hidden: true,
     }),
     defineField({
       name: 'category',

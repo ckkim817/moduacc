@@ -13,6 +13,7 @@ export async function getPosts() {
       category,
       title,
       "date": publishedAt,
+      "updatedAt": _updatedAt,
       author,
       "image": mainImage.asset->url,
       "palette": mainImage.asset->metadata.palette,
@@ -30,6 +31,7 @@ export async function getPost(slug: string, preview: boolean = false) {
       category,
       title,
       "date": publishedAt,
+      "updatedAt": _updatedAt,
       author,
       "image": mainImage.asset->url,
       "body": body,
@@ -53,6 +55,7 @@ export const postQuery = groq`*[_type == "post" && (slug.current == $slug || _id
   category,
   title,
   "date": publishedAt,
+  "updatedAt": _updatedAt,
   author,
   "image": mainImage.asset->url,
   "body": body,
@@ -65,6 +68,26 @@ export const postQuery = groq`*[_type == "post" && (slug.current == $slug || _id
     title
   }
 }`
+
+// 글의 최종 수정 시각 — 발행일을 문서 수정 시각보다 뒤로 지정한 경우 발행일을 우선
+export function postLastModified(post: { date?: string; updatedAt?: string }): Date {
+  const published = post.date ? new Date(post.date) : null
+  const updated = post.updatedAt ? new Date(post.updatedAt) : null
+  if (published && updated) return updated > published ? updated : published
+  return updated || published || new Date()
+}
+
+// Portable Text 본문에서 순수 텍스트 추출 (메타 description용)
+export function extractPlainText(body: unknown, maxLength: number = 160): string {
+  if (!Array.isArray(body)) return ""
+  const text = body
+    .filter((block: any) => block?._type === "block" && Array.isArray(block.children))
+    .map((block: any) => block.children.map((child: any) => child?.text ?? "").join(""))
+    .join(" ")
+    .replace(/\s+/g, " ")
+    .trim()
+  return text.length > maxLength ? `${text.slice(0, maxLength - 1).trimEnd()}…` : text
+}
 
 // 최신 포스트 N개 가져오기 (메인 페이지용)
 export async function getLatestPosts(limit: number = 4) {

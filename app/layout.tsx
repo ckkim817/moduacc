@@ -1,14 +1,17 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { draftMode } from "next/headers"
 import { VisualEditing } from "next-sanity/visual-editing"
 import PreviewProvider from "@/components/preview-provider"
 import "./globals.css"
 
+export const viewport: Viewport = {
+  themeColor: "#000000",
+}
+
 export const metadata: Metadata = {
   title: "모두세무회계그룹 | MODU Accounting",
   description: "성장의 모든 순간, 모두와 함께. 전문 세무사와 회계사가 제공하는 원스톱 회계·세무 솔루션",
-  themeColor: "#000000",
   generator: "v0.app",
   verification: {
     other: {

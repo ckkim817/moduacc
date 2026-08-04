@@ -14,6 +14,7 @@ import './sanity/studio.css'
 import {apiVersion, dataset, projectId} from './sanity/env'
 import {schema} from './sanity/schemaTypes'
 import {structure, defaultDocumentNode} from './sanity/structure'
+import {withAutoSlug} from './sanity/lib/publishWithAutoSlug'
 
 export default defineConfig({
   basePath: '/studio',
@@ -21,6 +22,13 @@ export default defineConfig({
   dataset,
   // Add and edit the content schema in the './sanity/schemaTypes' folder
   schema,
+  document: {
+    // 블로그 글 발행 시 슬러그가 비어 있으면 제목으로 자동 생성
+    actions: (prev, context) =>
+      context.schemaType === 'post'
+        ? prev.map((action) => (action.action === 'publish' ? withAutoSlug(action) : action))
+        : prev,
+  },
   plugins: [
     structureTool({structure, defaultDocumentNode}),
     // Vision is for querying with GROQ from inside the Studio
