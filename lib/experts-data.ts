@@ -125,7 +125,7 @@ export const expertsData: Expert[] = [
     name: "전환주",
     title: "회계사",
     tagline: "신뢰를 바탕으로 명쾌한 해법을 제시하는 회계·세무 전문가",
-    email: "modu123@naver.com",
+    email: "hwjeoncpa@moduacc.com",
     description:
       "전환주 회계사는 빅4 회계법인을 포함한 다년간의 경력을 바탕으로 회계감사, 세무기장, 종합소득세, 법인세 신고를 포함한 회계·세무 서비스를 책임감 있게 고객의 눈높이에서 제공합니다.",
     image: "/images/expert-jeon-hwan-ju.png",
@@ -143,7 +143,7 @@ export const expertsData: Expert[] = [
     name: "유재일",
     title: "회계사",
     tagline: "기업의 리스크를 지우고 성장을 최대화하는 회계·세무 파트너",
-    email: "modu123@naver.com",
+    email: "jaelcpa@moduacc.com",
     description:
       "유재일 회계사는 2010년 대형회계법인 입사 후 외국계 테크기업과 중견기업 지주사를 거치며 풍부한 실무 경험을 쌓았습니다. IT·콘텐츠, 이커머스, 요식업, 부동산 등 신산업과 전통 산업을 아우르는 실무 노하우와 스타트업 특화 전문성으로 최적의 재무·세무 솔루션을 제공합니다.",
     image: "/images/expert-yu-jae-il.png",
