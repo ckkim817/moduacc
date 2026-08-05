@@ -8,6 +8,9 @@ import { Footer } from "@/components/footer"
 import { InquiryButton } from "@/components/inquiry-button"
 import { ScrollToTop } from "@/components/scroll-to-top"
 
+// 데이터 캐싱 옵션 (60초마다 갱신)
+export const revalidate = 60
+
 export default function Home() {
   return (
     <main className="min-h-screen">
