@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { useState, useEffect, useRef } from "react"
+import { ScrollToTop } from "@/components/scroll-to-top"
 import { InquiryButton } from "@/components/inquiry-button"
 
 // 날짜 형식 변환 (yyyy-MM-dd → yyyy.MM.dd)
@@ -31,12 +32,6 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
   const [currentPage, setCurrentPage] = useState(1)
   const totalPages = Math.ceil(blogPosts.length / 9)
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo(0, 0)
-    }
-  }, [])
 
   useEffect(() => {
     const startInterval = () => {
@@ -144,7 +139,8 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
   if (!blogPosts || blogPosts.length === 0) {
     return (
       <>
-        <Navigation forceWhiteMode={true} />
+        <ScrollToTop />
+      <Navigation forceWhiteMode={true} />
         <main className="bg-white">
           {/* Hero Section */}
           <section className="bg-white pt-[220px] max-[441px]:!pt-[116px]">
@@ -203,6 +199,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
 
   return (
     <>
+      <ScrollToTop />
       <Navigation forceWhiteMode={true} />
 
       <main className="bg-white">

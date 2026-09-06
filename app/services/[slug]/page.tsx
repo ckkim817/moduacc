@@ -1,6 +1,7 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
+import { ScrollToTop } from "@/components/scroll-to-top"
 import { useParams, useRouter, notFound } from 'next/navigation'
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
@@ -650,12 +651,6 @@ export default function ServiceDetailPage() {
 
   const [openIndices, setOpenIndices] = useState<Set<number>>(new Set())
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo(0, 0)
-    }
-  }, [])
-
   // Find the service by slug
   const service = servicesData.find((s) => s.slug === slug)
 
@@ -680,6 +675,7 @@ export default function ServiceDetailPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <ScrollToTop />
       {/* Navigation */}
       <Navigation forceWhiteMode />
 

@@ -1,6 +1,7 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
+import { ScrollToTop } from "@/components/scroll-to-top"
 import Image from "next/image"
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
@@ -15,12 +16,6 @@ import {
 } from "@/components/ui/select"
 
 export default function ContactPage() {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo(0, 0)
-    }
-  }, [])
-
   const [formData, setFormData] = useState({
     name: "",
     phone1: "010",
@@ -130,6 +125,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
+      <ScrollToTop />
       <Navigation forceWhiteMode />
 
       {/* Hero Section */}

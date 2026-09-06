@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import { ScrollToTop } from "@/components/scroll-to-top"
 import Image from "next/image"
 import Link from "next/link"
 import Script from "next/script"
@@ -21,10 +22,6 @@ export default function LocationPage() {
   const [isButtonHovered, setIsButtonHovered] = useState(false)
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo(0, 0)
-    }
-
     // Kakao Maps SDK가 이미 로드되어 있으면 지도 초기화
     if (window.kakao && window.kakao.maps && mapRef.current) {
       window.kakao.maps.load(() => {
@@ -73,6 +70,7 @@ export default function LocationPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <ScrollToTop />
       {/* Kakao Map Script */}
       {KAKAO_MAP_KEY && (
         <Script

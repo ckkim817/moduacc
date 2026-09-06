@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect } from "react"
+import { ScrollToTop } from "@/components/scroll-to-top"
 import { useParams, useRouter, notFound } from 'next/navigation'
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
@@ -16,18 +16,13 @@ export default function ExpertDetailPage() {
 
   const expert = expertsData.find((e) => e.slug === slug)
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo(0, 0)
-    }
-  }, [])
-
   if (!expert) {
     notFound()
   }
 
   return (
     <div className="min-h-screen bg-white">
+      <ScrollToTop />
       {/* Navigation */}
       <Navigation forceWhiteMode />
 

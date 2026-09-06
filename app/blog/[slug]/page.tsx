@@ -7,6 +7,7 @@ import BlogPostPreview from "./BlogPostPreview"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { InquiryButton } from "@/components/inquiry-button"
+import { ScrollToTop } from "@/components/scroll-to-top"
 import { getPost, getPosts, extractPlainText, postLastModified } from "@/lib/sanity-utils"
 
 const BASE_URL = "https://www.moduacc.com"
@@ -150,6 +151,8 @@ export default async function BlogPostPage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
         />
       )}
+      {/* 이전·다음 글로 이동할 때도 다시 맨 위로 (slug 가 바뀌면 다시 마운트) */}
+      <ScrollToTop key={decodedSlug} />
       <Navigation forceWhiteMode={true} />
       {isDraftMode ? (
         <BlogPostPreview

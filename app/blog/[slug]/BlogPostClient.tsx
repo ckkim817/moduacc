@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { CommonButton } from "@/components/common-button"
@@ -101,12 +100,6 @@ interface BlogPostClientProps {
 }
 
 export default function BlogPostClient({ post, previousPost, nextPost, slug }: BlogPostClientProps) {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo(0, 0)
-    }
-  }, [slug])
-
   if (!post) {
     return (
       <div className="min-h-screen flex items-center justify-center">

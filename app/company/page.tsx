@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect } from "react"
+import { ScrollToTop } from "@/components/scroll-to-top"
 import Image from "next/image"
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
@@ -8,14 +8,9 @@ import { Footer } from "@/components/footer"
 import { InquiryButton } from "@/components/inquiry-button"
 
 export default function CompanyPage() {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo(0, 0)
-    }
-  }, [])
-
   return (
     <div className="min-h-screen bg-white">
+      <ScrollToTop />
       {/* Navigation - using component with forceWhiteMode */}
       <Navigation forceWhiteMode />
 
