@@ -25,6 +25,7 @@ export function Navigation({ forceWhiteMode = false, isMainPage = false }: Navig
   const isCompanyActive = pathname?.startsWith("/company") || pathname === "/location"
   const isServicesActive = pathname?.startsWith("/services")
   const isExpertsActive = pathname?.startsWith("/experts")
+  const isCasesActive = pathname?.startsWith("/cases")
   const isBlogActive = pathname?.startsWith("/blog")
   const isContactActive = pathname?.startsWith("/contact")
 
@@ -195,6 +196,15 @@ export function Navigation({ forceWhiteMode = false, isMainPage = false }: Navig
                 <span className="inline-flex flex-col items-center after:content-['MEMBER'] after:font-bold after:h-0 after:overflow-hidden after:invisible">MEMBER</span>
               </Link>
 
+              {/* CASES: 페이지 준비 전이라 링크 없이 자리만 잡아 둔다. 준비되면 Link href="/cases" 로 교체 */}
+              <span
+                className={`text-[18px] transition-all px-4 py-2 rounded-[10px] block cursor-default ${
+                  isCasesActive || isMainPage ? "font-bold" : "font-medium"
+                } ${forceWhiteMode || isScrolled ? "text-[#414141]" : "text-white"}`}
+              >
+                <span className="inline-flex flex-col items-center after:content-['CASES'] after:font-bold after:h-0 after:overflow-hidden after:invisible">CASES</span>
+              </span>
+
               <Link
                 href="/blog"
                 onClick={handleBlogClick}
@@ -222,25 +232,6 @@ export function Navigation({ forceWhiteMode = false, isMainPage = false }: Navig
               >
                 <span className="inline-flex flex-col items-center after:content-['CONTACT'] after:font-bold after:h-0 after:overflow-hidden after:invisible">CONTACT</span>
               </Link>
-
-              <a
-                href="https://lp.appplay.co.kr/cnsl_appc_001.act?k=f85e86ec-25d0-449f-9426-2fcf0f3b1692"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ml-4 block"
-              >
-                <Image
-                  src={
-                    forceWhiteMode || isScrolled
-                      ? "/images/btn_tax_refund_navy.png"
-                      : "/images/btn_tax_refund_white.png"
-                  }
-                  alt="세금 환급 신청"
-                  width={162}
-                  height={53}
-                  className="transition-opacity hover:opacity-80"
-                />
-              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -311,26 +302,20 @@ export function Navigation({ forceWhiteMode = false, isMainPage = false }: Navig
               MEMBER
             </Link>
 
+            {/* CASES: 페이지 준비 전이라 링크 없이 자리만 */}
+            <span className="block text-base font-bold text-[#111111] py-2 mb-4 cursor-default">
+              CASES
+            </span>
+
             {/* BLOG */}
             <Link href="/blog" onClick={handleBlogClick} className="block text-base font-bold text-[#111111] py-2 mb-4">
               BLOG
             </Link>
 
             {/* CONTACT */}
-            <Link href="/contact" onClick={handleContactClick} className="block text-base font-bold text-[#111111] py-2 mb-4">
+            <Link href="/contact" onClick={handleContactClick} className="block text-base font-bold text-[#111111] py-2">
               CONTACT
             </Link>
-
-            {/* Tax Refund Application */}
-            <a
-              href="https://lp.appplay.co.kr/cnsl_appc_001.act?k=f85e86ec-25d0-449f-9426-2fcf0f3b1692"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-base font-bold py-2"
-              style={{ color: "#355CBA" }}
-            >
-              세금 환급 신청
-            </a>
           </div>
         </div>
       </nav>

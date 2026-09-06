@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export function ConsultationCTA() {
@@ -17,11 +18,7 @@ export function ConsultationCTA() {
           <br />
           지금 바로 전문가에게 맡겨보세요
         </h2>
-        <a
-          href="https://lp.appplay.co.kr/cnsl_appc_001.act?k=f85e86ec-25d0-449f-9426-2fcf0f3b1692"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href="/contact">
           <Button
             variant="outline"
             size="lg"
@@ -29,7 +26,7 @@ export function ConsultationCTA() {
           >
             상담 신청하기
           </Button>
-        </a>
+        </Link>
       </div>
     </section>
   )
