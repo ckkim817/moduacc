@@ -21,13 +21,13 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video (poster: 기존 히어로 이미지, 영상 로드 전이나 재생 불가 환경에서 표시) */}
+      {/* Background Video (poster: 영상의 첫 프레임. 영상 로드 전·재생 불가 환경에서 표시되며, 첫 프레임과 같아 전환이 보이지 않는다) */}
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover"
           src="/videos/hero.mp4"
-          poster="/images/main_hero.png"
+          poster="/images/hero-poster.jpg"
           autoPlay
           muted
           loop
