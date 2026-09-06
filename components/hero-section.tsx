@@ -35,7 +35,7 @@ export function HeroSection() {
           preload="auto"
           aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
       {/* Scroll Indicator */}
