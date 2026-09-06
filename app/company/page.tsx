@@ -56,7 +56,7 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      <section className="bg-white pb-[calc(100vw*300/1920)] max-[441px]:pt-12 max-[441px]:!pb-[calc(100vw*160/375)] pt-[100px]">
+      <section className="bg-white pb-[calc(100vw*190/1920)] max-[441px]:pt-12 max-[441px]:!pb-[calc(100vw*160/375)] pt-[100px]">
         <div
           className="max-[441px]:!px-5"
           style={{ paddingLeft: "calc(100vw / 5.5)", paddingRight: "calc(100vw / 5.5)" }}
@@ -125,6 +125,19 @@ export default function CompanyPage() {
                   <br />
                   예측하기 어려운 세무 리스크, 모두가 미리 대비하고 최적으로 대응합니다.
                 </p>
+              </div>
+
+              {/* 회사소개서 다운로드 — Figma 79:340. PDF는 정식본 수령 전까지 임시 파일 */}
+              <div className="flex justify-start max-[441px]:justify-center">
+                <a
+                  href="/files/company-profile.pdf"
+                  download="모두세무회계그룹_회사소개서.pdf"
+                  className="group inline-flex items-center justify-center rounded-full border-2 max-[441px]:border text-[#355CBA] border-[#355CBA] hover:bg-[#355CBA] hover:text-white transition-colors font-bold max-[441px]:w-[calc(100vw*335/375)] max-[441px]:px-6 max-[441px]:py-3 max-[441px]:gap-1 max-[441px]:text-[15px] max-[441px]:leading-[22px] pl-[26px] pr-[28px] py-[16px] gap-[6px] text-[18px] leading-[24px]"
+                >
+                  <Image src="/images/icon_download.svg" alt="" width={24} height={24} className="max-[441px]:w-5 max-[441px]:h-5 group-hover:hidden" />
+                  <Image src="/images/icon_download_hover.svg" alt="" width={24} height={24} className="max-[441px]:w-5 max-[441px]:h-5 hidden group-hover:block" />
+                  회사소개서 다운로드
+                </a>
               </div>
             </div>
           </div>
