@@ -101,6 +101,6 @@ export async function getLatestPosts(limit: number = 4) {
       author,
       "image": mainImage.asset->url
     }`,
-    { limit: limit - 1 }
+    { limit }
   )
 }

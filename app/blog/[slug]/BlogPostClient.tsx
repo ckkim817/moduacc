@@ -54,9 +54,23 @@ const ptComponents = {
       )
     }
   },
+  list: {
+    bullet: ({children}: any) => (
+      <ul className="mb-6 pl-7 list-disc space-y-2 max-[441px]:text-[17px] max-[441px]:leading-[26px] text-[18px] leading-[25.2px]" style={{ color: "#333333" }}>
+        {children}
+      </ul>
+    ),
+    number: ({children}: any) => (
+      <ol className="mb-6 pl-7 list-decimal space-y-2 max-[441px]:text-[17px] max-[441px]:leading-[26px] text-[18px] leading-[25.2px]" style={{ color: "#333333" }}>
+        {children}
+      </ol>
+    ),
+  },
   marks: {
     link: ({children, value}: any) => {
-      let href = value.href
+      let href = value?.href
+      if (!href) return <>{children}</>
+
       // 프로토콜이 없고 /로 시작하지 않으면 https:// 추가
       if (!href.startsWith('/') && !href.startsWith('http://') && !href.startsWith('https://')) {
         href = `https://${href}`
@@ -166,7 +180,7 @@ export default function BlogPostClient({ post, previousPost, nextPost, slug }: B
         </div>
 
         {/* Post Content */}
-        <div className="w-full prose prose-lg max-w-[1160px] mx-auto mb-[160px] max-[441px]:mb-[80px]">
+        <div className="w-full max-w-[1160px] mx-auto mb-[160px] max-[441px]:mb-[80px]">
           {post.body ? (
             <PortableText value={post.body} components={ptComponents} />
           ) : (

@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
-import { useParams, useRouter } from 'next/navigation'
+import { useParams, useRouter, notFound } from 'next/navigation'
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -23,7 +23,7 @@ export default function ExpertDetailPage() {
   }, [])
 
   if (!expert) {
-    return <div>Expert not found</div>
+    notFound()
   }
 
   return (

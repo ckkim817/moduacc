@@ -1,7 +1,7 @@
 import { cache } from "react"
 import type { Metadata } from "next"
 import { draftMode } from "next/headers"
-import { permanentRedirect } from "next/navigation"
+import { notFound, permanentRedirect } from "next/navigation"
 import BlogPostClient from "./BlogPostClient"
 import BlogPostPreview from "./BlogPostPreview"
 import { Navigation } from "@/components/navigation"
@@ -94,6 +94,11 @@ export default async function BlogPostPage({
   const decodedSlug = decodeSlug(slug)
   const { isEnabled: isDraftMode } = await draftMode()
   const postData = await getCachedPost(decodedSlug, isDraftMode)
+
+  // 없는 글은 404 (초안 미리보기 중에는 아직 발행 전 초안일 수 있으므로 제외)
+  if (!isDraftMode && !postData) {
+    notFound()
+  }
 
   // 슬러그가 있는 글에 옛 주소(UUID)로 접근하면 대표 주소로 301
   if (!isDraftMode && postData && postData.slug !== decodedSlug) {

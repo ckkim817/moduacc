@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { useParams, useRouter } from 'next/navigation'
+import { useParams, useRouter, notFound } from 'next/navigation'
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -660,7 +660,7 @@ export default function ServiceDetailPage() {
   const service = servicesData.find((s) => s.slug === slug)
 
   if (!service) {
-    return <div>Service not found</div>
+    notFound()
   }
 
   // Get Q&A data for this service (fallback to audit if not found)
