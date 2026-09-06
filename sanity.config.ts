@@ -5,6 +5,7 @@
  */
 
 import {visionTool} from '@sanity/vision'
+import {table} from '@sanity/table'
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {presentationTool} from 'sanity/presentation'
@@ -31,6 +32,8 @@ export default defineConfig({
   },
   plugins: [
     structureTool({structure, defaultDocumentNode}),
+    // 본문 표 블록(blogTable)이 쓰는 `table` 타입 제공
+    table(),
     // Vision is for querying with GROQ from inside the Studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({defaultApiVersion: apiVersion}),

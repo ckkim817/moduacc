@@ -107,6 +107,7 @@ export default defineType({
           ],
         },
         { type: 'image' },
+        { type: 'blogTable' },
       ],
       validation: (rule) => rule.required(),
     }),

@@ -4,93 +4,10 @@ import Link from "next/link"
 import Image from "next/image"
 import { CommonButton } from "@/components/common-button"
 import { PortableText } from "@portabletext/react"
-import { urlFor } from "@/sanity/lib/image"
-import React from "react"
+import { ptComponents } from "./portable-text-components"
 
 // 날짜 형식 변환 (yyyy-MM-dd → yyyy.MM.dd)
 const formatDate = (date: string) => date?.replace(/-/g, '.') || ''
-
-// PortableText용 커스텀 스타일 컴포넌트
-const ptComponents = {
-  block: {
-    title: ({children}: any) => {
-      const isEmpty = !children || (Array.isArray(children) && children.length === 0) || (React.Children.count(children) === 1 && children[0] === '')
-      return (
-        <h2 className="font-bold mb-6 max-[441px]:text-[22px] max-[441px]:leading-[31px] text-[24px] leading-[33.6px]" style={{ color: "#333333" }}>
-          {isEmpty ? <br /> : children}
-        </h2>
-      )
-    },
-    normal: ({children}: any) => {
-      const isEmpty = !children || (Array.isArray(children) && children.length === 0) || (React.Children.count(children) === 1 && children[0] === '')
-      return (
-        <p className="mb-6 max-[441px]:text-[17px] max-[441px]:leading-[26px] text-[18px] leading-[25.2px]" style={{ color: "#333333" }}>
-          {isEmpty ? <br /> : children}
-        </p>
-      )
-    },
-    caption: ({children}: any) => {
-      const isEmpty = !children || (Array.isArray(children) && children.length === 0) || (React.Children.count(children) === 1 && children[0] === '')
-      return (
-        <p className="mb-6 max-[441px]:text-[15px] max-[441px]:leading-[21px] text-[20px] leading-[30px]" style={{ color: "#999999" }}>
-          {isEmpty ? <br /> : children}
-        </p>
-      )
-    },
-  },
-  types: {
-    image: ({value}: any) => {
-      if (!value?.asset?._ref) return null
-      return (
-        <div className="relative w-full aspect-video my-8 rounded-lg overflow-hidden">
-          <Image
-            src={urlFor(value).url()}
-            alt={value.alt || 'blog image'}
-            fill
-            className="object-cover"
-          />
-        </div>
-      )
-    }
-  },
-  list: {
-    bullet: ({children}: any) => (
-      <ul className="mb-6 pl-7 list-disc space-y-2 max-[441px]:text-[17px] max-[441px]:leading-[26px] text-[18px] leading-[25.2px]" style={{ color: "#333333" }}>
-        {children}
-      </ul>
-    ),
-    number: ({children}: any) => (
-      <ol className="mb-6 pl-7 list-decimal space-y-2 max-[441px]:text-[17px] max-[441px]:leading-[26px] text-[18px] leading-[25.2px]" style={{ color: "#333333" }}>
-        {children}
-      </ol>
-    ),
-  },
-  marks: {
-    link: ({children, value}: any) => {
-      let href = value?.href
-      if (!href) return <>{children}</>
-
-      // 프로토콜이 없고 /로 시작하지 않으면 https:// 추가
-      if (!href.startsWith('/') && !href.startsWith('http://') && !href.startsWith('https://')) {
-        href = `https://${href}`
-      }
-      const isExternal = !href.startsWith('/')
-      const rel = isExternal ? 'noopener noreferrer' : undefined
-      const target = isExternal ? '_blank' : undefined
-      return (
-        <a
-          href={href}
-          target={target}
-          rel={rel}
-          className="underline"
-          style={{ color: "#355CBA" }}
-        >
-          {children}
-        </a>
-      )
-    }
-  }
-}
 
 interface BlogPostClientProps {
   post: any
