@@ -24,9 +24,7 @@ export default function ExpertsPage() {
           <div className="container mx-auto px-6">
             <div className="max-w-7xl mx-auto text-center">
               <h1 className="font-bold text-[#111111] mb-6 max-[441px]:mb-[10px] leading-[56px] max-[441px]:text-[30px] max-[441px]:leading-[39px] text-[40px]">
-                숫자 너머의 가치를
-                <br />
-                함께 만드는 파트너
+                구성원
               </h1>
               <p className="max-[441px]:text-[16px] max-[441px]:leading-[24px] text-[18px] leading-[25.2px] font-semibold" style={{ color: "rgba(17, 17, 17, 0.5)" }}>
                 각 분야의 전문성을 갖춘 회계사들이 비즈니스의 든든한 동반자가 됩니다.
