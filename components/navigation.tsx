@@ -276,8 +276,8 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
                 <Image
                   src={
                     forceWhiteMode || isScrolled
-                      ? "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/btn_white-rJRUTe1lubSH22rJpCFzuHQ7sWNfAc.png"
-                      : "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/btn_bg_x-eAjYv3ovrPAdW5i8rZK0wfHb5zHB8A.png"
+                      ? "/images/btn_tax_refund_navy.png"
+                      : "/images/btn_tax_refund_white.png"
                   }
                   alt="세금 환급 신청"
                   width={162}
