@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <ScrollToTop />
-      <Navigation />
+      <Navigation isMainPage />
       <HeroSection />
       <ServicesSection />
       <TeamSection />

@@ -9,9 +9,13 @@ import { usePathname } from 'next/navigation'
 
 interface NavigationProps {
   forceWhiteMode?: boolean
+  // 메인 페이지는 메뉴 전부를 볼드로 표시한다. usePathname으로 판정하면 Vercel ISR 재생성 시
+  // 서버가 "/"가 아닌 경로로 렌더해 font-medium HTML이 내려오고, 하이드레이션은 클래스 불일치를
+  // 고치지 않아 첫 화면이 얇게 보였다. 페이지가 명시적으로 넘겨 서버·클라이언트가 항상 일치하게 한다.
+  isMainPage?: boolean
 }
 
-export function Navigation({ forceWhiteMode = false }: NavigationProps) {
+export function Navigation({ forceWhiteMode = false, isMainPage = false }: NavigationProps) {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -23,7 +27,6 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
   const isExpertsActive = pathname?.startsWith("/experts")
   const isBlogActive = pathname?.startsWith("/blog")
   const isContactActive = pathname?.startsWith("/contact")
-  const isMainPage = !pathname || pathname === "/"
 
   useEffect(() => {
     if (forceWhiteMode) {
@@ -64,68 +67,21 @@ export function Navigation({ forceWhiteMode = false }: NavigationProps) {
     }
   }, [isMobileMenuOpen])
 
-  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (pathname === "/") {
+  // 현재 페이지와 같은 링크를 누르면 이동 대신 맨 위로 스크롤한다.
+  // 클릭 시점의 실제 주소(window.location)를 읽으므로 서버 렌더 경로와 무관하게 동작한다.
+  const scrollToTopIfCurrent = (path: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (typeof window !== "undefined" && window.location.pathname === path) {
       e.preventDefault()
-      if (typeof window !== 'undefined') {
-        window.scrollTo({ top: 0, behavior: "smooth" })
-      }
+      window.scrollTo({ top: 0, behavior: "smooth" })
     }
   }
-
-  const handleCompanyClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (pathname === "/company") {
-      e.preventDefault()
-      if (typeof window !== 'undefined') {
-        window.scrollTo({ top: 0, behavior: "smooth" })
-      }
-    }
-  }
-
-  const handleServicesClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (pathname === "/services") {
-      e.preventDefault()
-      if (typeof window !== 'undefined') {
-        window.scrollTo({ top: 0, behavior: "smooth" })
-      }
-    }
-  }
-
-  const handleLocationClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (pathname === "/location") {
-      e.preventDefault()
-      if (typeof window !== 'undefined') {
-        window.scrollTo({ top: 0, behavior: "smooth" })
-      }
-    }
-  }
-
-  const handleExpertsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (pathname === "/experts") {
-      e.preventDefault()
-      if (typeof window !== 'undefined') {
-        window.scrollTo({ top: 0, behavior: "smooth" })
-      }
-    }
-  }
-
-  const handleBlogClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (pathname === "/blog") {
-      e.preventDefault()
-      if (typeof window !== 'undefined') {
-        window.scrollTo({ top: 0, behavior: "smooth" })
-      }
-    }
-  }
-
-  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (pathname === "/contact") {
-      e.preventDefault()
-      if (typeof window !== 'undefined') {
-        window.scrollTo({ top: 0, behavior: "smooth" })
-      }
-    }
-  }
+  const handleLogoClick = scrollToTopIfCurrent("/")
+  const handleCompanyClick = scrollToTopIfCurrent("/company")
+  const handleServicesClick = scrollToTopIfCurrent("/services")
+  const handleLocationClick = scrollToTopIfCurrent("/location")
+  const handleExpertsClick = scrollToTopIfCurrent("/experts")
+  const handleBlogClick = scrollToTopIfCurrent("/blog")
+  const handleContactClick = scrollToTopIfCurrent("/contact")
 
   return (
     <>
