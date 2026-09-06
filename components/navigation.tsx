@@ -7,6 +7,9 @@ import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from 'next/navigation'
 
+// CASES 페이지는 시안 검토 중이라 메뉴에서 임시로 숨긴다. 준비되면 true 로 바꾸고 아래 span 을 Link 로 교체.
+const SHOW_CASES_MENU = false
+
 interface NavigationProps {
   forceWhiteMode?: boolean
   // 메인 페이지는 메뉴 전부를 볼드로 표시한다. usePathname으로 판정하면 Vercel ISR 재생성 시
@@ -197,13 +200,15 @@ export function Navigation({ forceWhiteMode = false, isMainPage = false }: Navig
               </Link>
 
               {/* CASES: 페이지 준비 전이라 링크 없이 자리만 잡아 둔다. 준비되면 Link href="/cases" 로 교체 */}
-              <span
-                className={`text-[18px] transition-all px-4 py-2 rounded-[10px] block cursor-default ${
-                  isCasesActive || isMainPage ? "font-bold" : "font-medium"
-                } ${forceWhiteMode || isScrolled ? "text-[#414141]" : "text-white"}`}
-              >
-                <span className="inline-flex flex-col items-center after:content-['CASES'] after:font-bold after:h-0 after:overflow-hidden after:invisible">CASES</span>
-              </span>
+              {SHOW_CASES_MENU && (
+                <span
+                  className={`text-[18px] transition-all px-4 py-2 rounded-[10px] block cursor-default ${
+                    isCasesActive || isMainPage ? "font-bold" : "font-medium"
+                  } ${forceWhiteMode || isScrolled ? "text-[#414141]" : "text-white"}`}
+                >
+                  <span className="inline-flex flex-col items-center after:content-['CASES'] after:font-bold after:h-0 after:overflow-hidden after:invisible">CASES</span>
+                </span>
+              )}
 
               <Link
                 href="/blog"
@@ -303,9 +308,11 @@ export function Navigation({ forceWhiteMode = false, isMainPage = false }: Navig
             </Link>
 
             {/* CASES: 페이지 준비 전이라 링크 없이 자리만 */}
-            <span className="block text-base font-bold text-[#111111] py-2 mb-4 cursor-default">
-              CASES
-            </span>
+            {SHOW_CASES_MENU && (
+              <span className="block text-base font-bold text-[#111111] py-2 mb-4 cursor-default">
+                CASES
+              </span>
+            )}
 
             {/* BLOG */}
             <Link href="/blog" onClick={handleBlogClick} className="block text-base font-bold text-[#111111] py-2 mb-4">
