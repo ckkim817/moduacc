@@ -21,6 +21,22 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <style jsx>{`
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in-up {
+          animation: fadeInUp 1s ease-out forwards;
+        }
+      `}</style>
+
       {/* Background Video (poster: 영상의 첫 프레임. 영상 로드 전·재생 불가 환경에서 표시되며, 첫 프레임과 같아 전환이 보이지 않는다) */}
       <div className="absolute inset-0 z-0">
         <video
@@ -35,7 +51,17 @@ export function HeroSection() {
           preload="auto"
           aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-black/30" />
+        {/* 오버레이 50%: 문구 가독성 확보 (2026-09-10 고객 요청으로 문구 복원) */}
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 text-center px-6">
+        <h1 className="text-white font-bold leading-[84px] max-[441px]:text-[30px] max-[441px]:leading-tight text-[66px] animate-fade-in-up">
+          성장의 모든 순간,
+          <br />
+          모두
+        </h1>
       </div>
 
       {/* Scroll Indicator */}
