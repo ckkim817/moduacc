@@ -122,7 +122,7 @@ export default function CompanyPage() {
                 </p>
               </div>
 
-              {/* 회사소개서 다운로드 — Figma 79:340. PDF는 정식본 수령 전까지 임시 파일 */}
+              {/* 회사소개서 다운로드 — Figma 79:340. PDF 는 2026-09-10 수령한 정식본(18쪽) */}
               <div className="flex justify-start max-[441px]:justify-center">
                 <a
                   href="/files/company-profile.pdf"
