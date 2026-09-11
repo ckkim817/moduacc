@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <Navigation forceWhiteMode />
-      <div className="flex-1 flex flex-col items-center justify-center text-center px-5 pt-[110px] pb-[80px]">
+      <div className="flex-1 flex flex-col items-center justify-center text-center px-5 pt-[80px] pb-[80px]">
         <h1 className="font-bold text-[40px] leading-[56px] max-[441px]:text-[24px] max-[441px]:leading-[34px] mb-4" style={{ color: "#111111" }}>
           페이지를 찾을 수 없습니다
         </h1>

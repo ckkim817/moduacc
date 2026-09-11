@@ -680,7 +680,7 @@ export default function ServiceDetailPage() {
       <Navigation forceWhiteMode />
 
       {/* Hero Section with Image Overlay */}
-      <section className="pt-[110px] max-[441px]:pt-16">
+      <section className="pt-[80px] max-[441px]:pt-16">
         <div
           className="max-[441px]:!px-0"
           style={{ paddingLeft: "calc(100vw / 5.5)", paddingRight: "calc(100vw / 5.5)" }}

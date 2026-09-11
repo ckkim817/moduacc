@@ -7,7 +7,7 @@ export function Footer() {
       <div className="max-w-[1240px] mx-auto px-5">
             {/* Logo */}
             <div className="mb-8">
-              <Image src="/images/img_logo_white.png" alt="MODU Logo" width={170} height={53} className="h-[53px] max-[441px]:h-[44px] w-auto" />
+              <Image src="/images/img_logo_white_footer.png" alt="MODU Logo" width={170} height={53} className="h-[53px] max-[441px]:h-[44px] w-auto" />
             </div>
 
             <div className="mb-8 max-[441px]:mb-6">

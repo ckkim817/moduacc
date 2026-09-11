@@ -42,7 +42,7 @@ export function Navigation({ forceWhiteMode = false, isMainPage = false }: Navig
 
     const handleScroll = () => {
       const heroHeight = window.innerHeight
-      const navHeight = 110
+      const navHeight = 80
       const scrollThreshold = heroHeight - navHeight / 2
 
       setIsScrolled(window.scrollY > scrollThreshold)
@@ -96,7 +96,7 @@ export function Navigation({ forceWhiteMode = false, isMainPage = false }: Navig
       >
         <div className="max-w-[1240px] mx-auto min-[830px]:px-5">
           <div
-            className="flex items-center justify-between h-14 min-[830px]:h-[110px]"
+            className="flex items-center justify-between h-14 min-[830px]:h-[80px]"
           >
             {/* Logo */}
             <Link
@@ -111,9 +111,9 @@ export function Navigation({ forceWhiteMode = false, isMainPage = false }: Navig
                     : "/images/img_logo_white.png"
                 }
                 alt="MODU Logo"
-                width={197}
-                height={62}
-                className="h-[62px] w-auto max-[829px]:h-[36px]"
+                width={150}
+                height={50}
+                className="h-[50px] w-auto max-[829px]:h-[36px]"
                 priority
                 quality={95}
               />
@@ -121,7 +121,7 @@ export function Navigation({ forceWhiteMode = false, isMainPage = false }: Navig
 
             {/* Desktop Navigation */}
             <div
-              className="hidden min-[830px]:flex items-center gap-2 min-[830px]:h-[110px]"
+              className="hidden min-[830px]:flex items-center gap-2 min-[830px]:h-[80px]"
             >
               {/* MODU Dropdown */}
               <div
