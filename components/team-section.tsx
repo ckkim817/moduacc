@@ -5,7 +5,18 @@ import Image from "next/image"
 import { Card } from "@/components/ui/card"
 import { CommonButton } from "@/components/common-button"
 
-const leftColumnMembers = [
+type TeamMember = {
+  name: string
+  role: string
+  badge?: string
+  slug: string
+  image: string
+}
+
+// 한 줄의 카드 수가 달라도 스크롤 속도가 같도록 줄 길이에 비례해 재생 시간을 정한다 (4명 = 120s)
+const SCROLL_SECONDS_PER_MEMBER = 30
+
+const leftColumnMembers: TeamMember[] = [
   {
     name: "이원준",
     role: "회계사",
@@ -30,9 +41,16 @@ const leftColumnMembers = [
     slug: "jeon-hwan-ju",
     image: "/images/expert-jeon-hwan-ju-bg.png",
   },
+  {
+    name: "이병학",
+    role: "세무사",
+    badge: "고문",
+    slug: "lee-byeong-hak",
+    image: "/images/expert-lee-byeong-hak-bg.png",
+  },
 ]
 
-const rightColumnMembers = [
+const rightColumnMembers: TeamMember[] = [
   {
     name: "임형진",
     role: "세무사",
@@ -101,7 +119,10 @@ export function TeamSection() {
             </div>
 
             <div className="grid grid-cols-2 gap-[10px] min-[441px]:gap-[30px] pointer-events-none relative z-0">
-              <div className="flex flex-col gap-[10px] min-[441px]:gap-[30px] animate-scroll-up">
+              <div
+                className="flex flex-col gap-[10px] min-[441px]:gap-[30px] animate-scroll-up"
+                style={{ animationDuration: `${leftColumnMembers.length * SCROLL_SECONDS_PER_MEMBER}s` }}
+              >
                 {[...Array(6)].flatMap((_, arrayIndex) =>
                   leftColumnMembers.map((member, index) => (
                     <Link
@@ -122,6 +143,12 @@ export function TeamSection() {
                         <div className="absolute left-4 bottom-4 lg:left-[40px] lg:bottom-[40px] flex flex-col items-start">
                           <p className="text-white font-semibold text-[13px] lg:font-bold lg:text-[14px] mb-1">
                             {member.role}
+                            {member.badge && (
+                              <>
+                                <span className="inline-block w-[3px] h-[3px] rounded-full bg-white/50 mx-[6px] align-middle" aria-hidden />
+                                {member.badge}
+                              </>
+                            )}
                           </p>
                           <h3 className="text-white font-bold text-[18px] lg:text-[30px]">{member.name}</h3>
                         </div>
@@ -131,7 +158,10 @@ export function TeamSection() {
                 )}
               </div>
 
-              <div className="flex flex-col gap-[10px] min-[441px]:gap-[30px] animate-scroll-up pt-10 min-[441px]:pt-[80px]">
+              <div
+                className="flex flex-col gap-[10px] min-[441px]:gap-[30px] animate-scroll-up pt-10 min-[441px]:pt-[80px]"
+                style={{ animationDuration: `${rightColumnMembers.length * SCROLL_SECONDS_PER_MEMBER}s` }}
+              >
                 {[...Array(6)].flatMap((_, arrayIndex) =>
                   rightColumnMembers.map((member, index) => (
                     <Link
@@ -152,6 +182,12 @@ export function TeamSection() {
                         <div className="absolute left-4 bottom-4 lg:left-[40px] lg:bottom-[40px] flex flex-col items-start">
                           <p className="text-white font-semibold text-[13px] lg:font-bold lg:text-[14px] mb-1">
                             {member.role}
+                            {member.badge && (
+                              <>
+                                <span className="inline-block w-[3px] h-[3px] rounded-full bg-white/50 mx-[6px] align-middle" aria-hidden />
+                                {member.badge}
+                              </>
+                            )}
                           </p>
                           <h3 className="text-white font-bold text-[18px] lg:text-[30px]">{member.name}</h3>
                         </div>

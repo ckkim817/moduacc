@@ -83,6 +83,12 @@ export default function ExpertsPage() {
                     }}
                   >
                     {expert.title}
+                    {expert.badge && (
+                      <>
+                        <span className="inline-block w-[3px] h-[3px] rounded-full bg-white/50 mx-[6px] align-middle" aria-hidden />
+                        {expert.badge}
+                      </>
+                    )}
                   </p>
                   <h3 className="font-bold max-[441px]:text-[24px]" style={{ fontSize: "24px" }}>{expert.name}</h3>
                 </div>

@@ -2,6 +2,8 @@ export interface Expert {
   slug: string
   name: string
   title: string
+  /** 직함 옆 표시 (예: 고문). 목록 카드에는 "세무사 · 고문", 상세 페이지에는 태그라인 자리에 표시 */
+  badge?: string
   tagline: string
   email: string
   description: string
@@ -157,5 +159,24 @@ export const expertsData: Expert[] = [
       "[AUDIT & ASSURANCE]\n- 회계감사 : 법정 외부감사부터 임의감사까지, 신뢰할 수 있는 재무제표 감사를 효율적으로 수행합니다.\n- 사업비 정산 및 회계검증 : 정부지원사업·R&D 과제의 사업비 집행 적정성을 검증하고, 정산 보고서 제출을 위한 전문 회계 검증을 수행합니다.",
       "[CONSULTING & ADVISORY]\n- 스타트업 자문 : 초기 자금조달, 지분구조 설계 등 스타트업 성장 단계에 맞는 재무·세무 이슈를 자문합니다.\n- 기업 컨설팅 : 법인 설립, 법인 전환, 조직 개편 등 성장 단계별 재무·세무 전략을 자문합니다.\n- M&A 자문 : 세무·회계 실사부터 거래구조 설계까지 통합 자문을 제공합니다.",
     ],
+  },
+  {
+    // 고문 세무사. Figma PC_07_파트너상세_이병학세무사님(384:2230) 기준
+    slug: "lee-byeong-hak",
+    name: "이병학",
+    title: "세무사",
+    badge: "고문",
+    tagline: "",
+    // TODO: 이메일 확인 후 추가. 비어 있으면 상세 페이지의 이메일 줄이 숨겨진다
+    email: "",
+    description:
+      "이병학 세무사는 국립세무대학 1회 졸업 후 중부지방국세청 조사국과 법무과, 동수원세무서 등에서 25년간 국세공무원으로 근무한 세무행정 전문가입니다. 재직 중 동수원세무서 정보공개 심의위원과 국세심사위원, 중부지방국세청 범칙심의위원을 역임하며 세무조사와 불복·심사 분야에서 폭넓은 실무 경험을 쌓았습니다. 오랜 현장 경험을 바탕으로 납세자의 입장에서 실질적인 해법을 제시하고 있습니다.",
+    image: "/images/expert-lee-byeong-hak.png",
+    imageWithBackground: "/images/expert-lee-byeong-hak-bg.png",
+    education: ["- 국립세무대학 1회 졸업\n- 세무사"],
+    career: [
+      "- 중부지방국세청 조사국/법무과\n- 동수원세무서외 국세청 25년 근무\n- 동수원세무서 정보공개 심의위원\n- 동수원세무서 국세심사위원\n- 중부지방국세청 범칙심의위원",
+    ],
+    workAreas: [],
   },
 ]

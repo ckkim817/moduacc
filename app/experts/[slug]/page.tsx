@@ -65,7 +65,7 @@ export default function ExpertDetailPage() {
                   }}
                 >
                   <p className="text-white text-[16px] leading-[22.4px] font-semibold">
-                    {expert.tagline}
+                    {expert.badge ?? expert.tagline}
                   </p>
                   <h1 className="text-white font-bold text-[40px] leading-[56px]">
                     {expert.name} {expert.title}
@@ -80,7 +80,7 @@ export default function ExpertDetailPage() {
                     top: "calc(100vw * 70 / 1920)",
                   }}
                 >
-                  {expert.tagline}
+                  {expert.badge ?? expert.tagline}
                 </p>
 
                 <h1
@@ -93,32 +93,34 @@ export default function ExpertDetailPage() {
                   {expert.name} {expert.title}
                 </h1>
 
-                <a
-                  href={`mailto:${expert.email}`}
-                  className="absolute flex items-center text-white opacity-50 cursor-pointer"
-                  style={{
-                    left: "min(80px, calc(100vw * 80 / 1920))",
-                    bottom: "min(70px, calc(100vw * 70 / 1920))",
-                  }}
-                >
-                  <Image src="/images/icon_email.svg" alt="email" width={24} height={24} unoptimized />
-                  <span
-                    className="text-[18px]"
+                {expert.email && (
+                  <a
+                    href={`mailto:${expert.email}`}
+                    className="absolute flex items-center text-white opacity-50 cursor-pointer"
                     style={{
-                      marginLeft: "min(6px, calc(100vw * 6 / 1920))",
+                      left: "min(80px, calc(100vw * 80 / 1920))",
+                      bottom: "min(70px, calc(100vw * 70 / 1920))",
                     }}
                   >
-                    e-mail
-                  </span>
-                  <span
-                    className="text-[18px]"
-                    style={{
-                      marginLeft: "min(10px, calc(100vw * 10 / 1920))",
-                    }}
-                  >
-                    {expert.email}
-                  </span>
-                </a>
+                    <Image src="/images/icon_email.svg" alt="email" width={24} height={24} unoptimized />
+                    <span
+                      className="text-[18px]"
+                      style={{
+                        marginLeft: "min(6px, calc(100vw * 6 / 1920))",
+                      }}
+                    >
+                      e-mail
+                    </span>
+                    <span
+                      className="text-[18px]"
+                      style={{
+                        marginLeft: "min(10px, calc(100vw * 10 / 1920))",
+                      }}
+                    >
+                      {expert.email}
+                    </span>
+                  </a>
+                )}
               </div>
             </div>
 
@@ -209,23 +211,25 @@ export default function ExpertDetailPage() {
                 </div>
 
                 {/* Email icon */}
-                <a
-                  href={`mailto:${expert.email}`}
-                  className="absolute top-3 right-3 z-40 cursor-pointer"
-                >
-                  <Image
-                    src="/images/icon_email.svg"
-                    alt="email"
-                    width={20}
-                    height={20}
-                    unoptimized
-                    className="opacity-40"
-                  />
-                </a>
+                {expert.email && (
+                  <a
+                    href={`mailto:${expert.email}`}
+                    className="absolute top-3 right-3 z-40 cursor-pointer"
+                  >
+                    <Image
+                      src="/images/icon_email.svg"
+                      alt="email"
+                      width={20}
+                      height={20}
+                      unoptimized
+                      className="opacity-40"
+                    />
+                  </a>
+                )}
 
                 {/* Text content - on top of gradient */}
                 <div className="absolute bottom-6 left-0 right-0 z-40 text-white text-center px-6">
-                  <p className="text-[13px] font-medium" style={{ marginBottom: "6px" }}>{expert.tagline}</p>
+                  <p className="text-[13px] font-medium" style={{ marginBottom: "6px" }}>{expert.badge ?? expert.tagline}</p>
                   <h1 className="font-bold mb-1 text-[24px] leading-[34px]">
                     {expert.name} {expert.title}
                   </h1>
@@ -291,20 +295,24 @@ export default function ExpertDetailPage() {
             </div>
           </div>
 
-          {/* Divider */}
-          <div className="w-full h-[1px] bg-black/[0.07]" />
+          {/* Main Work Areas (고문 등 업무분야가 없는 구성원은 생략 — Figma 384:2230) */}
+          {expert.workAreas.length > 0 && (
+            <>
+              {/* Divider */}
+              <div className="w-full h-[1px] bg-black/[0.07]" />
 
-          {/* Main Work Areas */}
-          <div className="grid grid-cols-[200px_1fr] gap-8 py-[60px] max-[441px]:py-[40px] max-[441px]:grid-cols-1 max-[441px]:gap-4">
-            <h2 className="font-bold text-[#111111] max-[441px]:text-[18px] max-[441px]:leading-[25px] text-[20px] leading-[28px]">주요 업무분야</h2>
-            <div className="flex flex-col gap-[20px] max-[441px]:gap-[16px]">
-              {expert.workAreas.map((item, index) => (
-                <p key={index} className="text-[#333333] max-[441px]:text-[16px] max-[441px]:leading-[25px] text-[18px] leading-[25.2px] whitespace-pre-line">
-                  {item}
-                </p>
-              ))}
-            </div>
-          </div>
+              <div className="grid grid-cols-[200px_1fr] gap-8 py-[60px] max-[441px]:py-[40px] max-[441px]:grid-cols-1 max-[441px]:gap-4">
+                <h2 className="font-bold text-[#111111] max-[441px]:text-[18px] max-[441px]:leading-[25px] text-[20px] leading-[28px]">주요 업무분야</h2>
+                <div className="flex flex-col gap-[20px] max-[441px]:gap-[16px]">
+                  {expert.workAreas.map((item, index) => (
+                    <p key={index} className="text-[#333333] max-[441px]:text-[16px] max-[441px]:leading-[25px] text-[18px] leading-[25.2px] whitespace-pre-line">
+                      {item}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
 
           <div
             className="flex justify-center pt-[60px] pb-[300px] max-[441px]:!pt-[20px] max-[441px]:!pb-[160px]"
