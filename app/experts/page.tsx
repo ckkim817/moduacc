@@ -16,7 +16,7 @@ export default function ExpertsPage() {
       <ScrollToTop />
       <Navigation forceWhiteMode />
 
-      <section className="bg-white pt-[220px] max-[441px]:!pt-[116px]">
+      <section className="bg-white pt-[180px] max-[441px]:!pt-[116px]">
         <div
           className="max-[441px]:!px-5"
           style={{ paddingLeft: "calc(100vw / 5.5)", paddingRight: "calc(100vw / 5.5)" }}

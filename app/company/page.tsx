@@ -16,7 +16,7 @@ export default function CompanyPage() {
 
       {/* Hero Section */}
       <section
-        className="pb-[100px] bg-white max-[441px]:pb-8 pt-[220px] max-[441px]:!pt-[116px]"
+        className="pb-[100px] bg-white max-[441px]:pb-8 pt-[180px] max-[441px]:!pt-[116px]"
       >
         <div
           className="max-[441px]:!px-5"

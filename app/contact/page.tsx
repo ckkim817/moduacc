@@ -129,7 +129,7 @@ export default function ContactPage() {
       <Navigation forceWhiteMode />
 
       {/* Hero Section */}
-      <section className="bg-white pt-[220px] max-[441px]:!pt-[116px]">
+      <section className="bg-white pt-[180px] max-[441px]:!pt-[116px]">
         <div className="max-[441px]:!px-5">
           <div className="container mx-auto px-6 max-[441px]:px-0">
             <div className="max-w-7xl mx-auto text-center">

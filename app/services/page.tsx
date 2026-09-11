@@ -88,7 +88,7 @@ export default function ServicesPage() {
       <Navigation forceWhiteMode />
 
       {/* Hero Section */}
-      <section className="pb-16 bg-white max-[441px]:pb-8 pt-[220px] max-[441px]:!pt-[116px]">
+      <section className="pb-16 bg-white max-[441px]:pb-8 pt-[180px] max-[441px]:!pt-[116px]">
         <div className="max-[441px]:!px-5">
           <div className="container mx-auto px-6 max-[441px]:px-0">
             <div className="max-w-7xl mx-auto text-center">

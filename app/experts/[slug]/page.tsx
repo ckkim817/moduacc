@@ -27,7 +27,7 @@ export default function ExpertDetailPage() {
       <Navigation forceWhiteMode />
 
       {/* Hero Section with Expert Image and Info */}
-      <section className="relative bg-white max-[441px]:!pt-[48px]" style={{ paddingTop: "calc(110px)" }}>
+      <section className="relative bg-white max-[441px]:!pt-[48px]" style={{ paddingTop: "calc(90px)" }}>
         <div
           className="relative mx-auto max-[441px]:hidden"
           style={{
